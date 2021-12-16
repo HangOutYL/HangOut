@@ -1,9 +1,12 @@
-function App() {
+import React from "react";
+import Home from "./components/Home/Home";
+
+const App = () => {
   return (
     <>
-      <h1>HangOut App</h1>
+      <Home />
     </>
   );
-}
+};
 
 export default App;
