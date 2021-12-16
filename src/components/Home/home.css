@@ -31,14 +31,14 @@
   position: absolute;
   width: 90px;
   height: 51px;
-  left: 2px;
-  top: 3px;
+  left: 10px;
+  top: 5px;
 
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
-  line-height: 51px;
+  line-height: 40px;
   /* identical to box height */
 
   color: rgba(239, 227, 200, 0.76);
@@ -56,8 +56,8 @@
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
-  font-size: 40px;
-  line-height: 67px;
+  font-size: 32px;
+  line-height: 50px;
 
   color: #eb370ae0;
 
