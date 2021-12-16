@@ -1,8 +1,10 @@
 body {
   margin: 0;
+  padding: 0;
   border: 1px solid blue;
-  max-height: 812px;
-  max-width: 375px;
+  height: 812px;
+  width: 375px;
+  background: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

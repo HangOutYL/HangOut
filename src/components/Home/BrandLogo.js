@@ -1,7 +1,7 @@
 import React from "react";
 
 const BrandLogo = () => {
-  return <div>Brand Logo</div>;
+  return <div className="Logo">Brand Logo</div>;
 };
 
 export default BrandLogo;

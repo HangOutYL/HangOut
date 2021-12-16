@@ -5,17 +5,18 @@ import Categories from "./Categories";
 import CoffeeCards from "./CoffeCards";
 import LoggedUser from "./LoggedUser";
 import Search from "./Search";
+import "./home.css";
 
 const Home = () => {
   return (
-    <>
+    <div className="Home">
       <BrandLogo />
       <LoggedUser />
       <Search />
       <CoffeeCards />
       <Categories />
       <ButtomNav />
-    </>
+    </div>
   );
 };
 

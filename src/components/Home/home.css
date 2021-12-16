@@ -1,0 +1,128 @@
+/* Home Screen */
+
+.Home {
+  width: 375px;
+  height: 812px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+
+  flex-direction: column;
+  color: #efe3c8;
+  background: #201520;
+  border-radius: 33.6232px;
+}
+
+/* Brand Logo */
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 120px;
+  height: 97px;
+  left: 16px;
+  top: 32px;
+  color: #efe3c8;
+  border: 1px solid #000000;
+}
+
+/* Profile Picture */
+
+.Profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 309px;
+  top: 56px;
+  border: 1px dashed #dcaa70;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+/* Search Bar */
+
+.SearchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 19px 10px 20px;
+
+  position: absolute;
+  width: 303px;
+  height: 30px;
+  left: 16px;
+  top: 141px;
+
+  background: #171017;
+  border-radius: 10px;
+  border: 1px solid #000000;
+}
+
+/* Coffee Categories */
+
+.CoffeeCategories {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  padding: 35px 8px;
+
+  position: absolute;
+  width: 45px;
+  height: 552px;
+  left: 0px;
+  top: 201px;
+
+  background: rgba(112, 67, 65, 0.3);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 0px 40px 0px 0px;
+}
+
+.Category {
+  width: fit-content;
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #efe3c8;
+
+  border: 1px solid #000000;
+  transform: rotate(-90deg);
+
+  margin: 40px -22px;
+}
+
+/* Coffee Cards */
+
+.CoffeeCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 326px;
+  height: 550px;
+  left: 46px;
+  top: 201px;
+  border: 1px solid #000000;
+}
+
+/* Bottom Nav Bar */
+
+.ButtomNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 375px;
+  height: 78px;
+  left: 0px;
+  top: 750px;
+}
