@@ -16,16 +16,52 @@
 /* Brand Logo */
 
 .Logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   width: 120px;
   height: 97px;
   left: 16px;
   top: 32px;
   color: #efe3c8;
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
+}
+
+/* Brand first name */
+
+.brand {
+  position: absolute;
+  width: 90px;
+  height: 51px;
+  left: 2px;
+  top: 3px;
+
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 51px;
+  /* identical to box height */
+
+  color: rgba(239, 227, 200, 0.76);
+}
+
+/* Brand Second Name */
+
+.logo {
+  position: absolute;
+  width: 115px;
+  height: 67px;
+  left: 20px;
+  top: 34px;
+
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 67px;
+
+  color: #eb370ae0;
+
+  /* border: 1px solid #000000; */
 }
 
 /* Profile Picture */
