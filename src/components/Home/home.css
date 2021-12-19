@@ -146,15 +146,37 @@
 
 .CoffeeCards {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: auto;
   align-items: center;
   position: absolute;
   width: 327px;
   height: 480px;
   left: 45px;
-  top: 173px;
+  top: 170px;
   /* border: 1px solid #09139ca8; */
   border-radius: 5%;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1em;
+  /* position: absolute; */
+  width: 139px;
+  height: 210px;
+  left: 63px;
+  top: 201px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12.6087px;
 }
 
 /* Bottom Nav Bar */
