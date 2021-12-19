@@ -197,6 +197,8 @@
 
 .Card .PriceAndCart button {
   cursor: pointer;
+  height: 1.5rem;
+  border-radius: 50%;
 }
 
 .Card .PriceAndCart button:hover {
