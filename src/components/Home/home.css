@@ -2,7 +2,7 @@
 
 .Home {
   width: 375px;
-  height: 812px;
+  height: 100vh;
   left: 0px;
   top: 0px;
   display: flex;
@@ -20,8 +20,9 @@
   width: 120px;
   height: 97px;
   left: 16px;
-  top: 32px;
+  top: 22px;
   color: #efe3c8;
+
   /* border: 1px solid #000000; */
 }
 
@@ -51,7 +52,7 @@
   width: 115px;
   height: 67px;
   left: 20px;
-  top: 34px;
+  top: 30px;
 
   font-family: Rosarivo;
   font-style: normal;
@@ -74,10 +75,11 @@
   width: 50px;
   height: 50px;
   left: 309px;
-  top: 56px;
+  top: 35px;
   border: 1px dashed #dcaa70;
   border-radius: 50%;
   font-size: 10px;
+  cursor: pointer;
 }
 
 /* Search Bar */
@@ -92,7 +94,7 @@
   width: 303px;
   height: 30px;
   left: 16px;
-  top: 141px;
+  top: 118px;
 
   background: #171017;
   border-radius: 10px;
@@ -103,21 +105,21 @@
 
 .CoffeeCategories {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-direction: column;
   /* align-items: flex-start; */
   padding: 35px 8px;
 
   position: absolute;
-  width: 45px;
-  height: 552px;
+  width: 43px;
+  height: 535px;
   left: 0px;
-  top: 201px;
+  top: 173px;
 
   background: rgba(112, 67, 65, 0.3);
   border: 1px solid #000000;
   box-sizing: border-box;
-  border-radius: 0px 40px 0px 0px;
+  border-radius: 0px 40px 0px 33.6232px;
 }
 
 .Category {
@@ -127,13 +129,17 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
-
+  cursor: pointer;
   color: #efe3c8;
 
   border: 1px solid #000000;
   transform: rotate(-90deg);
 
   margin: 40px -22px;
+}
+
+.Category:hover {
+  background-color: #d8d2d2a8;
 }
 
 /* Coffee Cards */
@@ -144,22 +150,31 @@
   align-items: center;
   position: absolute;
   width: 327px;
-  height: 550px;
+  height: 480px;
   left: 45px;
-  top: 201px;
-  border: 1px solid #d8d2d2a8;
+  top: 173px;
+  /* border: 1px solid #09139ca8; */
   border-radius: 5%;
 }
 
 /* Bottom Nav Bar */
 
 .ButtomNav {
+  /* border: 1px solid #d8d2d2a8; */
+  background-color: #22151f;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   position: absolute;
   width: 375px;
   height: 78px;
   left: 0px;
-  top: 750px;
+  top: 630px;
+  border-bottom-left-radius: 33.6232px;
+  border-bottom-right-radius: 33.6232px;
+}
+
+.ButtomNav img:hover {
+  background-color: #d8d2d2a8;
+  cursor: pointer;
 }
