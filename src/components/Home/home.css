@@ -222,7 +222,12 @@
   border-bottom-right-radius: 33.6232px;
 }
 
-.ButtomNav img:hover {
+.ButtomNav .NavBtn {
+  background-color: transparent;
+  border-style: none;
+}
+
+.ButtomNav .NavBtn:hover {
   background-color: coral;
   cursor: pointer;
 }

@@ -5,8 +5,12 @@ import CartButton from "../../views/CartButtonVector.png";
 const ButtomNav = () => {
   return (
     <div className="ButtomNav">
-      <img src={HomeButton} alt="HomeButton" />
-      <img src={CartButton} alt="CartButton" />
+      <button className="NavBtn">
+        <img src={HomeButton} alt="HomeButton" />
+      </button>
+      <button className="NavBtn">
+        <img src={CartButton} alt="CartButton" />
+      </button>
     </div>
   );
 };
