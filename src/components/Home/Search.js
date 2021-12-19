@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div className="SearchBar">
       <img src={SearchIcon} alt="SearchIcon" />
-      <input placeholder="Search your favourite Coffee.." />
+      <input placeholder="Browse your favourite Coffee.." />
     </div>
   );
 };
