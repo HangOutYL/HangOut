@@ -94,7 +94,7 @@
   width: 303px;
   height: 30px;
   left: 16px;
-  top: 118px;
+  top: 110px;
 
   background: #171017;
   border-radius: 10px;
@@ -132,14 +132,14 @@
   cursor: pointer;
   color: #efe3c8;
 
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
   transform: rotate(-90deg);
 
   margin: 40px -22px;
 }
 
 .Category:hover {
-  background-color: #d8d2d2a8;
+  background-color: coral;
 }
 
 /* Coffee Cards */
@@ -179,6 +179,30 @@
   border-radius: 12.6087px;
 }
 
+.Card img {
+  cursor: pointer;
+}
+
+.Card .Text {
+  cursor: pointer;
+}
+
+.Card .PriceAndCart {
+  /* border: 1px solid blue; */
+  width: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Card .PriceAndCart button {
+  cursor: pointer;
+}
+
+.Card .PriceAndCart button:hover {
+  background-color: coral;
+}
+
 /* Bottom Nav Bar */
 
 .ButtomNav {
@@ -197,6 +221,6 @@
 }
 
 .ButtomNav img:hover {
-  background-color: #d8d2d2a8;
+  background-color: coral;
   cursor: pointer;
 }
