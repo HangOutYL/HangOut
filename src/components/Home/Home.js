@@ -2,7 +2,7 @@ import React from "react";
 import BrandLogo from "./BrandLogo";
 import ButtomNav from "./ButtomNav";
 import Categories from "./Categories";
-import CoffeeCards from "./CoffeCards";
+import CoffeeCards from "./CoffeeCards";
 import LoggedUser from "./LoggedUser";
 import Search from "./Search";
 import "./home.css";

@@ -1,0 +1,195 @@
+/* Cart Screen */
+
+.Cart {
+  width: 375px;
+  height: 701px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+
+  flex-direction: column;
+  color: #efe3c8;
+  background: #201520;
+  border-radius: 33.6232px;
+}
+
+.Cart-Title {
+  /* position: absolute; */
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 125%;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+/* Cart Cards */
+
+.Cart-Items {
+  /* border: 1px solid red; */
+  width: 372px;
+  height: 320px;
+  left: -55px;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Item {
+  /* border: 1px solid blue; */
+  width: 343px;
+  height: 96px;
+  left: 16px;
+  top: 96px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.Item-Desc {
+  /* position: absolute; */
+  width: 210px;
+  height: 71px;
+  left: 96px;
+  top: 12px;
+  display: flex;
+
+  /* border: 1px solid green; */
+}
+
+.Item-Detail {
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 88px;
+  height: 71px;
+  left: 100px;
+  top: 12px;
+  margin-left: 12px;
+  /* border: 1px solid salmon; */
+}
+
+.item-img {
+  /* position: absolute; */
+  width: 72px;
+  height: 72px;
+  left: 12px;
+  top: 12px;
+
+  border-radius: 15px;
+}
+
+.Item-Title {
+  /* position: absolute; */
+  width: 78px;
+  height: 22px;
+  left: 96px;
+  top: 12px;
+
+  font-size: 14px;
+  line-height: 160%;
+  /* or 22px */
+
+  color: #ffffff;
+}
+
+.Item-Text,
+.Item-Title,
+.Item-Number {
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.Item-Text {
+  /* position: absolute; */
+  width: 88px;
+  height: 17px;
+  left: 96px;
+  top: 42px;
+
+  font-size: 12px;
+  line-height: 145%;
+  /* or 17px */
+
+  color: #ffffff;
+}
+
+.Item-Price {
+  /* position: absolute; */
+  width: 37px;
+  height: 16px;
+  left: 96px;
+  top: 67px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 115%;
+  /* or 18px */
+
+  color: #ffffff;
+}
+
+.Item-Amount {
+  /* position: absolute; */
+  width: 87px;
+  height: 30px;
+  left: 244px;
+  top: 33px;
+  display: flex;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+.Item-Plus,
+.Item-Minus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px;
+
+  /* position: absolute; */
+  width: 30px;
+  height: 30px;
+  top: 33px;
+
+  background: #efe3c8;
+  border-radius: 8px;
+  /* border: 1px solid lime; */
+}
+
+.Item-Plus {
+  left: 244px;
+}
+
+.Item-Minus {
+  left: 301px;
+}
+
+.Item-Number {
+  /* position: absolute; */
+  width: 7px;
+  height: 32px;
+  left: 300px;
+  top: 128px;
+
+  font-size: 20px;
+  line-height: 160%;
+  /* identical to box height, or 32px */
+
+  color: #ffffff;
+}

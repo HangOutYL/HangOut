@@ -1,7 +1,7 @@
 import React from "react";
 import Coffee1 from "../../views/CoffeeImage1.png";
 
-const CoffeCards = () => {
+const CoffeeCards = () => {
   return (
     <div className="CoffeeCards">
       <div className="Card">
@@ -56,4 +56,4 @@ const CoffeCards = () => {
   );
 };
 
-export default CoffeCards;
+export default CoffeeCards;
