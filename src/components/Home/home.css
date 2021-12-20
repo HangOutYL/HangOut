@@ -60,7 +60,7 @@
   font-size: 32px;
   line-height: 50px;
 
-  color: #eb370ae0;
+  color: tomato;
 
   /* border: 1px solid #000000; */
 }
@@ -90,9 +90,9 @@
   justify-content: space-between;
   padding: 10px 10px 10px 10px;
   position: absolute;
-  width: 309px;
+  width: 312px;
   height: 20px;
-  left: 13px;
+  left: 16px;
   top: 110px;
   background: #171017;
   border-radius: 10px;
@@ -107,9 +107,8 @@
   border-color: transparent;
 }
 
-.SearchBar input:focus {
-  border-color: transparent;
-  border-style: none;
+.SearchBar input:hover {
+  border-color: tomato;
 }
 
 /* Coffee Categories */
@@ -236,6 +235,10 @@
 .ButtomNav .NavBtn {
   background-color: transparent;
   border-style: none;
+}
+
+.ButtomNav .NavBtn .ProfilePic {
+  height: 33px;
 }
 
 .ButtomNav .NavBtn:hover {

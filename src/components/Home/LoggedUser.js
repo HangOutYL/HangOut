@@ -1,10 +1,10 @@
 import React from "react";
+import ProfilePic from "../../views/ProfilePictureVector.png";
 
 const LoggedUser = () => {
   return (
     <div className="Profile">
-      Logged
-      <br /> User
+      <img src={ProfilePic} alt="ProfilePic" />
     </div>
   );
 };
