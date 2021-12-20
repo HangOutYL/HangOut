@@ -8,16 +8,26 @@
   display: flex;
 
   flex-direction: column;
+  align-items: center;
   color: #efe3c8;
   background: #201520;
   border-radius: 33.6232px;
 }
 
+.Item-Text,
+.Item-Title,
+.Item-Number,
+.Coupon-Text,
+.Delivery,
+.Taxes,
 .Cart-Title {
-  /* position: absolute; */
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
+}
+
+.Cart-Title {
+  /* position: absolute; */
   font-size: 24px;
   line-height: 125%;
 
@@ -102,14 +112,6 @@
   color: #ffffff;
 }
 
-.Item-Text,
-.Item-Title,
-.Item-Number {
-  font-family: Rosarivo;
-  font-style: normal;
-  font-weight: normal;
-}
-
 .Item-Text {
   /* position: absolute; */
   width: 88px;
@@ -169,6 +171,8 @@
 
   background: #efe3c8;
   border-radius: 8px;
+  cursor: pointer;
+
   /* border: 1px solid lime; */
 }
 
@@ -192,4 +196,213 @@
   /* identical to box height, or 32px */
 
   color: #ffffff;
+}
+
+/* .Cart-Line {
+  position: absolute;
+  width: 343px;
+  height: 0px;
+  left: 20px;
+  top: 470px;
+
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+} */
+
+.Coupon {
+  /* position: absolute; */
+  width: 343px;
+  height: 40px;
+  left: 20px;
+  top: 456px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* 
+.Coupon-Text {
+  position: absolute;
+  width: 135px;
+  height: 20px;
+  left: 46px;
+  top: 466px;
+
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid magenta;
+} */
+
+.Order-Summary {
+  /* position: absolute; */
+  width: 344px;
+  height: 110px;
+  left: 16px;
+  top: 515px;
+  margin-top: 19px;
+}
+
+.Delivery {
+  /* position: absolute; */
+  width: 113px;
+  height: 18px;
+  left: 16px;
+  top: 516px;
+
+  font-size: 14px;
+  line-height: 125%;
+
+  color: #ffffff;
+}
+
+.Taxes {
+  /* position: absolute; */
+  width: 37px;
+  height: 18px;
+  left: 16px;
+  top: 542px;
+
+  font-size: 14px;
+  line-height: 125%;
+
+  color: #ffffff;
+}
+
+.Delivery-Price {
+  /* position: absolute; */
+  width: 25px;
+  height: 16px;
+  left: 335px;
+  top: 515px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 115%;
+
+  color: #ffffff;
+}
+
+.Taxes-Price {
+  /* position: absolute; */
+  width: 44px;
+  height: 16px;
+  left: 315px;
+  top: 542px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 115%;
+
+  color: #ffffff;
+}
+
+.Extra-Charges {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid mediumslateblue; */
+  height: 50px;
+}
+
+.Charge-Titles,
+.Charge-Prices {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50px;
+  /* border: 1px solid magenta; */
+}
+
+.Charge-Prices {
+  direction: rtl;
+}
+
+.Order-Total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 1px solid mediumturquoise; */
+}
+
+.Grand-Total {
+  /* position: absolute; */
+  width: 113px;
+  height: 25px;
+  left: 16px;
+  top: 600px;
+
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 125%;
+
+  color: #ffffff;
+}
+
+.Total-Price {
+  /* position: absolute; */
+  width: 60px;
+  height: 23px;
+  left: 274px;
+  top: 597px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 115%;
+  direction: rtl;
+
+  color: #ffffff;
+}
+
+.Pay-Bttn {
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 50px;
+  margin-top: 28px;
+
+  /* position: absolute; */
+  width: 343px;
+  height: 45px;
+  left: 16px;
+  top: 653px;
+
+  background: #efe3c8;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.Pay-Text {
+  position: static;
+  width: 75px;
+  height: 22px;
+  left: 134px;
+  top: 11.5px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #4a2b29;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+  cursor: pointer;
 }
