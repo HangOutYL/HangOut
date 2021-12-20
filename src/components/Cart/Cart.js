@@ -77,7 +77,7 @@ const Cart = () => {
           <span className="Grand-Total">Grand Total</span>
           <span className="Total-Price">21.99$</span>
         </div>
-        <button className="Pay-Bttn">
+        <button className="Pay-Btn">
           <span className="Pay-Text">PAY NOW</span>
         </button>
       </div>
