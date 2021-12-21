@@ -239,7 +239,7 @@
   height: 53px;
   left: 16px;
   top: 724.23px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -262,6 +262,23 @@
 
   color: #ffffff;
 }
+.Product .PriceAndBuy .Price .PriceAmount {
+  /* position: absolute; */
+  width: 55px;
+  height: 28px;
+  left: 16px;
+  top: 749.24px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 115%;
+  /* or 28px */
+
+  color: #ffffff;
+}
+
 /* Buy Now Button */
 
 .Product .PriceAndBuy .BuyNowBtn {
