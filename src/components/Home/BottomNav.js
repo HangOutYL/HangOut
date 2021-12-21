@@ -3,9 +3,9 @@ import HomeButton from "../../views/HomeButtonVector.png";
 import CartButton from "../../views/CartButtonVector.png";
 import ProfilePic from "../../views/ProfilePictureVector.png";
 
-const ButtomNav = () => {
+const BottomNav = () => {
   return (
-    <div className="ButtomNav">
+    <div className="BottomNav">
       <button className="NavBtn">
         <img src={HomeButton} alt="HomeButton" />
       </button>
@@ -19,4 +19,4 @@ const ButtomNav = () => {
   );
 };
 
-export default ButtomNav;
+export default BottomNav;

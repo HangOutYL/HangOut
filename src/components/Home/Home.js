@@ -1,6 +1,6 @@
 import React from "react";
 import BrandLogo from "./BrandLogo";
-import ButtomNav from "./ButtomNav";
+import BottomNav from "./BottomNav";
 import Categories from "./Categories";
 import CoffeeCards from "./CoffeeCards";
 import LoggedUser from "./LoggedUser";
@@ -15,7 +15,7 @@ const Home = () => {
       <Search />
       <CoffeeCards />
       <Categories />
-      <ButtomNav />
+      <BottomNav />
     </div>
   );
 };

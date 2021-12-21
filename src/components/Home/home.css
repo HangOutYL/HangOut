@@ -217,7 +217,7 @@
 
 /* Bottom Nav Bar */
 
-.ButtomNav {
+.BottomNav {
   /* border: 1px solid #d8d2d2a8; */
   background-color: #22151f;
   display: flex;
@@ -232,16 +232,16 @@
   border-bottom-right-radius: 33.6232px;
 }
 
-.ButtomNav .NavBtn {
+.BottomNav .NavBtn {
   background-color: transparent;
   border-style: none;
 }
 
-.ButtomNav .NavBtn .ProfilePic {
+.BottomNav .NavBtn .ProfilePic {
   height: 33px;
 }
 
-.ButtomNav .NavBtn:hover {
+.BottomNav .NavBtn:hover {
   background-color: tomato;
   cursor: pointer;
 }

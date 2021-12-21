@@ -3,7 +3,7 @@ import "./Cart.css";
 import Coffee1 from "../../views/CoffeeImage1.png";
 import CouponCode from "../../views/CouponVector.png";
 import DashedLine from "../../views/DashedLineVector.png";
-import BottomNav from "../BottomNav/BottomNav";
+// import BottomNav from "../BottomNav/BottomNav";
 
 const Cart = () => {
   return (
@@ -81,7 +81,7 @@ const Cart = () => {
           <span className="Pay-Text">PAY NOW</span>
         </button>
       </div>
-      <BottomNav />
+      {/* <BottomNav /> */}
     </div>
   );
 };
