@@ -1,0 +1,31 @@
+/* Bottom Nav Bar */
+
+.BottomNav {
+  background-color: #22151f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* position: absolute; */
+  width: 375px;
+  height: 78px;
+  left: -2px;
+  top: 734px;
+  border-bottom-left-radius: 33.6232px;
+  border-bottom-right-radius: 33.6232px;
+  margin-top: 50px;
+  /* border: 1px solid lime; */
+}
+
+.BottomNav .NavBtn {
+  background-color: transparent;
+  border-style: none;
+}
+
+.BottomNav .NavBtn .ProfilePic {
+  height: 33px;
+}
+
+.BottomNav .NavBtn:hover {
+  background-color: tomato;
+  cursor: pointer;
+}
