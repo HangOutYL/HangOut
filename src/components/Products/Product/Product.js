@@ -37,7 +37,9 @@ const Product = () => {
           <span className="PriceText">Price</span>
           <span className="PriceAmount">299$</span>
         </div>
-        <button className="BuyNowBtn">BUY NOW</button>
+        <button className="BuyNowBtn">
+          <span className="BuyBtnText">BUY NOW</span>
+        </button>
       </div>
     </div>
   );
