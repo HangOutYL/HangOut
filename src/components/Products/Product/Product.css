@@ -173,27 +173,24 @@
   margin: 0px 8px;
 }
 
-.Product .MoreOptions .Tabs .Tab:hover,
-.Product .MoreOptions .Tabs .Tab .TabText:hover {
+.Product .MoreOptions .Tabs .Tab:hover {
   background: #efe3c8;
-  color: #201520;
   cursor: pointer;
 }
 
 /* Tab Text */
 
 .Product .MoreOptions .Tabs .Tab .TabText {
-  position: static;
-  width: 88px;
-  height: 16px;
+  /* position: static; */
+  width: 100px;
+  height: 34px;
   left: 20px;
   top: 9px;
-
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 125%;
+  line-height: 255%;
   /* or 18px */
 
   text-align: center;
@@ -206,6 +203,10 @@
   order: 0;
   flex-grow: 0;
   margin: 0px 10px;
+}
+
+.Product .MoreOptions .Tabs .Tab .TabText:hover {
+  color: #201520;
 }
 
 /* Price And Buy */
