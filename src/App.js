@@ -6,8 +6,8 @@ const App = () => {
   return (
     <div className="app">
       <Home />
-      <Cart />
       <Products />
+      <Cart />
     </div>
   );
 };
