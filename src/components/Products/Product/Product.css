@@ -160,13 +160,13 @@
 
 /* Each Tab */
 
-.Product .MoreOptions .Tabs .Tab {
+.Product .MoreOptions .Tabs .Tab button {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px 20px;
-
+  background-color: transparent;
   position: static;
   width: 100px;
   height: 34px;
@@ -185,7 +185,7 @@
   margin: 0px 8px;
 }
 
-.Product .MoreOptions .Tabs .Tab:hover {
+.Product .MoreOptions .Tabs .Tab button:hover {
   background: #efe3c8;
   cursor: pointer;
 }
@@ -201,8 +201,8 @@
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 255%;
+  font-size: 13px;
+  line-height: 100%;
   /* or 18px */
 
   text-align: center;

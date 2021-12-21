@@ -22,13 +22,13 @@ const Product = () => {
         <span className="MoreOptionsTitle">Choice Of Milk</span>
         <div className="Tabs">
           <div className="Tab">
-            <span className="TabText">Oat Milk</span>
+            <button className="TabText">Oat Milk</button>
           </div>
           <div className="Tab">
-            <span className="TabText">Soy Milk</span>
+            <button className="TabText">Soy Milk</button>
           </div>
           <div className="Tab">
-            <span className="TabText">Almond Milk</span>
+            <button className="TabText">Almond Milk</button>
           </div>
         </div>
       </div>
