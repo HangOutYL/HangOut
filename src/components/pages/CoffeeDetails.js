@@ -2,12 +2,14 @@ import React from "react";
 import "./CoffeeDetails.css";
 import Coffee1Big from "../../views/CoffeeImage1Big.png";
 import ArrowBack from "../../views/ArrowBackVector.png";
-
+import { Link } from "react-router-dom";
 const CoffeeDetails = () => {
   return (
     <div className="Product">
       <img src={Coffee1Big} alt="CoffeeImage" className="BigPicture" />
-      <img src={ArrowBack} alt="ArrowBack" className="ArrowBack" />
+      <Link to={"/"}>
+        <img src={ArrowBack} alt="ArrowBack" className="ArrowBack" />
+      </Link>
       <div className="NameAndDesc">
         <span className="ProductName">Cappuccino</span>
         <span className="ProductDetails">Drizzled with Caramel</span>
