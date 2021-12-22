@@ -1,0 +1,329 @@
+.Product {
+  width: 375px;
+  height: 701px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  color: #efe3c8;
+  background: #201520;
+  border-radius: 33.6232px;
+}
+
+/* Product Image */
+
+.Product .BigPicture {
+  /* position: absolute; */
+  width: 343px;
+  height: 391px;
+  left: 16px;
+  top: 36px;
+  margin: 10px 0px -20px 0px;
+  border-radius: 40px;
+  /* border: solid blue 1px; */
+}
+
+/*  Arrow Back Route */
+
+.Product .ArrowBack {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  left: -136px;
+  top: -360px;
+  cursor: pointer;
+}
+
+/* Product Name & Description */
+
+.Product .NameAndDesc {
+  /* position: absolute; */
+  width: 343px;
+  height: 138px;
+  left: 16px;
+  top: 443px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: blue 1px solid; */
+}
+
+/* Cappuccino */
+
+.Product .ProductName {
+  /* position: absolute; */
+  width: 150px;
+  height: 30px;
+  left: 16px;
+  top: 443px;
+
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 125%;
+  /* identical to box height, or 30px */
+  /* border: solid 1px violet; */
+  color: #ffffff;
+}
+
+/* Product Details */
+
+.Product .ProductDetails {
+  /* position: absolute; */
+  width: 170px;
+  height: 20px;
+  left: 16px;
+  top: 481px;
+  margin-top: 0.5rem;
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  /* identical to box height, or 20px */
+
+  color: #ffffff;
+}
+
+/* Products Description */
+.Product .ProductDesc {
+  /* position: absolute; */
+  width: 343px;
+  height: 80px;
+  left: 16px;
+  top: 509px;
+  overflow: auto;
+  margin-top: 1rem;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 145%;
+  /* or 20px */
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+/* More Options Tabs */
+
+.Product .MoreOptions {
+  /* position: absolute; */
+  width: 343px;
+  height: 60px;
+  left: 16px;
+  top: 619px;
+  /* border: hotpink 1px solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* More Options Title */
+
+.Product .MoreOptions .MoreOptionsTitle {
+  /* position: absolute; */
+  width: 110px;
+  height: 18px;
+  left: 16px;
+  top: 619px;
+
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  /* identical to box height, or 18px */
+  /* border: solid 1px gray; */
+  color: #ffffff;
+}
+
+/* Tabs */
+
+.Product .MoreOptions .Tabs {
+  /* Auto Layout */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  /* border: goldenrod 1px solid; */
+  /* position: absolute; */
+  width: 343px;
+  height: 34px;
+  left: 16px;
+  top: 645px;
+}
+
+/* Each Tab */
+
+.Product .MoreOptions .Tabs .Tab button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  background-color: transparent;
+  position: static;
+  width: 100px;
+  height: 34px;
+  left: 107px;
+  top: 0px;
+
+  border: 1px solid #efe3c8;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+
+.Product .MoreOptions .Tabs .Tab button:hover {
+  background: #efe3c8;
+  cursor: pointer;
+}
+
+/* Tab Text */
+
+.Product .MoreOptions .Tabs .Tab .TabText {
+  /* position: static; */
+  width: 100px;
+  height: 34px;
+  left: 20px;
+  top: 9px;
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 100%;
+  /* or 18px */
+
+  text-align: center;
+
+  color: #efe3c8;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+
+.Product .MoreOptions .Tabs .Tab .TabText:hover {
+  color: #201520;
+}
+
+/* Price And Buy */
+
+.Product .PriceAndBuy {
+  width: 343px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: solid red 1px; */
+}
+
+/* Price */
+
+.Product .PriceAndBuy .Price {
+  width: 55px;
+  height: 53px;
+  left: 16px;
+  top: 724.23px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Price Text */
+
+.Product .PriceAndBuy .Price .PriceText {
+  /* position: absolute; */
+  width: 33px;
+  height: 16px;
+  left: 16px;
+  top: 724.23px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 115%;
+  /* or 16px */
+
+  color: #ffffff;
+}
+.Product .PriceAndBuy .Price .PriceAmount {
+  /* position: absolute; */
+  width: 55px;
+  height: 28px;
+  left: 16px;
+  top: 749.24px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 115%;
+  /* or 28px */
+
+  color: #ffffff;
+}
+
+/* Buy Now Button */
+
+.Product .PriceAndBuy .BuyNowBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15.0048px 50px 13px;
+
+  /* position: absolute; */
+  width: 253px;
+  height: 38px;
+  left: 106px;
+  top: 727px;
+
+  background: #efe3c8;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.Product .PriceAndBuy .BuyNowBtn:hover {
+  cursor: pointer;
+  background-color: tomato;
+}
+
+.Product .PriceAndBuy .BuyNowBtn .BuyBtnText {
+  position: static;
+  width: 86.03px;
+  height: 25.01px;
+  left: 83.49px;
+  top: 11px;
+
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #4a2b29;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
