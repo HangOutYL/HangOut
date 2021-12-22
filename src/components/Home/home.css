@@ -241,7 +241,7 @@
   height: 33px;
 }
 
-.BottomNav .NavBtn:hover {
+.ButtomNav .NavBtn:hover {
   background-color: tomato;
   cursor: pointer;
 }

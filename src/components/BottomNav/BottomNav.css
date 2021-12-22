@@ -1,19 +1,19 @@
 /* Bottom Nav Bar */
 
 .BottomNav {
+  /* border: 1px solid #d8d2d2a8; */
   background-color: #22151f;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* position: absolute; */
+
+  position: absolute;
   width: 375px;
   height: 78px;
-  left: -2px;
-  top: 734px;
+  left: 0px;
+  top: 630px;
   border-bottom-left-radius: 33.6232px;
   border-bottom-right-radius: 33.6232px;
-  margin-top: 50px;
-  /* border: 1px solid lime; */
 }
 
 .BottomNav .NavBtn {
