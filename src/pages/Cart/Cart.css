@@ -12,6 +12,7 @@
   color: #efe3c8;
   background: #201520;
   border-radius: 33.6232px;
+  /* border: blue 1px solid; */
 }
 
 .Item-Text,
@@ -46,27 +47,31 @@
 
 .Cart-Items {
   /* border: 1px solid red; */
-  width: 372px;
+  width: 375px;
   height: 320px;
   left: -55px;
   top: 96px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin-top: -15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .Item {
   /* border: 1px solid blue; */
+  padding: 7px;
   width: 343px;
-  height: 96px;
+  height: 100px;
   left: 16px;
   top: 96px;
   display: flex;
   justify-content: space-evenly;
+  margin-top: 10px;
   align-items: center;
-
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
 }

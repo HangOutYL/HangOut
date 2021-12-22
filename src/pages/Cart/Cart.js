@@ -55,11 +55,25 @@ const Cart = () => {
             <button className="Item-Plus">+</button>
           </div>
         </div>
+        <div className="Item">
+          <div className="Item-Desc">
+            <img src={Coffee1} alt="item-img" className="item-img" />
+            <div className="Item-Detail">
+              <span className="Item-Title">Cappuccino</span>
+              <span className="Item-Text">Dalgona Macha</span>
+              <span className="Item-Price">1.99$</span>
+            </div>
+          </div>
+          <div className="Item-Amount">
+            <button className="Item-Minus">-</button>
+            <span className="Item-Number">0</span>
+            <button className="Item-Plus">+</button>
+          </div>
+        </div>
       </div>
       <img src={DashedLine} alt="DashLine" className="DashLine" />
       <div className="Coupon">
         <img src={CouponCode} alt="Cart-Coupon" className="Cart-Coupon" />
-        {/* <span className="Coupon-Text">Apply Coupon Code</span> */}
       </div>
       <div className="Order-Summary">
         <div className="Extra-Charges">
@@ -81,6 +95,7 @@ const Cart = () => {
           <span className="Pay-Text">PAY NOW</span>
         </button>
       </div>
+
       <BottomNav />
     </div>
   );
