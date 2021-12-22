@@ -189,12 +189,43 @@
   border-radius: 12.6087px;
 }
 
+/* Each Card Link Route */
+.Card .Link {
+  /* border: solid 1px blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-decoration: none;
+}
+
 .Card img {
   cursor: pointer;
+  /* position: absolute; */
+  width: 111px;
+  height: 111px;
+  left: 75px;
+  top: 213px;
+  /* border: blue 1px solid; */
+  border-radius: 15px;
 }
 
 .Card .Text {
   cursor: pointer;
+  /* position: absolute; */
+  width: 111px;
+  height: 35px;
+  left: 75px;
+  top: 332px;
+  margin-top: 1em;
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 145%;
+  /* or 20px */
+
+  color: #ffffff;
 }
 
 .Card .PriceAndCart {

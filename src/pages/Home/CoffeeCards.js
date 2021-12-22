@@ -6,9 +6,9 @@ const CoffeeCards = () => {
   return (
     <div className="CoffeeCards">
       <div className="Card">
-        <Link to="/products/:id">
+        <Link to="/products/:id" className="Link">
           <img src={Coffee1} alt="CoffeeImage" />
-          <span className="Text">Some Text</span>
+          <span className="Text">Drizzled with Caramel</span>
         </Link>
         <div className="PriceAndCart">
           <span className="Price">1.99$</span>
@@ -16,40 +16,50 @@ const CoffeeCards = () => {
         </div>
       </div>
       <div className="Card">
-        <img src={Coffee1} alt="CoffeeImage" />
-        <span className="Text">Some Text</span>
+        <Link to="/products/:id" className="Link">
+          <img src={Coffee1} alt="CoffeeImage" />
+          <span className="Text">Drizzled with Caramel</span>
+        </Link>
         <div className="PriceAndCart">
           <span className="Price">1.99$</span>
           <button className="AddToCart">+</button>
         </div>
       </div>
       <div className="Card">
-        <img src={Coffee1} alt="CoffeeImage" />
-        <span className="Text">Some Text</span>
+        <Link to="/products/:id" className="Link">
+          <img src={Coffee1} alt="CoffeeImage" />
+          <span className="Text">Drizzled with Caramel</span>
+        </Link>
         <div className="PriceAndCart">
           <span className="Price">1.99$</span>
           <button className="AddToCart">+</button>
         </div>
       </div>
       <div className="Card">
-        <img src={Coffee1} alt="CoffeeImage" />
-        <span className="Text">Some Text</span>
+        <Link to="/products/:id" className="Link">
+          <img src={Coffee1} alt="CoffeeImage" />
+          <span className="Text">Drizzled with Caramel</span>
+        </Link>
         <div className="PriceAndCart">
           <span className="Price">1.99$</span>
           <button className="AddToCart">+</button>
         </div>
       </div>
       <div className="Card">
-        <img src={Coffee1} alt="CoffeeImage" />
-        <span className="Text">Some Text</span>
+        <Link to="/products/:id" className="Link">
+          <img src={Coffee1} alt="CoffeeImage" />
+          <span className="Text">Drizzled with Caramel</span>
+        </Link>
         <div className="PriceAndCart">
           <span className="Price">1.99$</span>
           <button className="AddToCart">+</button>
         </div>
       </div>
       <div className="Card">
-        <img src={Coffee1} alt="CoffeeImage" />
-        <span className="Text">Some Text</span>
+        <Link to="/products/:id" className="Link">
+          <img src={Coffee1} alt="CoffeeImage" />
+          <span className="Text">Drizzled with Caramel</span>
+        </Link>
         <div className="PriceAndCart">
           <span className="Price">1.99$</span>
           <button className="AddToCart">+</button>
