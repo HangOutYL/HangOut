@@ -5,7 +5,6 @@ import CoffeeCards from "./CoffeeCards";
 import LoggedUser from "./LoggedUser";
 import Search from "./Search";
 import "./home.css";
-import BottomNav from "../BottomNav/BottomNav";
 
 const Home = () => {
   return (
@@ -15,7 +14,6 @@ const Home = () => {
       <Search />
       <CoffeeCards />
       <Categories />
-      <BottomNav />
     </div>
   );
 };
