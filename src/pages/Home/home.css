@@ -1,22 +1,20 @@
 /* Home Screen */
 
 .Home {
-  width: 375px;
-  height: 701px;
+  /* height: 701px; */
   left: 0px;
   top: 0px;
   display: flex;
 
   flex-direction: column;
   color: #efe3c8;
-  background: #201520;
-  border-radius: 33.6232px;
+  /* border-radius: 33.6232px; */
 }
 
 /* Brand Logo */
 
 .Logo {
-  position: absolute;
+  position: fixed;
   width: 120px;
   height: 97px;
   left: 16px;
@@ -29,7 +27,7 @@
 /* Brand first name */
 
 .brand {
-  position: absolute;
+  position: fixed;
   width: 90px;
   height: 51px;
   left: 10px;
@@ -48,8 +46,8 @@
 /* Brand Second Name */
 
 .logo {
-  position: absolute;
-  width: 115px;
+  position: fixed;
+  width: 100%;
   height: 67px;
   left: 20px;
   top: 30px;
@@ -71,10 +69,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   width: 50px;
   height: 50px;
-  left: 309px;
+  right: 13%;
   top: 35px;
   border: 1px dashed #dcaa70;
   border-radius: 50%;
@@ -89,7 +87,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 10px 10px 10px 10px;
-  position: absolute;
+  position: fixed;
   width: 312px;
   height: 20px;
   left: 16px;
@@ -120,7 +118,7 @@
   /* align-items: flex-start; */
   padding: 35px 8px;
 
-  position: absolute;
+  position: fixed;
   width: 43px;
   height: 535px;
   left: 0px;
@@ -161,7 +159,7 @@
   flex-wrap: wrap;
   overflow: auto;
   align-items: center;
-  position: absolute;
+  position: fixed;
   width: 327px;
   height: 480px;
   left: 45px;
@@ -176,7 +174,7 @@
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1em;
-  /* position: absolute; */
+  /* position: fixed; */
   width: 139px;
   height: 210px;
   left: 63px;
@@ -201,7 +199,7 @@
 
 .Card img {
   cursor: pointer;
-  /* position: absolute; */
+  /* position: fixed; */
   width: 111px;
   height: 111px;
   left: 75px;
@@ -212,7 +210,7 @@
 
 .Card .Text {
   cursor: pointer;
-  /* position: absolute; */
+  /* position: fixed; */
   width: 111px;
   height: 35px;
   left: 75px;
@@ -244,35 +242,4 @@
 
 .Card .PriceAndCart button:hover {
   background-color: tomato;
-}
-
-/* Bottom Nav Bar */
-
-.BottomNav {
-  /* border: 1px solid #d8d2d2a8; */
-  background-color: #22151f;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  width: 375px;
-  height: 78px;
-  left: 0px;
-  top: 630px;
-  border-bottom-left-radius: 33.6232px;
-  border-bottom-right-radius: 33.6232px;
-}
-
-.BottomNav .NavBtn {
-  background-color: transparent;
-  border-style: none;
-}
-
-.BottomNav .NavBtn .ProfilePic {
-  height: 33px;
-}
-
-.ButtomNav .NavBtn:hover {
-  background-color: tomato;
-  cursor: pointer;
 }
