@@ -1,11 +1,14 @@
 import React from "react";
 import "./Product.css";
 import Coffee1Big from "../../../views/CoffeeImage1Big.png";
+import ArrowBack from "../../../views/ArrowBackVector.png";
 
 const Product = () => {
   return (
     <div className="Product">
-      <img src={Coffee1Big} alt="CoffeeImage" />
+      <img src={Coffee1Big} alt="CoffeeImage" className="BigPicture" />
+      <img src={ArrowBack} alt="ArrowBack" className="ArrowBack" />
+
       <div className="NameAndDesc">
         <span className="ProductName">Cappuccino</span>
         <span className="ProductDetails">Drizzled with Caramel</span>
@@ -19,13 +22,13 @@ const Product = () => {
         <span className="MoreOptionsTitle">Choice Of Milk</span>
         <div className="Tabs">
           <div className="Tab">
-            <span className="TabText">Oat Milk</span>
+            <button className="TabText">Oat Milk</button>
           </div>
           <div className="Tab">
-            <span className="TabText">Soy Milk</span>
+            <button className="TabText">Soy Milk</button>
           </div>
           <div className="Tab">
-            <span className="TabText">Almond Milk</span>
+            <button className="TabText">Almond Milk</button>
           </div>
         </div>
       </div>
@@ -34,7 +37,9 @@ const Product = () => {
           <span className="PriceText">Price</span>
           <span className="PriceAmount">299$</span>
         </div>
-        <button className="BuyNowBtn">BUY NOW</button>
+        <button className="BuyNowBtn">
+          <span className="BuyBtnText">BUY NOW</span>
+        </button>
       </div>
     </div>
   );
