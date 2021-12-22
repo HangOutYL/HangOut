@@ -1,9 +1,9 @@
 import React from "react";
-import "./Cart.css";
 import Coffee1 from "../../views/CoffeeImage1.png";
 import CouponCode from "../../views/CouponVector.png";
 import DashedLine from "../../views/DashedLineVector.png";
-import BottomNav from "../BottomNav/BottomNav";
+import BottomNav from "../../components/BottomNav/BottomNav";
+import "./Cart.css";
 
 const Cart = () => {
   return (

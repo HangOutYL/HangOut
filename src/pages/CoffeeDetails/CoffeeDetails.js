@@ -1,8 +1,8 @@
 import React from "react";
-import "./CoffeeDetails.css";
-import Coffee1Big from "../../views/CoffeeImage1Big.png";
-import ArrowBack from "../../views/ArrowBackVector.png";
 import { Link } from "react-router-dom";
+import ArrowBack from "../../views/ArrowBackVector.png";
+import Coffee1Big from "../../views/CoffeeImage1Big.png";
+import "./CoffeeDetails.css";
 const CoffeeDetails = () => {
   return (
     <div className="Product">
