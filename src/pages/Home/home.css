@@ -168,9 +168,9 @@
   overflow-x: hidden;
   align-items: center;
   position: fixed;
-  width: 91%;
+  width: 80%;
   height: 69%;
-  left: 10%;
+  margin-left: 15%;
   top: 22%;
   box-sizing: border-box;
   /* border: 1px solid #09139ca8; */
@@ -202,13 +202,18 @@
   align-items: center;
   text-decoration: none;
   box-sizing: border-box;
+  overflow: hidden;
+  /* border: solid 1px red; */
+  margin-left: 2%;
+  width: 95%;
+  height: 10%;
 }
 
 .Card img {
   cursor: pointer;
   /* position: fixed; */
-  width: 111px;
-  height: 111px;
+  width: 80%;
+  height: 20%;
   left: 75px;
   top: 213px;
   /* border: blue 1px solid; */
@@ -218,10 +223,9 @@
 .Card .Text {
   cursor: pointer;
   /* position: fixed; */
-  width: 111px;
-  height: 35px;
-  left: 75px;
-  top: 332px;
+  width: 100%;
+  height: 2%;
+
   margin-top: 1em;
   font-family: Rosarivo;
   font-style: normal;
