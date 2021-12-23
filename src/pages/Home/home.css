@@ -170,9 +170,9 @@
   position: fixed;
   width: 91%;
   height: 69%;
-  left: 8%;
+  left: 10%;
   top: 22%;
-
+  box-sizing: border-box;
   /* border: 1px solid #09139ca8; */
 }
 
@@ -201,6 +201,7 @@
   justify-content: space-evenly;
   align-items: center;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .Card img {
