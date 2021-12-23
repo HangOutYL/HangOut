@@ -1,13 +1,15 @@
 /* Home Screen */
 
 .Home {
-  /* height: 701px; */
-  /* left: 0px;
-  top: 0px; */
+  margin: 0;
+  padding: 0;
   display: flex;
+  /* width: 99vw;
+  height: 100vh; */
   flex-direction: column;
   color: #efe3c8;
-
+  /* border: springgreen 1px solid; */
+  overflow: auto;
   /* border-radius: 33.6232px; */
 }
 
@@ -23,6 +25,7 @@
   left: 1%;
   top: 2%;
   color: #efe3c8;
+  box-sizing: border-box;
 
   /* border: 1px solid #e40f0f; */
 }
@@ -31,9 +34,9 @@
 
 .Cafe {
   display: flex;
-  width: 50%;
-  height: 50%;
-  left: 2%;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 10px;
   top: 2%;
   /* border: springgreen 1px solid; */
   font-family: Rosarivo;
@@ -50,10 +53,11 @@
 
 .Hangout {
   display: flex;
-  align-items: flex-end;
-  width: 50%;
-  height: 45%;
-  margin-left: 5%;
+  /* align-items: flex-end; */
+  width: fit-content;
+  height: fit-content;
+  margin-left: 28px;
+  margin-top: -15px;
   /* border: hotpink 1px solid; */
   font-family: Rosarivo;
   font-style: normal;
@@ -92,9 +96,9 @@
   padding: 10px 10px 10px 10px;
   position: fixed;
   width: 80%;
-  height: 20px;
+  height: 3%;
   left: 10%;
-  top: 110px;
+  top: 14%;
   background: #171017;
   border-radius: 10px;
   border: 1px solid #000000;
@@ -116,9 +120,9 @@
 
 .CoffeeCategories {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-direction: column;
-  /* align-items: flex-start; */
+  /* align-items: center; */
   padding: 35px 8px;
 
   position: fixed;
