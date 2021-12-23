@@ -7,7 +7,7 @@ const CoffeeCards = () => {
     <div className="CoffeeCards">
       <div className="Card">
         <Link to="/products/:id" className="Link">
-          <img src={Coffee1} alt="CoffeeImage" />
+          <img src={Coffee1} alt="CoffeeImage" className="CoffeeImage" />
           <span className="Text">Drizzled with Caramel</span>
         </Link>
         <div className="PriceAndCart">
