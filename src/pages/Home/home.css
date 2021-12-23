@@ -126,10 +126,10 @@
   padding: 35px 8px;
 
   position: fixed;
-  width: 43px;
-  height: 535px;
+  width: 15%;
+  height: 76%;
   left: 0px;
-  top: 173px;
+  top: 22%;
 
   background: rgba(112, 67, 65, 0.3);
   border: 1px solid #000000;
@@ -170,7 +170,7 @@
   position: fixed;
   width: 80%;
   height: 69%;
-  margin-left: 15%;
+  margin-left: 18%;
   top: 22%;
   box-sizing: border-box;
   /* border: 1px solid #09139ca8; */
