@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ArrowBack from "../../views/ArrowBackVector.png";
 import Coffee1Big from "../../views/CoffeeImage1Big.png";
-import "./CoffeeDetails.css";
-const CoffeeDetails = () => {
+import "./ProductDetails.css";
+const ProductDetails = () => {
   return (
     <div className="Product">
       <img src={Coffee1Big} alt="CoffeeImage" className="BigPicture" />
@@ -46,4 +46,4 @@ const CoffeeDetails = () => {
   );
 };
 
-export default CoffeeDetails;
+export default ProductDetails;
