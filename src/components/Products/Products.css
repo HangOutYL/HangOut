@@ -1,0 +1,19 @@
+/* Coffee Cards */
+
+.CoffeeCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  align-items: flex-start;
+  position: fixed;
+
+  width: 88%;
+  height: 69%;
+  left: 12%;
+  top: 22%;
+  box-sizing: border-box;
+  /* border: 1px solid #09139ca8; */
+}
