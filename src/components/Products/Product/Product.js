@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Coffee1 from "../../views/CoffeeImage1.png";
+import Coffee1 from "../../../views/CoffeeImage1.png";
 import "./Product.css";
 
 const Product = () => {

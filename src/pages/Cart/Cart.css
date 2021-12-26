@@ -1,17 +1,17 @@
 /* Cart Screen */
 
 .Cart {
-  width: 375px;
-  height: 701px;
-  left: 0px;
-  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
 
   flex-direction: column;
   align-items: center;
   color: #efe3c8;
   background: #201520;
-  border-radius: 33.6232px;
+  /* border-radius: 33.6232px; */
   /* border: blue 1px solid; */
 }
 
@@ -29,10 +29,9 @@
 
 .Cart-Title {
   /* position: absolute; */
-  width: 49px;
-  height: 30px;
-  left: 164px;
-  top: 46px;
+  width: 10%;
+  height: 5%;
+  left: 50%;
 
   font-size: 24px;
   line-height: 125%;
@@ -46,30 +45,36 @@
 /* Cart Cards */
 
 .Cart-Items {
-  /* border: 1px solid red; */
-  width: 375px;
+  /* width: 375px;
   height: 320px;
   left: -55px;
-  top: 96px;
+  top: 96px; */
+  /* border: 1px solid red; */
+  width: 88%;
+  height: 40%;
+
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  margin-top: -15px;
+  align-items: flex-start;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .Item {
   /* border: 1px solid blue; */
-  padding: 10px;
-  width: 343px;
-  height: 100px;
-  left: 16px;
-  top: 96px;
+  /* left: 16px; */
+  /* top: 96px; */
+  /* margin-top: 10px; */
+  width: 95%;
+  height: 20%;
+  /* padding: 1.5%; */
+  /* width: 343px;
+  height: 100px; */
   display: flex;
   justify-content: space-evenly;
-  margin-top: 10px;
+  /* margin-top: 3%; */
   align-items: center;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
@@ -78,10 +83,12 @@
 
 .Item-Desc {
   /* position: absolute; */
-  width: 210px;
-  height: 71px;
-  left: 96px;
-  top: 12px;
+  /* width: 210px; */
+  /* height: 71px; */
+  /* left: 96px;
+  top: 12px; */
+  width: 67%;
+  height: 100%;
   display: flex;
 
   /* border: 1px solid green; */
@@ -89,76 +96,93 @@
 
 .Item-Detail {
   /* position: absolute; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /* left: 100px;
+  top: 12px;
   width: 88px;
   height: 71px;
-  left: 100px;
-  top: 12px;
-  margin-left: 12px;
-  /* border: 1px solid salmon; */
+  margin-left: 12px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 45%;
+  height: 95%;
+  margin-left: 4%;
+  /* border: 1px solid rgb(5, 4, 4); */
 }
 
 .item-img {
   /* position: absolute; */
-  width: 72px;
+  /* width: 72px;
   height: 72px;
-  left: 12px;
-  top: 12px;
+  top: 12px; */
+  width: 23%;
+  left: 23%;
 
   border-radius: 15px;
 }
 
 .Item-Title {
   /* position: absolute; */
-  width: 78px;
-  height: 22px;
-  left: 96px;
-  top: 12px;
+  /* left: 96px;
+  top: 12px; */
+  width: max-content;
+  height: max-content;
+  /* width: 78px;
+  height: 22px; */
 
-  font-size: 14px;
-  line-height: 160%;
+  font-size: 12px;
+  /* line-height: 160%; */
   /* or 22px */
 
   color: #ffffff;
+  /* border: grey 1px solid; */
+  /* border: pink 1px solid; */
 }
 
 .Item-Text {
   /* position: absolute; */
-  width: 88px;
-  height: 17px;
-  left: 96px;
-  top: 42px;
+  /* left: 96px;
+  top: 42px; */
+  /* width: 88px;
+  height: 17px; */
+  width: 100%;
+  height: 20%;
 
-  font-size: 12px;
-  line-height: 145%;
+  font-size: 10px;
+  /* line-height: 145%; */
   /* or 17px */
+  /* border: pink 1px solid; */
 
   color: #ffffff;
 }
 
 .Item-Price {
   /* position: absolute; */
-  width: 37px;
-  height: 16px;
-  left: 96px;
-  top: 67px;
+  /* left: 96px;
+  top: 67px; */
+  /* width: 37px;
+  height: 16px; */
+  height: max-content;
+  width: max-content;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 115%;
+  font-size: 12px;
+  /* line-height: 115%; */
   /* or 18px */
+  border: pink 1px solid;
 
   color: #ffffff;
 }
 
 .Item-Amount {
   /* position: absolute; */
-  width: 87px;
+  /* width: 17.5%;
+  height: 36%; */
   height: 30px;
+  width: 87px;
   left: 244px;
   top: 33px;
   display: flex;
@@ -210,14 +234,16 @@
   /* border: violet 1px solid; */
   font-size: 20px;
   line-height: 150%;
-  /* identical to box height, or 32px */
 
   color: #ffffff;
 }
 
 .Coupon {
   /* position: absolute; */
-  width: 343px;
+  /* width: 343px; */
+  display: flex;
+  justify-content: center;
+  width: 95%;
   height: 40px;
   left: 20px;
   top: 456px;
@@ -227,11 +253,14 @@
 
 .Order-Summary {
   /* position: absolute; */
-  width: 344px;
+  /* width: 344px;
+  height: 110px; */
+  width: 88%;
   height: 110px;
   left: 16px;
   top: 515px;
   margin-top: 19px;
+  /* border: blue 1px solid; */
 }
 
 .Delivery {
@@ -357,14 +386,14 @@
   /* Auto Layout */
 
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 15px 50px;
   margin-top: 15px;
 
   /* position: absolute; */
-  width: 343px;
+  /* width: 343px; */
+  width: 50%;
   height: 45px;
   left: 16px;
   top: 653px;
