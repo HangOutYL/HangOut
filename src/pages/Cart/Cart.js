@@ -1,7 +1,7 @@
 import React from "react";
 import Coffee1 from "../../views/CoffeeImage1.png";
 import CouponCode from "../../views/Coupon2svg.svg";
-import DashedLine from "../../views/DashedLineVector.png";
+import DashedLine from "../../views/DashedLine2svg.svg";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import "./Cart.css";
 
@@ -74,7 +74,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <img src={DashedLine} alt="DashLine" className="DashLine" />
+        <img src={DashedLine} alt="DashLine" className="DashLine1" />
         <div className="Coupon">
           <img src={CouponCode} alt="Cart-Coupon" className="Cart-Coupon" />
         </div>
@@ -89,7 +89,7 @@ const Cart = () => {
               <span className="Taxes-Price">3.46$</span>
             </div>
           </div>
-          <img src={DashedLine} alt="DashLine" className="DashLine" />
+          <img src={DashedLine} alt="DashLine" className="DashLine2" />
           <div className="Order-Total">
             <span className="Grand-Total">Grand Total</span>
             <span className="Total-Price">21.99$</span>

@@ -243,29 +243,46 @@
 .Coupon {
   /* position: absolute; */
   /* width: 343px; */
+  /* left: 20px;
+  top: 456px; */
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 40px;
-  left: 20px;
-  top: 456px;
-  margin-top: 10px;
+  width: 88%;
+  height: max-content;
+  margin-top: 2%;
   cursor: pointer;
+  /* border: greenyellow 1px solid; */
 }
 
 .Coupon img {
+  width: 100%;
+}
+
+.DashLine1 {
   width: 88%;
+  margin-top: 3%;
+  opacity: 0.5;
+  /* border: green 1px solid; */
+}
+
+.DashLine2 {
+  width: 100%;
+  margin-top: 3%;
+  opacity: 0.5;
+  /* border: green 1px solid; */
 }
 
 .Order-Summary {
   /* position: absolute; */
   /* width: 344px;
   height: 110px; */
+  /* height: 110px; */
+  /* left: 16px;
+  top: 515px; */
+  /* margin-top: 19px; */
   width: 88%;
-  height: 110px;
-  left: 16px;
-  top: 515px;
-  margin-top: 19px;
+  height: max-content;
+  margin-top: 4%;
   border: blue 1px solid;
 }
 
