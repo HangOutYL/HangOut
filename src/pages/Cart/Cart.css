@@ -1,10 +1,9 @@
-/* Cart Screen */
-
 .Cart {
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
+  left: 0px;
+  top: 0px;
+  /* padding: 5px 5px 5px 5px; */
   display: flex;
 
   flex-direction: column;
@@ -28,16 +27,13 @@
 }
 
 .Cart-Title {
-  /* position: absolute; */
-  width: 10%;
-  height: 5%;
-  left: 50%;
-
+  /* width: 49px; */
+  height: 30px;
+  margin-bottom: 0;
   font-size: 24px;
-  line-height: 125%;
+  /* line-height: 125%; */
 
   text-align: center;
-  /* border: 1px solid green; */
 
   color: #ffffff;
 }
@@ -45,149 +41,96 @@
 /* Cart Cards */
 
 .Cart-Items {
-  /* width: 375px;
+  width: 375px;
   height: 320px;
-  left: -55px;
-  top: 96px; */
-  /* border: 1px solid red; */
-  width: 88%;
-  height: 40%;
 
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .Item {
-  /* border: 1px solid blue; */
-  /* left: 16px; */
-  /* top: 96px; */
-  /* margin-top: 10px; */
-  /* width: 343px;
-  height: 100px; */
-  /* border-radius: 15px; */
-  width: 95%;
-  height: 22%;
-  padding: 1%;
+  padding: 5px;
+  width: 343px;
+  height: 90px;
+
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 3vmin;
+  border-radius: 15px;
 }
 
 .Item-Desc {
-  /* position: absolute; */
   /* width: 210px; */
-  /* height: 71px; */
-  /* left: 96px;
-  top: 12px; */
-  width: 67%;
-  height: 100%;
-  display: flex;
+  height: 71px;
 
-  /* border: 1px solid green; */
+  display: flex;
 }
 
 .Item-Detail {
-  /* position: absolute; */
-  /* left: 100px;
-  top: 12px;
-  width: 88px;
-  height: 71px;
-  margin-left: 12px; */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  width: 45%;
-  height: 95%;
-  margin-left: 4%;
-  /* border: 1px solid rgb(5, 4, 4); */
+  /* width: 88px; */
+
+  top: 12px;
+  margin-left: 12px;
 }
 
 .item-img {
-  /* position: absolute; */
-  /* width: 72px;
+  /* width: 72px; */
   height: 72px;
-  top: 12px; */
-  /* border-radius: 15px; */
-  width: 23%;
-  left: 23%;
 
-  border-radius: 3vmin;
+  border-radius: 15px;
 }
 
 .Item-Title {
-  /* position: absolute; */
-  /* left: 96px;
-  top: 12px; */
-  /* width: 78px;
-  height: 22px; */
-  /* line-height: 160%; */
+  /* width: 78px; */
+  height: 22px;
 
-  /* border: pink 1px solid; */
-  width: max-content;
-  height: max-content;
-  font-size: 12px;
+  font-size: 14px;
+  /* line-height: 160%; */
 
   color: #ffffff;
 }
 
 .Item-Text {
-  /* position: absolute; */
-  /* left: 96px;
-  top: 42px; */
-  /* width: 88px;
-  height: 17px; */
-  /* line-height: 145%; */
-  /* or 17px */
-  /* border: pink 1px solid; */
-  width: max-content;
-  height: max-content;
+  /* width: 88px; */
+  height: 17px;
 
-  font-size: 10px;
+  font-size: 12px;
+  /* line-height: 145%; */
 
   color: #ffffff;
 }
 
 .Item-Price {
-  /* position: absolute; */
-  /* left: 96px;
-  top: 67px; */
-  /* width: 37px;
-  height: 16px; */
-  height: max-content;
-  width: max-content;
+  /* width: 37px; */
+  height: 16px;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
-
-  /* border: pink 1px solid; */
+  font-size: 16px;
+  /* line-height: 115%; */
 
   color: #ffffff;
 }
 
 .Item-Amount {
-  /* position: absolute; */
-  /* width: 87px; */
-  /* height: 30px; */
-  /* left: 244px;
-  top: 33px; */
-  height: 56%;
-  width: 22%;
+  width: 87px;
+  height: 30px;
+
   display: flex;
   justify-content: space-between;
 
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 1.5vmin;
+  border-radius: 8px;
 }
 
 .Item-Plus,
@@ -196,30 +139,15 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* padding: 13px; */
-  /* padding: 5%; */
+  padding: 13px;
 
-  /* position: absolute; */
-  /* width: 30px; */
-  /* top: 33px; */
-  /* height: 30px; */
-  width: 35%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
 
   background: #efe3c8;
-  border-radius: 1.5vmin;
+  border-radius: 8px;
   cursor: pointer;
-
-  /* border: 1px solid lime; */
 }
-/* 
-.Item-Plus {
-  left: 244px;
-}
-
-.Item-Minus {
-  left: 301px;
-} */
 
 .Item-Minus:hover,
 .Item-Plus:hover {
@@ -227,120 +155,70 @@
 }
 
 .Item-Number {
-  /* position: absolute; */
   /* width: 12px; */
-  /* left: 300px;
-  top: 128px; */
-  /* line-height: 150%; */
-  width: max-content;
-  height: max-content;
+  height: 28px;
   font-size: 20px;
 
   color: #ffffff;
-  /* border: violet 1px solid; */
 }
 
 .Coupon {
-  /* position: absolute; */
   /* width: 343px; */
-  /* left: 20px;
-  top: 456px; */
-  display: flex;
-  justify-content: center;
-  width: 88%;
-  height: max-content;
-  margin-top: 2%;
+  height: 40px;
+  margin-top: 10px;
   cursor: pointer;
-  /* border: greenyellow 1px solid; */
-}
-
-.Coupon img {
-  width: 100%;
-}
-
-.DashLine1 {
-  width: 88%;
-  margin-top: 3%;
-  opacity: 0.5;
-  /* border: green 1px solid; */
-}
-
-.DashLine2 {
-  width: 100%;
-  margin-top: 3%;
-  opacity: 0.5;
-  /* border: green 1px solid; */
 }
 
 .Order-Summary {
-  /* position: absolute; */
-  /* width: 344px;
-  height: 110px; */
-  /* height: 110px; */
-  /* left: 16px;
-  top: 515px; */
-  /* margin-top: 19px; */
-  width: 88%;
-  height: max-content;
-  margin-top: 4%;
-  /* border: blue 1px solid; */
+  /* width: 344px; */
+  height: 100px;
+  margin-top: 5px;
 }
 
 .Delivery {
-  /* position: absolute; */
-  /* left: 16px;
-  top: 516px; */
   /* width: 113px; */
-  /* line-height: 125%; */
-  width: max-content;
-  height: max-content;
+  height: 18px;
 
   font-size: 14px;
+  /* line-height: 125%; */
 
   color: #ffffff;
 }
 
 .Taxes {
-  /* position: absolute; */
-  /* left: 16px;
-  top: 542px; */
-  /* line-height: 125%; */
-  width: max-content;
-  height: max-content;
+  /* width: 37px; */
+
+  height: 18px;
 
   font-size: 14px;
+  /* line-height: 125%; */
 
   color: #ffffff;
 }
 
 .Delivery-Price {
-  /* position: absolute; */
-  /* left: 335px;
-  top: 515px; */
-  /* line-height: 115%; */
-  width: max-content;
-  height: max-content;
+  /* width: 25px; */
+  height: 16px;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
+  /* line-height: 115%; */
 
   color: #ffffff;
 }
 
 .Taxes-Price {
-  /* position: absolute; */
-  /* left: 315px;
-  top: 542px; */
-  /* line-height: 115%; */
-  width: max-content;
-  height: max-content;
+  /* width: 44px; */
+
+  height: 16px;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
+  /* line-height: 115%; */
 
   color: #ffffff;
 }
@@ -348,18 +226,15 @@
 .Extra-Charges {
   display: flex;
   justify-content: space-between;
-  height: max-content;
-  /* border: 1px solid mediumslateblue; */
+  height: 50px;
 }
 
 .Charge-Titles,
 .Charge-Prices {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  /* height: 50px; */
+  justify-content: space-evenly;
   height: 50px;
-  /* border: 1px solid magenta; */
 }
 
 .Charge-Prices {
@@ -370,39 +245,31 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 1rem;
-  /* border: 1px solid mediumturquoise; */
+  margin-top: 5px;
 }
 
 .Grand-Total {
-  /* position: absolute; */
-  /* left: 16px;
-  top: 600px; */
-  /* line-height: 125%; */
-  width: max-content;
-  height: max-content;
-
+  /* width: 113px; */
+  height: 25px;
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
+  /* line-height: 125%; */
 
   color: #ffffff;
-  /* border: solid 1px grey; */
 }
 
 .Total-Price {
   /* position: absolute; */
-  /* left: 274px;
-  top: 597px; */
-  /* line-height: 115%; */
-  width: max-content;
-  height: max-content;
+  /* width: 60px; */
+  height: 23px;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
+  /* line-height: 115%; */
   direction: rtl;
 
   color: #ffffff;
@@ -412,23 +279,19 @@
   /* Auto Layout */
 
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 15px 50px;
   margin-top: 15px;
 
-  /* position: absolute; */
-  /* width: 343px;
-  height: 45px; */
-  /* left: 16px;
-  top: 653px; */
-  width: 88%;
-  height: 5.7%;
+  width: 343px;
+  height: 45px;
+
   cursor: auto;
   background: #efe3c8;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-  /* border-radius: 10px; */
-  border-radius: 2vmin;
+  border-radius: 10px;
 }
 
 .Pay-Btn:hover {
@@ -437,16 +300,13 @@
 
 .Pay-Text {
   position: static;
-  width: 75px;
+  /* width: 75px; */
   height: 22px;
-  left: 134px;
-  top: 11.5px;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: 22px;
 
   display: flex;
   align-items: center;
