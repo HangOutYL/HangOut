@@ -283,63 +283,64 @@
   width: 88%;
   height: max-content;
   margin-top: 4%;
-  border: blue 1px solid;
+  /* border: blue 1px solid; */
 }
 
 .Delivery {
   /* position: absolute; */
-  width: 113px;
-  height: 18px;
-  left: 16px;
-  top: 516px;
+  /* left: 16px;
+  top: 516px; */
+  /* width: 113px; */
+  /* line-height: 125%; */
+  width: max-content;
+  height: max-content;
 
   font-size: 14px;
-  line-height: 125%;
 
   color: #ffffff;
 }
 
 .Taxes {
   /* position: absolute; */
-  width: 37px;
-  height: 18px;
-  left: 16px;
-  top: 542px;
+  /* left: 16px;
+  top: 542px; */
+  /* line-height: 125%; */
+  width: max-content;
+  height: max-content;
 
   font-size: 14px;
-  line-height: 125%;
 
   color: #ffffff;
 }
 
 .Delivery-Price {
   /* position: absolute; */
-  width: 25px;
-  height: 16px;
-  left: 335px;
-  top: 515px;
+  /* left: 335px;
+  top: 515px; */
+  /* line-height: 115%; */
+  width: max-content;
+  height: max-content;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
-  line-height: 115%;
 
   color: #ffffff;
 }
 
 .Taxes-Price {
   /* position: absolute; */
-  width: 44px;
-  height: 16px;
-  left: 315px;
-  top: 542px;
+  /* left: 315px;
+  top: 542px; */
+  /* line-height: 115%; */
+  width: max-content;
+  height: max-content;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
-  line-height: 115%;
 
   color: #ffffff;
 }
@@ -347,15 +348,16 @@
 .Extra-Charges {
   display: flex;
   justify-content: space-between;
+  height: max-content;
   /* border: 1px solid mediumslateblue; */
-  height: 50px;
 }
 
 .Charge-Titles,
 .Charge-Prices {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  /* height: 50px; */
   height: 50px;
   /* border: 1px solid magenta; */
 }
@@ -374,32 +376,33 @@
 
 .Grand-Total {
   /* position: absolute; */
-  width: 113px;
-  height: 25px;
-  left: 16px;
-  top: 600px;
+  /* left: 16px;
+  top: 600px; */
+  /* line-height: 125%; */
+  width: max-content;
+  height: max-content;
 
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 125%;
 
   color: #ffffff;
+  /* border: solid 1px grey; */
 }
 
 .Total-Price {
   /* position: absolute; */
-  width: 60px;
-  height: 23px;
-  left: 274px;
-  top: 597px;
+  /* left: 274px;
+  top: 597px; */
+  /* line-height: 115%; */
+  width: max-content;
+  height: max-content;
 
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 115%;
   direction: rtl;
 
   color: #ffffff;
