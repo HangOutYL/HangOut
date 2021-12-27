@@ -54,10 +54,10 @@
 }
 
 .Item {
-  padding: 5px;
+  padding: 6px;
   width: 343px;
   height: 90px;
-  /* margin-top: 1%; */
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,7 +67,7 @@
 }
 
 .Item:first-child {
-  margin-top: 108px;
+  margin-top: 140px;
 }
 
 .Item-Desc {
