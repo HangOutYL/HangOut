@@ -67,18 +67,18 @@
   /* left: 16px; */
   /* top: 96px; */
   /* margin-top: 10px; */
-  width: 95%;
-  height: 20%;
-  /* padding: 1.5%; */
   /* width: 343px;
   height: 100px; */
+  /* border-radius: 15px; */
+  width: 95%;
+  height: 22%;
+  padding: 1%;
   display: flex;
   justify-content: space-evenly;
-  /* margin-top: 3%; */
   align-items: center;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+  border-radius: 3vmin;
 }
 
 .Item-Desc {
@@ -116,28 +116,27 @@
   /* width: 72px;
   height: 72px;
   top: 12px; */
+  /* border-radius: 15px; */
   width: 23%;
   left: 23%;
 
-  border-radius: 15px;
+  border-radius: 3vmin;
 }
 
 .Item-Title {
   /* position: absolute; */
   /* left: 96px;
   top: 12px; */
-  width: max-content;
-  height: max-content;
   /* width: 78px;
   height: 22px; */
-
-  font-size: 12px;
   /* line-height: 160%; */
-  /* or 22px */
+
+  /* border: pink 1px solid; */
+  width: max-content;
+  height: max-content;
+  font-size: 12px;
 
   color: #ffffff;
-  /* border: grey 1px solid; */
-  /* border: pink 1px solid; */
 }
 
 .Item-Text {
@@ -146,13 +145,13 @@
   top: 42px; */
   /* width: 88px;
   height: 17px; */
-  width: 100%;
-  height: 20%;
-
-  font-size: 10px;
   /* line-height: 145%; */
   /* or 17px */
   /* border: pink 1px solid; */
+  width: max-content;
+  height: max-content;
+
+  font-size: 10px;
 
   color: #ffffff;
 }
@@ -170,26 +169,25 @@
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  /* line-height: 115%; */
-  /* or 18px */
-  border: pink 1px solid;
+
+  /* border: pink 1px solid; */
 
   color: #ffffff;
 }
 
 .Item-Amount {
   /* position: absolute; */
-  /* width: 17.5%;
-  height: 36%; */
-  height: 30px;
-  width: 87px;
-  left: 244px;
-  top: 33px;
+  /* width: 87px; */
+  /* height: 30px; */
+  /* left: 244px;
+  top: 33px; */
+  height: 56%;
+  width: 22%;
   display: flex;
   justify-content: space-between;
 
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 1.5vmin;
 }
 
 .Item-Plus,
@@ -198,27 +196,30 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 13px;
+  /* padding: 13px; */
+  /* padding: 5%; */
 
   /* position: absolute; */
-  width: 30px;
-  height: 30px;
-  top: 33px;
+  /* width: 30px; */
+  /* top: 33px; */
+  /* height: 30px; */
+  width: 35%;
+  height: 100%;
 
   background: #efe3c8;
-  border-radius: 8px;
+  border-radius: 1.5vmin;
   cursor: pointer;
 
   /* border: 1px solid lime; */
 }
-
+/* 
 .Item-Plus {
   left: 244px;
 }
 
 .Item-Minus {
   left: 301px;
-}
+} */
 
 .Item-Minus:hover,
 .Item-Plus:hover {
@@ -227,15 +228,16 @@
 
 .Item-Number {
   /* position: absolute; */
-  width: 12px;
-  height: 28px;
-  left: 300px;
-  top: 128px;
-  /* border: violet 1px solid; */
+  /* width: 12px; */
+  /* left: 300px;
+  top: 128px; */
+  /* line-height: 150%; */
+  width: max-content;
+  height: max-content;
   font-size: 20px;
-  line-height: 150%;
 
   color: #ffffff;
+  /* border: violet 1px solid; */
 }
 
 .Coupon {
@@ -243,12 +245,16 @@
   /* width: 343px; */
   display: flex;
   justify-content: center;
-  width: 95%;
+  width: 100%;
   height: 40px;
   left: 20px;
   top: 456px;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.Coupon img {
+  width: 88%;
 }
 
 .Order-Summary {
@@ -260,7 +266,7 @@
   left: 16px;
   top: 515px;
   margin-top: 19px;
-  /* border: blue 1px solid; */
+  border: blue 1px solid;
 }
 
 .Delivery {
@@ -392,15 +398,17 @@
   margin-top: 15px;
 
   /* position: absolute; */
-  /* width: 343px; */
-  width: 50%;
-  height: 45px;
-  left: 16px;
-  top: 653px;
+  /* width: 343px;
+  height: 45px; */
+  /* left: 16px;
+  top: 653px; */
+  width: 88%;
+  height: 5.7%;
   cursor: auto;
   background: #efe3c8;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border-radius: 2vmin;
 }
 
 .Pay-Btn:hover {

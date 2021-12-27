@@ -1,6 +1,6 @@
 import React from "react";
 import Coffee1 from "../../views/CoffeeImage1.png";
-import CouponCode from "../../views/CouponVector.png";
+import CouponCode from "../../views/Coupon2svg.svg";
 import DashedLine from "../../views/DashedLineVector.png";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import "./Cart.css";
