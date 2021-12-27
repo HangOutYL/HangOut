@@ -283,7 +283,7 @@
   width: 88%;
   height: max-content;
   margin-top: 4%;
-  border: blue 1px solid;
+  /* border: blue 1px solid; */
 }
 
 .Delivery {
@@ -359,7 +359,7 @@
   justify-content: space-around;
   /* height: 50px; */
   height: 50px;
-  border: 1px solid magenta;
+  /* border: 1px solid magenta; */
 }
 
 .Charge-Prices {
@@ -388,7 +388,7 @@
   font-size: 20px;
 
   color: #ffffff;
-  border: solid 1px grey;
+  /* border: solid 1px grey; */
 }
 
 .Total-Price {
