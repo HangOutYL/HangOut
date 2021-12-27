@@ -5,9 +5,10 @@
   top: 0px; */
   /* padding: 5px 5px 5px 5px; */
   display: flex;
-
+  flex: 1;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   color: #efe3c8;
   background: #201520;
   /* border-radius: 33.6232px; */
@@ -56,13 +57,17 @@
   padding: 5px;
   width: 343px;
   height: 90px;
-  margin-top: 1%;
+  /* margin-top: 1%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
+}
+
+.Item:first-child {
+  margin-top: 108px;
 }
 
 .Item-Desc {
@@ -282,6 +287,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-self: flex-end;
   padding: 15px 50px;
   margin-top: 15px;
 
