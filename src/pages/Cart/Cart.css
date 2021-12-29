@@ -43,7 +43,7 @@
 /* Cart Cards */
 
 .Cart-Items {
-  width: 375px;
+  /* width: 375px; */
   height: 320px;
 
   display: flex;
