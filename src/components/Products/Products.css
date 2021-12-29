@@ -6,11 +6,14 @@
   flex-wrap: wrap;
   overflow: auto;
   align-items: center;
-  position: fixed;
-  /* width: 327px; */
+  /* position: fixed; */
+  width: 327px;
   height: 420px;
-  left: 45px;
-  top: 170px;
+  margin-left: 5px;
+  /* left: 45px;
+  top: 170px; */
+  /* left: 63px;
+  top: 201px; */
   /* border: 1px solid #09139ca8; */
   border-radius: 15px;
 }

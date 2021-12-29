@@ -4,7 +4,7 @@ import BrandLogo from "./BrandLogo";
 import Categories from "./Categories";
 import Products from "../../components/Products/Products";
 import "./home.css";
-import LoggedUser from "./LoggedUser";
+// import LoggedUser from "./LoggedUser";
 import Search from "./Search";
 
 const Home = () => {
@@ -12,10 +12,13 @@ const Home = () => {
     <>
       <div className="Home">
         <BrandLogo />
-        <LoggedUser />
+        {/* <LoggedUser /> */}
+
         <Search />
-        <Products />
-        <Categories />
+        <div className="CateProd">
+          <Categories />
+          <Products />
+        </div>
       </div>
       <BottomNav />
     </>
