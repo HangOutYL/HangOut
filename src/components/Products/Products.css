@@ -1,19 +1,16 @@
 /* Coffee Cards */
-
 .CoffeeCards {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  align-items: flex-start;
+  overflow: auto;
+  align-items: center;
   position: fixed;
-
-  width: 88%;
-  height: 69%;
-  left: 12%;
-  top: 22%;
-  box-sizing: border-box;
+  /* width: 327px; */
+  height: 420px;
+  left: 45px;
+  top: 170px;
   /* border: 1px solid #09139ca8; */
+  border-radius: 15px;
 }

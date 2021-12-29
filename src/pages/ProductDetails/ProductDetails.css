@@ -18,7 +18,7 @@
 
 .Product .BigPicture {
   /* position: absolute; */
-  /* width: 95%;s */
+  /* width: 95%; */
   height: 351px;
   left: 16px;
   top: 36px;
@@ -43,7 +43,7 @@
 .Product .NameAndDesc {
   /* position: absolute; */
   /* width: 343px; */
-  margin-top: 16px;
+  margin-top: 10px;
   height: 138px;
   left: 16px;
   top: 443px;
@@ -100,7 +100,7 @@
   left: 16px;
   top: 509px;
   overflow: auto;
-  margin-top: 20px;
+  margin-top: 8px;
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
@@ -233,7 +233,7 @@
   /* position: fixed; */
 
   /* width: 95%; */
-  margin-top: 45.23px;
+  margin-top: 20px;
   height: 53px;
   display: flex;
   justify-content: space-between;

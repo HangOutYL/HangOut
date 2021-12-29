@@ -87,6 +87,7 @@
   border-radius: 10px;
   border: 1px solid #000000;
 }
+
 .SearchBar input {
   padding: 1px;
   width: 256px;
@@ -94,10 +95,12 @@
   color: #efe3c8;
   border-color: transparent;
 }
+
 .SearchBar input:focus {
   outline: none;
   box-shadow: 0 0 5px #719ece;
 }
+
 /* Coffee Categories */
 .CoffeeCategories {
   display: flex;
@@ -106,11 +109,12 @@
   /* align-items: flex-start; */
   padding: 35px 8px;
   /* position: fixed; */
+  /* position: sticky; */
   width: 43px;
   height: 535px;
   /* left: 0px; */
   top: 173px;
-  margin-top: 170px;
+  /* margin-top: 150px; */
   background: rgba(112, 67, 65, 0.3);
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -133,22 +137,7 @@
 .Category:hover {
   background-color: tomato;
 }
-/* Coffee Cards */
-.CoffeeCards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  overflow: auto;
-  align-items: center;
-  position: fixed;
-  width: 327px;
-  height: 480px;
-  left: 45px;
-  top: 170px;
-  /* border: 1px solid #09139ca8; */
-  border-radius: 5%;
-}
+
 .Card {
   display: flex;
   flex-direction: column;
