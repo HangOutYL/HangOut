@@ -99,8 +99,7 @@
   /* position: fixed; */
   width: 312px;
   height: 20px;
-  /* left: 16px;
-  top: 110px; */
+  /* align-self: center; /* left: 16px; */
   background: #171017;
   border-radius: 10px;
   border: 1px solid #000000;
@@ -135,7 +134,6 @@
   padding-left: 8px;
   padding-right: 8px;
   /* position: fixed; */
-  /* position: sticky; */
   width: 43px;
   height: 535px;
   /* left: 0px; */
@@ -153,7 +151,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 22px;
+  /* line-height: 22px; */
   cursor: pointer;
   color: #efe3c8;
   /* border: 1px solid #000000; */

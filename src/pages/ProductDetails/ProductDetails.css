@@ -18,7 +18,7 @@
 
 .Product .BigPicture {
   /* position: absolute; */
-  /* width: 95%; */
+  width: 330px;
   height: 351px;
   left: 16px;
   top: 36px;
@@ -44,7 +44,7 @@
   /* position: absolute; */
   /* width: 343px; */
   margin-top: 10px;
-  height: 138px;
+  height: 120px;
   left: 16px;
   top: 443px;
   display: flex;
@@ -96,7 +96,7 @@
 .Product .ProductDesc {
   /* position: absolute; */
   /* width: 343px; */
-  height: 80px;
+  height: 70px;
   left: 16px;
   top: 509px;
   overflow: auto;
@@ -234,7 +234,7 @@
 
   /* width: 95%; */
   margin-top: 20px;
-  height: 53px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;

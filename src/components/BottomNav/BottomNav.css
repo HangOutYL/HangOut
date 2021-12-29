@@ -8,9 +8,8 @@
   align-items: center;
   box-sizing: border-box;
   /* position: fixed; */
-  position: sticky;
+  /* position: sticky; */
 
-  bottom: 0;
   width: 100vw;
 }
 
