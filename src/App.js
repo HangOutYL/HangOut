@@ -15,7 +15,7 @@ const App = () => {
       setProducts(() => [...products, data]);
     };
     fetchData();
-  });
+  }, []);
 
   return (
     <ProductsContext.Provider value={products}>
