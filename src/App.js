@@ -3,8 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Home from "./pages/Home/Home";
-import { ProductsContext } from "./Context/ProductsContext";
-
+import ProductsContext from "./Context/ProductsContext";
 const App = () => {
   const [products, setProducts] = useState([]);
 
