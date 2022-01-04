@@ -173,10 +173,10 @@
   overflow-y: scroll;
   overflow-x: hidden;
   align-items: flex-start;
-  border: firebrick 1px solid;
+  /* border: firebrick 1px solid; */
 
-  width: 88%;
-  height: 510px;
+  width: 97%;
+  height: 450px;
 
   box-sizing: border-box;
 }
@@ -186,7 +186,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 5px;
   /* position: fixed; */
   width: 139px;
   height: 210px;
