@@ -6,19 +6,27 @@ import Home from "./pages/Home/Home";
 import ProductsContext from "./Context/ProductsContext";
 const App = () => {
   const [products, setProducts] = useState();
+  const [category, setCategory] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`http://localhost:3000/data.json`);
       const data = await res.json();
-      console.log("products:", data);
       data ? setProducts(() => [...data]) : <span>Loading..Please Wait</span>;
     };
     fetchData();
   }, []);
 
+  const filteredCategories =
+    products &&
+    products
+      .map((cat) => cat.category)
+      .filter((category, index, array) => array.indexOf(category) === index);
+
+  console.log(filteredCategories);
+
   return (
-    <ProductsContext.Provider value={products}>
+    <ProductsContext.Provider value={{ products, setProducts }}>
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
