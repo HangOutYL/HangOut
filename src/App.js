@@ -12,21 +12,30 @@ const App = () => {
     const fetchData = async () => {
       const res = await fetch(`http://localhost:3000/data.json`);
       const data = await res.json();
-      data ? setProducts(() => [...data]) : <span>Loading..Please Wait</span>;
+      if (data) {
+        return setProducts(() => [...data]);
+      }
     };
     fetchData();
   }, []);
 
-  const filteredCategories =
+  const UniqueCategories =
     products &&
     products
       .map((cat) => cat.category)
       .filter((category, index, array) => array.indexOf(category) === index);
-
-  console.log(filteredCategories);
+  console.log(UniqueCategories);
 
   return (
-    <ProductsContext.Provider value={{ products, setProducts }}>
+    <ProductsContext.Provider
+      value={{
+        products,
+        setProducts,
+        UniqueCategories,
+        category,
+        setCategory,
+      }}
+    >
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
