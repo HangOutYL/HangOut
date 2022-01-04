@@ -120,8 +120,11 @@
 
 .CateProd {
   display: flex;
+  justify-content: space-between;
   height: 450px;
+  width: 100%;
   overflow: hidden;
+  border: 1px solid deepskyblue;
 }
 
 /* Coffee Categories */
@@ -160,6 +163,24 @@
 }
 .Category:hover {
   background-color: tomato;
+}
+
+/* Coffee Cards */
+
+.CoffeeCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  align-items: flex-start;
+  border: firebrick 1px solid;
+
+  width: 88%;
+  height: 510px;
+
+  box-sizing: border-box;
 }
 
 .Card {
