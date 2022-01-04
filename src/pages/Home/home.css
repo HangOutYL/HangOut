@@ -12,6 +12,7 @@
   color: #efe3c8;
   background: #201520;
   display: flex;
+  overflow: hidden;
   /* border-radius: 33.6232px; */
 }
 
@@ -122,26 +123,21 @@
   display: flex;
   justify-content: space-between;
   height: 450px;
-  width: 100%;
+  width: fit-content;
   overflow: hidden;
-  border: 1px solid deepskyblue;
+  /* border: 1px solid deepskyblue; */
 }
 
 /* Coffee Categories */
 .CoffeeCategories {
   display: flex;
-  /* justify-content: flex-start; */
+  align-items: center;
   flex-direction: column;
-  /* align-items: flex-start; */
-  padding-top: 35px;
-  padding-left: 8px;
+  padding-top: 30px;
+  padding-left: 2px;
   padding-right: 8px;
-  /* position: fixed; */
-  width: 43px;
+  width: 40px;
   height: 535px;
-  /* left: 0px; */
-  /* top: 173px; */
-  /* margin-top: 150px; */
   background: rgba(112, 67, 65, 0.3);
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -149,16 +145,18 @@
 }
 
 .Category {
-  width: fit-content;
+  width: 100px;
   font-family: Rosarivo;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  /* line-height: 22px; */
+  display: flex;
+  justify-content: center;
   cursor: pointer;
   color: #efe3c8;
   /* border: 1px solid #000000; */
   transform: rotate(-90deg);
+
   margin: 40px -22px;
 }
 .Category:hover {
