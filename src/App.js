@@ -6,7 +6,6 @@ import Home from "./pages/Home/Home";
 import ProductsContext from "./Context/ProductsContext";
 const App = () => {
   const [products, setProducts] = useState();
-  const [category, setCategory] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +23,6 @@ const App = () => {
     products
       .map((cat) => cat.category)
       .filter((category, index, array) => array.indexOf(category) === index);
-  console.log(UniqueCategories);
 
   return (
     <ProductsContext.Provider
@@ -32,8 +30,6 @@ const App = () => {
         products,
         setProducts,
         UniqueCategories,
-        category,
-        setCategory,
       }}
     >
       <div className="app">

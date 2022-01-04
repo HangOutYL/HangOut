@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import BrandLogo from "./BrandLogo";
 import Categories from "./Categories";
@@ -8,7 +8,12 @@ import Search from "./Search";
 import ProductsContext from "../../Context/ProductsContext";
 
 const Home = () => {
-  const { products } = useContext(ProductsContext);
+  const { UniqueCategories } = useContext(ProductsContext);
+  const [categories, setCategories] = useState();
+
+  useEffect(() => {
+    setCategories(() => UniqueCategories);
+  }, [UniqueCategories]);
 
   return (
     <>
@@ -16,7 +21,7 @@ const Home = () => {
         <BrandLogo />
         <Search />
         <div className="CateProd">
-          <Categories />
+          <Categories names={categories} />
           <Products />
         </div>
       </div>
