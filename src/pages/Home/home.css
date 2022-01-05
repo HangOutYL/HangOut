@@ -123,9 +123,9 @@
   display: flex;
   justify-content: space-between;
   height: 450px;
-  width: fit-content;
+  width: 98%;
   overflow: hidden;
-  /* border: 1px solid deepskyblue; */
+  border: 1px solid deepskyblue;
 }
 
 /* Coffee Categories */
