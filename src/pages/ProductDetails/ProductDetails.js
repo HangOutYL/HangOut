@@ -1,9 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import ArrowBack from "../../views/ArrowBackVector.png";
 import Coffee1Big from "../../views/CoffeeImage1Big.png";
 import "./ProductDetails.css";
+
 const ProductDetails = () => {
+  const [product, setProduct] = useState(null);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://api.npoint.io/4b5384c6f07519b8aaa6/${id}`
+      );
+      const data = await res.json();
+      setProduct(data);
+    };
+    fetchData();
+  }, [id]);
+
   return (
     <div className="Product">
       <img src={Coffee1Big} alt="CoffeeImage" className="BigPicture" />
