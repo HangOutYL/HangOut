@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home";
 import ProductsContext from "./Context/ProductsContext";
 const App = () => {
   const [products, setProducts] = useState();
-  const [searchedProducts, setSearchedProducts] = useState([]);
+  const [searchedProducts, setSearchedProducts] = useState(products);
 
   useEffect(() => {
     const fetchData = async () => {
