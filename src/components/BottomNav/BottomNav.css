@@ -25,3 +25,21 @@
   background-color: tomato;
   cursor: pointer;
 }
+
+.BottomNav .Cart-Amount {
+  position: absolute;
+  background-color: rgb(252, 73, 41);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 25px;
+  left: 770px;
+}
+
+.BottomNav .Cart-Num {
+  color: white;
+  position: relative;
+}
