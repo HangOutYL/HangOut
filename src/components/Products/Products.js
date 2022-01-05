@@ -1,36 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Product from "./Product/Product";
-import "./Products.css";
-
+import ProductsContext from "../../Context/ProductsContext";
 const Products = () => {
+  const { searchedProducts } = useContext(ProductsContext);
+
   return (
     <div className="CoffeeCards">
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
-      <Product />
+      {searchedProducts &&
+        searchedProducts.map(({ id, image, title, price }) => (
+          <Product key={id} id={id} image={image} title={title} price={price} />
+        ))}
     </div>
   );
 };
