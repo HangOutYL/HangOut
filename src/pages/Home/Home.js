@@ -15,11 +15,26 @@ const Home = () => {
     setCategories(() => UniqueCategories);
   }, [UniqueCategories]);
 
+  // search bar function
+
+  const { products } = useContext(ProductsContext);
+  const [searched, setSearched] = useState([]);
+
+  const handleInput = (e) => {
+    const searchedProducts =
+      products &&
+      products.filter((product) =>
+        product.title.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+    setSearched(searchedProducts);
+    console.log(searched);
+  };
+
   return (
     <>
       <div className="Home">
         <BrandLogo />
-        <Search />
+        <Search handleInput={handleInput} />
         <div className="CateProd">
           <Categories names={categories} />
           <Products />
