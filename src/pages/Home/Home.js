@@ -18,16 +18,16 @@ const Home = () => {
   // search bar function
 
   const { products } = useContext(ProductsContext);
-  const [searched, setSearched] = useState([]);
+  const [searchedProducts, setSearchedProducts] = useState([]);
 
   const handleInput = (e) => {
-    const searchedProducts =
+    const productSearchFilter =
       products &&
       products.filter((product) =>
         product.title.toLowerCase().includes(e.target.value.toLowerCase())
       );
-    setSearched(searchedProducts);
-    console.log(searched);
+    setSearchedProducts(productSearchFilter);
+    console.log(searchedProducts);
   };
 
   return (
