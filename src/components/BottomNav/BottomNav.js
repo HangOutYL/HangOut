@@ -14,8 +14,9 @@ const BottomNav = () => {
         </button>
       </Link>
       <Link to={"/cart"}>
-        <button className="NavBtn">
+        <button type="button" className="NavBtn">
           <img src={CartButton} alt="CartButton" />
+          <span className="CartAmount">2</span>
         </button>
       </Link>
       <button className="NavBtn">
