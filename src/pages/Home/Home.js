@@ -8,33 +8,20 @@ import Search from "./Search";
 import ProductsContext from "../../Context/ProductsContext";
 
 const Home = () => {
-  const { UniqueCategories } = useContext(ProductsContext);
+  const { UniqueCategories, searchedProducts } = useContext(ProductsContext);
   const [categories, setCategories] = useState();
 
   useEffect(() => {
     setCategories(() => UniqueCategories);
   }, [UniqueCategories]);
 
-  // search bar function
-
-  const { products } = useContext(ProductsContext);
-  const [searchedProducts, setSearchedProducts] = useState([]);
-
-  const handleInput = (e) => {
-    const productSearchFilter =
-      products &&
-      products.filter((product) =>
-        product.title.toLowerCase().includes(e.target.value.toLowerCase())
-      );
-    setSearchedProducts(productSearchFilter);
-    console.log(searchedProducts);
-  };
+  useEffect(() => {}, [searchedProducts]);
 
   return (
     <>
       <div className="Home">
         <BrandLogo />
-        <Search handleInput={handleInput} />
+        <Search />
         <div className="CateProd">
           <Categories names={categories} />
           <Products />

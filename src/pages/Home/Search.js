@@ -1,7 +1,22 @@
 import React from "react";
 import SearchIcon from "../../views/SearchVector.png";
+import { useContext } from "react";
+import ProductsContext from "../../Context/ProductsContext";
 
-const Search = ({ handleInput }) => {
+const Search = () => {
+  const { products, searchedProducts, setSearchedProducts } =
+    useContext(ProductsContext);
+
+  const handleInput = (e) => {
+    const productSearchFilter =
+      products &&
+      products.filter((product) =>
+        product.title.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+    setSearchedProducts(productSearchFilter);
+    console.log(searchedProducts);
+  };
+
   return (
     <div className="SearchBar">
       <img src={SearchIcon} alt="SearchIcon" />
