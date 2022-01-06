@@ -71,7 +71,21 @@ const Cart = () => {
               <button className="Item-Plus">+</button>
             </div>
           </div>
-
+          <div className="Item">
+            <div className="Item-Desc">
+              <img src={Coffee1} alt="item-img" className="item-img" />
+              <div className="Item-Detail">
+                <span className="Item-Title">Cappuccino</span>
+                <span className="Item-Text">Dalgona Macha</span>
+                <span className="Item-Price">1.99$</span>
+              </div>
+            </div>
+            <div className="Item-Amount">
+              <button className="Item-Minus">-</button>
+              <span className="Item-Number">0</span>
+              <button className="Item-Plus">+</button>
+            </div>
+          </div>
           <div className="Item">
             <div className="Item-Desc">
               <img src={Coffee1} alt="item-img" className="item-img" />
