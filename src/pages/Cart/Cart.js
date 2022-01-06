@@ -102,7 +102,9 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <img src={DashedLine} alt="DashLine" className="DashLine" />
+        <div className="DashLine">
+          <img src={DashedLine} alt="DashLine" className="DashLine" />
+        </div>
         <div className="Coupon">
           <img src={CouponCode} alt="Cart-Coupon" className="Cart-Coupon" />
         </div>
@@ -117,7 +119,6 @@ const Cart = () => {
               <span className="Taxes-Price">3.46$</span>
             </div>
           </div>
-          <img src={DashedLine} alt="DashLine" className="DashLine" />
           <div className="Order-Total">
             <span className="Grand-Total">Grand Total</span>
             <span className="Total-Price">21.99$</span>
