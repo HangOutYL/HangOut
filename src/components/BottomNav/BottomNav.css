@@ -15,6 +15,7 @@
 .BottomNav .NavBtn {
   background-color: transparent;
   border-style: none;
+  display: flex;
 }
 
 .BottomNav .NavBtn .ProfilePic {
@@ -27,19 +28,16 @@
 }
 
 .BottomNav .Cart-Amount {
-  position: absolute;
+  display: flex;
+  align-self: flex-start;
   background-color: rgb(252, 73, 41);
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 25px;
-  left: 770px;
-}
-
-.BottomNav .Cart-Num {
   color: white;
-  position: relative;
+  margin-left: -11%;
+  margin-top: -12%;
 }

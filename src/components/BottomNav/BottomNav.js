@@ -16,9 +16,7 @@ const BottomNav = () => {
       <Link to={"/cart"}>
         <button type="button" className="NavBtn">
           <img src={CartButton} alt="CartButton" />
-          <div className="Cart-Amount">
-            <span className="Cart-Num">2</span>
-          </div>
+          <div className="Cart-Amount">2</div>
         </button>
       </Link>
       <button className="NavBtn">
