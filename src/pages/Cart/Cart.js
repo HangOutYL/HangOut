@@ -1,107 +1,57 @@
-import React from "react";
-import Coffee1 from "../../views/CoffeeImage1.png";
+import React, { useContext } from "react";
+// import Coffee1 from "../../views/CoffeeImage1.png";
 import CouponCode from "../../views/CouponVector.png";
 import DashedLine from "../../views/DashedLineVector.png";
 import BottomNav from "../../components/BottomNav/BottomNav";
+import ProductsContext from "../../Context/ProductsContext";
 import "./Cart.css";
 
 const Cart = () => {
+  const { count, setCount, cart } = useContext(ProductsContext);
+  // const [cart, setCart] = useState([]);
+
+  const addProduct = () => {
+    setCount(count + 1);
+  };
+
+  const removeProduct = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+    // if (count === 0) {
+    //   cart.splice();
+    // }
+  };
+
+  const cartItems = cart.map(({ id, image, title, category, price }) => {
+    return (
+      <div className="Item" key={id}>
+        <div className="Item-Desc">
+          <img src={image} alt="item-img" className="item-img" />
+          <div className="Item-Detail">
+            <span className="Item-Title">{category}</span>
+            <span className="Item-Text">{title}</span>
+            <span className="Item-Price">{price}</span>
+          </div>
+        </div>
+        <div className="Item-Amount">
+          <button className="Item-Minus" onClick={removeProduct}>
+            -
+          </button>
+          <span className="Item-Number">{count}</span>
+          <button className="Item-Plus" onClick={addProduct}>
+            +
+          </button>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <>
       <div className="Cart">
         <h2 className="Cart-Title">Cart</h2>
-        <div className="Cart-Items">
-          <div className="Item">
-            <div className="Item-Desc">
-              <img src={Coffee1} alt="item-img" className="item-img" />
-              <div className="Item-Detail">
-                <span className="Item-Title">Cappuccino</span>
-                <span className="Item-Text">Dalgona Macha</span>
-                <span className="Item-Price">1.99$</span>
-              </div>
-            </div>
-            <div className="Item-Amount">
-              <button className="Item-Minus">-</button>
-              <span className="Item-Number">0</span>
-              <button className="Item-Plus">+</button>
-            </div>
-          </div>
-          <div className="Item">
-            <div className="Item-Desc">
-              <img src={Coffee1} alt="item-img" className="item-img" />
-              <div className="Item-Detail">
-                <span className="Item-Title">Cappuccino</span>
-                <span className="Item-Text">Dalgona Macha</span>
-                <span className="Item-Price">1.99$</span>
-              </div>
-            </div>
-            <div className="Item-Amount">
-              <button className="Item-Minus">-</button>
-              <span className="Item-Number">0</span>
-              <button className="Item-Plus">+</button>
-            </div>
-          </div>
-          <div className="Item">
-            <div className="Item-Desc">
-              <img src={Coffee1} alt="item-img" className="item-img" />
-              <div className="Item-Detail">
-                <span className="Item-Title">Cappuccino</span>
-                <span className="Item-Text">Dalgona Macha</span>
-                <span className="Item-Price">1.99$</span>
-              </div>
-            </div>
-            <div className="Item-Amount">
-              <button className="Item-Minus">-</button>
-              <span className="Item-Number">0</span>
-              <button className="Item-Plus">+</button>
-            </div>
-          </div>
-          <div className="Item">
-            <div className="Item-Desc">
-              <img src={Coffee1} alt="item-img" className="item-img" />
-              <div className="Item-Detail">
-                <span className="Item-Title">Cappuccino</span>
-                <span className="Item-Text">Dalgona Macha</span>
-                <span className="Item-Price">1.99$</span>
-              </div>
-            </div>
-            <div className="Item-Amount">
-              <button className="Item-Minus">-</button>
-              <span className="Item-Number">0</span>
-              <button className="Item-Plus">+</button>
-            </div>
-          </div>
-          <div className="Item">
-            <div className="Item-Desc">
-              <img src={Coffee1} alt="item-img" className="item-img" />
-              <div className="Item-Detail">
-                <span className="Item-Title">Cappuccino</span>
-                <span className="Item-Text">Dalgona Macha</span>
-                <span className="Item-Price">1.99$</span>
-              </div>
-            </div>
-            <div className="Item-Amount">
-              <button className="Item-Minus">-</button>
-              <span className="Item-Number">0</span>
-              <button className="Item-Plus">+</button>
-            </div>
-          </div>
-          <div className="Item">
-            <div className="Item-Desc">
-              <img src={Coffee1} alt="item-img" className="item-img" />
-              <div className="Item-Detail">
-                <span className="Item-Title">Cappuccino</span>
-                <span className="Item-Text">Dalgona Macha</span>
-                <span className="Item-Price">1.99$</span>
-              </div>
-            </div>
-            <div className="Item-Amount">
-              <button className="Item-Minus">-</button>
-              <span className="Item-Number">0</span>
-              <button className="Item-Plus">+</button>
-            </div>
-          </div>
-        </div>
+        <div className="Cart-Items">{cartItems}</div>
         <div className="DashLine">
           <img src={DashedLine} alt="DashLine" className="DashLine" />
         </div>

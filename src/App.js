@@ -7,6 +7,8 @@ import ProductsContext from "./Context/ProductsContext";
 const App = () => {
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState(products);
+  const [count, setCount] = useState(0);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +37,10 @@ const App = () => {
         UniqueCategories,
         searchedProducts,
         setSearchedProducts,
+        count,
+        setCount,
+        cart,
+        setCart,
       }}
     >
       <div className="app">
