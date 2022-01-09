@@ -226,26 +226,26 @@
 /* Price And Buy */
 
 .Product .PriceAndBuy {
-  /* position: fixed; */
-
-  /* width: 95%; */
-  margin-top: 20px;
-  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  height: 40px;
+
+  min-width: 320px;
   /* border: solid red 1px; */
 }
 
 /* Price */
 
 .Product .PriceAndBuy .Price {
-  /* width: 55px; */
-  height: 53px;
-  left: 16px;
-  top: 724.23px;
   display: flex;
   flex-direction: column;
+  /* width: 55px; */
+  height: 53px;
+  overflow: hidden;
+  /* border: solid red 1px; */
 }
 
 /* Price Text */
