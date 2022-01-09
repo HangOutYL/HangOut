@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import HomeButton from "../../views/HomeButtonVector.png";
 import CartButton from "../../views/CartButtonVector.png";
 import ProfilePic from "../../views/ProfilePictureVector.png";
 import "./BottomNav.css";
 import { Link } from "react-router-dom";
+import ProductsContext from "../../Context/ProductsContext";
 
 const BottomNav = () => {
+  const { cart } = useContext(ProductsContext);
+
   return (
     <div className="BottomNav">
       <Link to={"/"}>
@@ -16,7 +19,7 @@ const BottomNav = () => {
       <Link to={"/cart"}>
         <button type="button" className="NavBtn">
           <img src={CartButton} alt="CartButton" />
-          <div className="Cart-Amount">2</div>
+          <div className="Cart-Amount">{cart.length}</div>
         </button>
       </Link>
       <button className="NavBtn">
