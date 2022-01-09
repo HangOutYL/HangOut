@@ -21,10 +21,12 @@ const ProductDetails = () => {
   return (
     product && (
       <div className="Product">
-        <img src={product.image} alt="CoffeeImage" className="BigPicture" />
-        <Link to={"/"}>
-          <img src={ArrowBack} alt="ArrowBack" className="ArrowBack" />
-        </Link>
+        <div className="Top">
+          <img src={product.image} alt="CoffeeImage" className="BigPicture" />
+          <Link to={"/"}>
+            <img src={ArrowBack} alt="ArrowBack" className="ArrowBack" />
+          </Link>
+        </div>
         <div className="NameAndDesc">
           <span className="ProductName">{product.category}</span>
           <span className="ProductDetails">{product.title}</span>
