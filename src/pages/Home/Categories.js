@@ -7,6 +7,7 @@ const Categories = ({ names }) => {
       {catNames?.map((cat) => (
         <div className="Category" key={cat}>
           {cat}
+          {console.log({ cat })}
         </div>
       ))}
     </div>

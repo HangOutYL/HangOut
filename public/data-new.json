@@ -56,20 +56,20 @@
     },
     {
       "id": "7",
+      "title": "Classic Flat White",
+      "category": "Espresso",
+      "description": "prepared by pouring microfoam (steamed milk from the bottom of a pitcher) over a single (30ml) or double shot (60ml) of espresso. Microfoam is used, resulting in a smooth and velvety texture.",
+      "image": "https://cdn.vox-cdn.com/thumbor/ZrksPGXGEge0_XVLWgAOQ1C3U5g=/0x0:1000x750/1400x1400/filters:focal(0x0:1000x750):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/45140100/6792268281_d0822743b8_b.0.0.jpg",
+      "price": "$10.90",
+      "milk": []
+    },
+    {
+      "id": "8",
       "title": "White Chocolate Mocha",
       "category": "Frappuccino",
       "description": "Blended coffee base, whole milk (type of milk can be changed based on selection), white chocolate syrup drizzled inside, and blended ice with Whipped cream.",
       "image": "https://coffeeatthree.com/wp-content/uploads/starbucks-white-chocolate-mocha-frappuccino-recipe.jpg",
       "price": "$19.90",
-      "milk": []
-    },
-    {
-      "id": "8",
-      "title": "Classic Flat White",
-      "category": "Flat White",
-      "description": "prepared by pouring microfoam (steamed milk from the bottom of a pitcher) over a single (30ml) or double shot (60ml) of espresso. Microfoam is used, resulting in a smooth and velvety texture.",
-      "image": "https://cdn.vox-cdn.com/thumbor/ZrksPGXGEge0_XVLWgAOQ1C3U5g=/0x0:1000x750/1400x1400/filters:focal(0x0:1000x750):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/45140100/6792268281_d0822743b8_b.0.0.jpg",
-      "price": "$10.90",
       "milk": []
     },
     {
