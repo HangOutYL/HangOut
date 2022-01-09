@@ -20,7 +20,7 @@
 /* Product Image */
 
 .Product .BigPicture {
-  width: 330px;
+  /* width: 330px; */
   height: 351px;
   margin: 2%;
   border-radius: 40px;
@@ -39,15 +39,13 @@
 /* Product Name & Description */
 
 .Product .NameAndDesc {
-  /* position: absolute; */
-  /* width: 343px; */
-  margin-top: 10px;
-  height: 120px;
-  left: 16px;
-  top: 443px;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 70%;
+  height: 25%;
+  overflow: hidden;
   /* border: blue 1px solid; */
 }
 
