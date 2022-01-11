@@ -11,9 +11,9 @@ const Categories = ({ names }) => {
     const filteredCategory = products?.filter(
       (product) => product.category === clickedCategory
     );
-    filteredCategory.length !== searchedProducts.length
-      ? setSearchedProducts(filteredCategory)
-      : setSearchedProducts(products);
+    filteredCategory === searchedProducts
+      ? setSearchedProducts(products)
+      : setSearchedProducts(filteredCategory);
   };
 
   return (
