@@ -1,19 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import ProductsContext from "../../Context/ProductsContext";
 
 const Categories = ({ names }) => {
-  const { searchedProducts, setSearchedProducts } = useContext(ProductsContext);
-
+  const { products, searchedProducts, setSearchedProducts } =
+    useContext(ProductsContext);
   const catNames = names;
 
   const handleClick = (e) => {
     const clickedCategory = e.target.value;
-    const filteredCategory = searchedProducts?.filter(
+    const filteredCategory = products?.filter(
       (product) => product.category === clickedCategory
     );
-    console.log(filteredCategory);
-
-    setSearchedProducts(filteredCategory);
+    filteredCategory.length !== searchedProducts.length
+      ? setSearchedProducts(filteredCategory)
+      : setSearchedProducts(products);
   };
 
   return (
