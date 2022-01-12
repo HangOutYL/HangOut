@@ -1,8 +1,15 @@
 import express from "express";
-import connect from "mongoose";
+import fetch from "node-fetch";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
 const app = express();
 const PORT = 8080;
 
+dotenv.config();
+// Middlewares
+
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
