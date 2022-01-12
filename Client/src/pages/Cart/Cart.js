@@ -22,29 +22,31 @@ const Cart = () => {
     // }
   };
 
-  const cartItems = cart.map(({ id, image, title, category, price }) => {
-    return (
-      <div className="Item" key={id}>
-        <div className="Item-Desc">
-          <img src={image} alt="item-img" className="item-img" />
-          <div className="Item-Detail">
-            <span className="Item-Title">{category}</span>
-            <span className="Item-Text">{title}</span>
-            <span className="Item-Price">{price}</span>
+  const cartItems = cart.map(
+    ({ id, image, title, category, price, amount }) => {
+      return (
+        <div className="Item" key={id}>
+          <div className="Item-Desc">
+            <img src={image} alt="item-img" className="item-img" />
+            <div className="Item-Detail">
+              <span className="Item-Title">{category}</span>
+              <span className="Item-Text">{title}</span>
+              <span className="Item-Price">{price}</span>
+            </div>
+          </div>
+          <div className="Item-Amount">
+            <button className="Item-Minus" onClick={removeProduct}>
+              -
+            </button>
+            <span className="Item-Number">{amount}</span>
+            <button className="Item-Plus" onClick={addProduct}>
+              +
+            </button>
           </div>
         </div>
-        <div className="Item-Amount">
-          <button className="Item-Minus" onClick={removeProduct}>
-            -
-          </button>
-          <span className="Item-Number">{count}</span>
-          <button className="Item-Plus" onClick={addProduct}>
-            +
-          </button>
-        </div>
-      </div>
-    );
-  });
+      );
+    }
+  );
 
   return (
     <>
