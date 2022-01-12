@@ -4,6 +4,8 @@ import Cart from "./pages/Cart/Cart";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Home from "./pages/Home/Home";
 import ProductsContext from "./Context/ProductsContext";
+import CartContext from "./Context/CartContext";
+
 const App = () => {
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState(products);
@@ -37,19 +39,17 @@ const App = () => {
         UniqueCategories,
         searchedProducts,
         setSearchedProducts,
-        count,
-        setCount,
-        cart,
-        setCart,
       }}
     >
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-        </Routes>
-      </div>
+      <CartContext.Provider value={{ count, setCount, cart, setCart }}>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+          </Routes>
+        </div>
+      </CartContext.Provider>
     </ProductsContext.Provider>
   );
 };

@@ -4,10 +4,10 @@ import CartButton from "../../views/CartButtonVector.png";
 import ProfilePic from "../../views/ProfilePictureVector.png";
 import "./BottomNav.css";
 import { Link } from "react-router-dom";
-import ProductsContext from "../../Context/ProductsContext";
+import CartContext from "../../Context/CartContext";
 
 const BottomNav = () => {
-  const { cart } = useContext(ProductsContext);
+  const { cart } = useContext(CartContext);
 
   return (
     <div className="BottomNav">

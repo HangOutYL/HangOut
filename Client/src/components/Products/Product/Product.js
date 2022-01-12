@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 // import Coffee1 from "../../../views/CoffeeImage1.png";
 import "./Product.css";
 import { useContext } from "react";
-import ProductsContext from "../../../Context/ProductsContext";
+import CartContext from "../../../Context/CartContext";
 
 const Product = ({ id, title, image, price, category }) => {
-  const { setCount, count, cart } = useContext(ProductsContext);
+  const { setCount, count, cart } = useContext(CartContext);
 
   const addedToCart = () => {
     const currentProduct = {

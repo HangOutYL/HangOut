@@ -3,12 +3,11 @@ import React, { useContext } from "react";
 import CouponCode from "../../views/CouponVector.png";
 import DashedLine from "../../views/DashedLineVector.png";
 import BottomNav from "../../components/BottomNav/BottomNav";
-import ProductsContext from "../../Context/ProductsContext";
 import "./Cart.css";
+import CartContext from "../../Context/CartContext";
 
 const Cart = () => {
-  const { count, setCount, cart } = useContext(ProductsContext);
-  // const [cart, setCart] = useState([]);
+  const { count, setCount, cart } = useContext(CartContext);
 
   const addProduct = () => {
     setCount(count + 1);
