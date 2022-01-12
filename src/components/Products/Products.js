@@ -6,7 +6,7 @@ const Products = () => {
 
   return (
     <div className="CoffeeCards">
-      {searchedProducts &&
+      {searchedProducts && searchedProducts.length > 0 ? (
         searchedProducts.map(({ id, image, title, price, category }) => (
           <Product
             key={id}
@@ -16,7 +16,10 @@ const Products = () => {
             price={price}
             category={category}
           />
-        ))}
+        ))
+      ) : (
+        <span>No matches found!</span>
+      )}
     </div>
   );
 };
