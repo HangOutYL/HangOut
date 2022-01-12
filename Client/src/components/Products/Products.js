@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import Product from "./Product/Product";
 import ProductsContext from "../../Context/ProductsContext";
 const Products = () => {
-  const { searchedProducts } = useContext(ProductsContext);
+  const { searchedProducts, noMatch } = useContext(ProductsContext);
 
   return (
     <div className="CoffeeCards">
-      {searchedProducts && searchedProducts.length > 0 ? (
+      {searchedProducts &&
         searchedProducts.map(({ id, image, title, price, category }) => (
           <Product
             key={id}
@@ -16,10 +16,9 @@ const Products = () => {
             price={price}
             category={category}
           />
-        ))
-      ) : (
-        <span>No matches found!</span>
-      )}
+        ))}
+      {noMatch && <div>No Matches Found!</div>}
+      <span></span>
     </div>
   );
 };

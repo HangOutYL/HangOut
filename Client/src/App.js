@@ -11,6 +11,7 @@ const App = () => {
   const [searchedProducts, setSearchedProducts] = useState(products);
   const [count, setCount] = useState(0);
   const [cart, setCart] = useState([]);
+  const [noMatch, setNoMatch] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +40,8 @@ const App = () => {
         UniqueCategories,
         searchedProducts,
         setSearchedProducts,
+        noMatch,
+        setNoMatch,
       }}
     >
       <CartContext.Provider value={{ count, setCount, cart, setCart }}>
