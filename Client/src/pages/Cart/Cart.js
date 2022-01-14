@@ -31,7 +31,7 @@ const Cart = () => {
             <div className="Item-Detail">
               <span className="Item-Title">{category}</span>
               <span className="Item-Text">{title}</span>
-              <span className="Item-Price">{price}</span>
+              <span className="Item-Price">${price}</span>
             </div>
           </div>
           <div className="Item-Amount">

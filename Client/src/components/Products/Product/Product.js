@@ -20,9 +20,7 @@ const Product = ({ id, title, image, price, category }) => {
       };
       setCart([...cart, newCartProduct]);
     } else {
-      const currentCartProduct = cartProduct;
-      currentCartProduct.amount = currentCartProduct.amount + 1;
-      console.log(cart);
+      cartProduct.amount = cartProduct.amount + 1;
     }
     // debugger;
   };
