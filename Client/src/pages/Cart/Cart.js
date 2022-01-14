@@ -5,24 +5,26 @@ import DashedLine from "../../views/DashedLineVector.png";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import "./Cart.css";
 import CartContext from "../../Context/CartContext";
-
+//
 const Cart = () => {
-  const { count, setCount, cart, setCart } = useContext(CartContext);
+  const { cart, setCart, cartAmount, setCartAmount } = useContext(CartContext);
 
   const addProduct = () => {
     const [{ id }] = cart;
     const addItem = cart.find((p) => p.id === id);
     addItem.amount = addItem.amount + 1;
-    setCount(count + 1);
-    console.log(addItem);
+    // setCount(count + 1);
+    setCartAmount(cartAmount + 1);
   };
 
   const removeProduct = () => {
     const [{ id }] = cart;
+    console.log(id);
     const removeItem = cart.find((p) => p.id === id);
     if (removeItem.amount > 0) {
       removeItem.amount = removeItem.amount - 1;
-      setCount(count - 1);
+      // setCount(count - 1);
+      setCartAmount(cartAmount - 1);
 
       console.log(removeItem);
     }
@@ -32,6 +34,11 @@ const Cart = () => {
       setCart(newCart);
     }
   };
+
+  const grandTotal = cart.reduce((acc, item) => {
+    const totalPrice = item.price * item.amount;
+    return acc + totalPrice;
+  }, 0);
 
   const cartItems = cart.map(
     ({ id, image, title, category, price, amount }) => {
@@ -83,7 +90,7 @@ const Cart = () => {
           </div>
           <div className="Order-Total">
             <span className="Grand-Total">Grand Total</span>
-            <span className="Total-Price">21.99$</span>
+            <span className="Total-Price">${Math.round(grandTotal)}</span>
           </div>
         </div>
         <button className="Pay-Btn">

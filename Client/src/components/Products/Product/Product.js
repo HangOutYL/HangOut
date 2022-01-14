@@ -5,7 +5,7 @@ import { useContext } from "react";
 import CartContext from "../../../Context/CartContext";
 
 const Product = ({ id, title, image, price, category }) => {
-  const { setCart, cart } = useContext(CartContext);
+  const { setCart, cart, setCartAmount, cartAmount } = useContext(CartContext);
 
   const addedToCart = () => {
     const cartProduct = cart.find((p) => p.id === id);
@@ -19,8 +19,12 @@ const Product = ({ id, title, image, price, category }) => {
         amount: 1,
       };
       setCart([...cart, newCartProduct]);
+      setCartAmount(cartAmount + 1);
+      console.log(cartAmount);
     } else {
       cartProduct.amount = cartProduct.amount + 1;
+      setCartAmount(cartAmount + 1);
+      console.log(cartAmount);
     }
     // debugger;
   };

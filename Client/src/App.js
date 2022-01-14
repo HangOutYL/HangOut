@@ -9,7 +9,7 @@ import CartContext from "./Context/CartContext";
 const App = () => {
   const [products, setProducts] = useState();
   const [searchedProducts, setSearchedProducts] = useState(products);
-  const [count, setCount] = useState(0);
+  const [cartAmount, setCartAmount] = useState(0);
   const [cart, setCart] = useState([]);
   const [noMatch, setNoMatch] = useState(false);
   // const [itemAmount, setItemAmount] = useState(0);
@@ -45,7 +45,9 @@ const App = () => {
         setNoMatch,
       }}
     >
-      <CartContext.Provider value={{ count, setCount, cart, setCart }}>
+      <CartContext.Provider
+        value={{ cart, setCart, cartAmount, setCartAmount }}
+      >
         <div className="app">
           <Routes>
             <Route path="/" element={<Home />} />
