@@ -5,7 +5,7 @@ import { useContext } from "react";
 import CartContext from "../../../Context/CartContext";
 
 const Product = ({ id, title, image, price, category }) => {
-  const { setCount, setCart, cart } = useContext(CartContext);
+  const { setCart, cart } = useContext(CartContext);
 
   const addedToCart = () => {
     const cartProduct = cart.find((p) => p.id === id);

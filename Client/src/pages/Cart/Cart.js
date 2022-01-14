@@ -7,19 +7,30 @@ import "./Cart.css";
 import CartContext from "../../Context/CartContext";
 
 const Cart = () => {
-  const { count, setCount, cart } = useContext(CartContext);
+  const { count, setCount, cart, setCart } = useContext(CartContext);
 
   const addProduct = () => {
+    const [{ id }] = cart;
+    const addItem = cart.find((p) => p.id === id);
+    addItem.amount = addItem.amount + 1;
     setCount(count + 1);
+    console.log(addItem);
   };
 
   const removeProduct = () => {
-    if (count > 0) {
+    const [{ id }] = cart;
+    const removeItem = cart.find((p) => p.id === id);
+    if (removeItem.amount > 0) {
+      removeItem.amount = removeItem.amount - 1;
       setCount(count - 1);
+
+      console.log(removeItem);
     }
-    // if (count === 0) {
-    //   cart.splice();
-    // }
+    if (removeItem.amount === 0) {
+      const newCart = cart.filter((item) => item.id !== id);
+      console.log(newCart);
+      setCart(newCart);
+    }
   };
 
   const cartItems = cart.map(
@@ -31,7 +42,7 @@ const Cart = () => {
             <div className="Item-Detail">
               <span className="Item-Title">{category}</span>
               <span className="Item-Text">{title}</span>
-              <span className="Item-Price">${price * amount}</span>
+              <span className="Item-Price">${Math.round(price * amount)}</span>
             </div>
           </div>
           <div className="Item-Amount">

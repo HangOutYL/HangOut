@@ -12,6 +12,7 @@ const App = () => {
   const [count, setCount] = useState(0);
   const [cart, setCart] = useState([]);
   const [noMatch, setNoMatch] = useState(false);
+  // const [itemAmount, setItemAmount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
