@@ -9,16 +9,14 @@ import CartContext from "../../Context/CartContext";
 const Cart = () => {
   const { cart, setCart, cartAmount, setCartAmount } = useContext(CartContext);
 
-  const addProduct = () => {
-    const [{ id }] = cart;
+  const addProduct = (id) => {
     const addItem = cart.find((p) => p.id === id);
     addItem.amount = addItem.amount + 1;
     // setCount(count + 1);
     setCartAmount(cartAmount + 1);
   };
 
-  const removeProduct = () => {
-    const [{ id }] = cart;
+  const removeProduct = (id) => {
     console.log(id);
     const removeItem = cart.find((p) => p.id === id);
     if (removeItem.amount > 0) {
@@ -53,11 +51,11 @@ const Cart = () => {
             </div>
           </div>
           <div className="Item-Amount">
-            <button className="Item-Minus" onClick={removeProduct}>
+            <button className="Item-Minus" onClick={() => removeProduct(id)}>
               -
             </button>
             <span className="Item-Number">{amount}</span>
-            <button className="Item-Plus" onClick={addProduct}>
+            <button className="Item-Plus" onClick={() => addProduct(id)}>
               +
             </button>
           </div>

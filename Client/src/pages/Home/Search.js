@@ -16,6 +16,8 @@ const Search = () => {
     setSearchedProducts(productSearchFilter);
     if (!productSearchFilter.length) {
       setNoMatch(true);
+    } else {
+      setNoMatch(false);
     }
   };
 
