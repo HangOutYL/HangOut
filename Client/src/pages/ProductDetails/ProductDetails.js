@@ -74,7 +74,8 @@ const ProductDetails = () => {
                   product.title,
                   product.image,
                   product.price,
-                  product.category
+                  product.category,
+                  product.milk
                 )
               }
             >

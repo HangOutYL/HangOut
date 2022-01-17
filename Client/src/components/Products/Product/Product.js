@@ -4,7 +4,7 @@ import "./Product.css";
 import { useContext } from "react";
 import CartContext from "../../../Context/CartContext";
 
-const Product = ({ id, title, image, price, category }) => {
+const Product = ({ id, title, image, price, category, milk }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
@@ -17,7 +17,7 @@ const Product = ({ id, title, image, price, category }) => {
         <span className="Price">{price}</span>
         <button
           className="AddToCart"
-          onClick={() => addToCart(id, title, image, price, category)}
+          onClick={() => addToCart(id, title, image, price, category, milk)}
         >
           +
         </button>

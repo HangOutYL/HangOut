@@ -32,7 +32,7 @@ const App = () => {
       .map((cat) => cat.category)
       .filter((category, index, array) => array.indexOf(category) === index);
 
-  const addToCart = (id, title, image, price, category) => {
+  const addToCart = (id, title, image, price, category, milk) => {
     // const existingProduct = products.find((p) => p.id === id);
     const cartProduct = cart.find((p) => p.id === id);
     if (!cartProduct) {
@@ -42,15 +42,14 @@ const App = () => {
         image,
         price,
         category,
+        milk,
         amount: 1,
       };
       setCart([...cart, newCartProduct]);
       setCartAmount(cartAmount + 1);
-      console.log(cartAmount);
     } else {
       cartProduct.amount = cartProduct.amount + 1;
       setCartAmount(cartAmount + 1);
-      console.log(cartAmount);
     }
   };
 
