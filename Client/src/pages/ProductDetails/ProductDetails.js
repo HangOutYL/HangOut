@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import CartContext from "../../Context/CartContext";
 import ArrowBack from "../../views/ArrowBackVector.png";
-// import Coffee1Big from "../../views/CoffeeImage1Big.png";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   const { id } = useParams();
 
@@ -65,7 +66,20 @@ const ProductDetails = () => {
             <span className="PriceAmount">${product.price}</span>
           </div>
           <button className="BuyNowBtn">
-            <span className="BuyBtnText">BUY NOW</span>
+            <span
+              className="BuyBtnText"
+              onClick={() =>
+                addToCart(
+                  product.id,
+                  product.title,
+                  product.image,
+                  product.price,
+                  product.category
+                )
+              }
+            >
+              BUY NOW
+            </span>
           </button>
         </div>
       </div>

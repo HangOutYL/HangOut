@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import Coffee1 from "../../views/CoffeeImage1.png";
 import CouponCode from "../../views/CouponVector.png";
 import DashedLine from "../../views/DashedLineVector.png";
 import BottomNav from "../../components/BottomNav/BottomNav";
@@ -12,7 +11,6 @@ const Cart = () => {
   const addProduct = (id) => {
     const addItem = cart.find((p) => p.id === id);
     addItem.amount = addItem.amount + 1;
-    // setCount(count + 1);
     setCartAmount(cartAmount + 1);
   };
 
@@ -21,7 +19,6 @@ const Cart = () => {
     const removeItem = cart.find((p) => p.id === id);
     if (removeItem.amount > 0) {
       removeItem.amount = removeItem.amount - 1;
-      // setCount(count - 1);
       setCartAmount(cartAmount - 1);
 
       console.log(removeItem);

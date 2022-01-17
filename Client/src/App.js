@@ -12,7 +12,6 @@ const App = () => {
   const [cartAmount, setCartAmount] = useState(0);
   const [cart, setCart] = useState([]);
   const [noMatch, setNoMatch] = useState(false);
-  // const [itemAmount, setItemAmount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +32,28 @@ const App = () => {
       .map((cat) => cat.category)
       .filter((category, index, array) => array.indexOf(category) === index);
 
+  const addToCart = (id, title, image, price, category) => {
+    // const existingProduct = products.find((p) => p.id === id);
+    const cartProduct = cart.find((p) => p.id === id);
+    if (!cartProduct) {
+      const newCartProduct = {
+        id,
+        title,
+        image,
+        price,
+        category,
+        amount: 1,
+      };
+      setCart([...cart, newCartProduct]);
+      setCartAmount(cartAmount + 1);
+      console.log(cartAmount);
+    } else {
+      cartProduct.amount = cartProduct.amount + 1;
+      setCartAmount(cartAmount + 1);
+      console.log(cartAmount);
+    }
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -46,7 +67,7 @@ const App = () => {
       }}
     >
       <CartContext.Provider
-        value={{ cart, setCart, cartAmount, setCartAmount }}
+        value={{ cart, setCart, cartAmount, setCartAmount, addToCart }}
       >
         <div className="app">
           <Routes>
