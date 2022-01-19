@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./pages/Cart/Cart";
+import Login from "./pages/Login/Login";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Home from "./pages/Home/Home";
 import ProductsContext from "./Context/ProductsContext";
@@ -73,6 +74,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </CartContext.Provider>

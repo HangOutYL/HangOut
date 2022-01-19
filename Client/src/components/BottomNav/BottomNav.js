@@ -22,9 +22,11 @@ const BottomNav = () => {
           <div className="Cart-Amount">{cart.length}</div>
         </button>
       </Link>
-      <button className="NavBtn">
-        <img src={ProfilePic} alt="ProfilePic" className="ProfilePic" />
-      </button>
+      <Link to={"/login"}>
+        <button className="NavBtn">
+          <img src={ProfilePic} alt="ProfilePic" className="ProfilePic" />
+        </button>
+      </Link>
     </div>
   );
 };

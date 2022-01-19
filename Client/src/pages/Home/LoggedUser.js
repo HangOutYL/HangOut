@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ProfilePic from "../../views/ProfilePictureVector.png";
 
 const LoggedUser = () => {
   return (
-    <div className="Profile">
-      <img src={ProfilePic} alt="ProfilePic" />
-    </div>
+    <Link to={"/login"}>
+      <div className="Profile">
+        <img src={ProfilePic} alt="ProfilePic" />
+      </div>
+    </Link>
   );
 };
 
