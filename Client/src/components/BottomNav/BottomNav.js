@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
 
 const BottomNav = () => {
-  const { cart } = useContext(CartContext);
+  const { cartAmount } = useContext(CartContext);
 
   return (
     <div className="BottomNav">
@@ -19,7 +19,7 @@ const BottomNav = () => {
       <Link to={"/cart"} style={{ textDecoration: "none" }}>
         <button type="button" className="NavBtn">
           <img src={CartButton} alt="CartButton" />
-          <div className="Cart-Amount">{cart.length}</div>
+          <div className="Cart-Amount">{cartAmount}</div>
         </button>
       </Link>
       <Link to={"/login"}>
