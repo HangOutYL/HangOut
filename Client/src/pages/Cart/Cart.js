@@ -15,7 +15,6 @@ const Cart = () => {
   };
 
   const removeProduct = (id) => {
-    console.log(id);
     const removeItem = cart.find((p) => p.id === id);
     if (removeItem.amount > 0) {
       removeItem.amount = removeItem.amount - 1;

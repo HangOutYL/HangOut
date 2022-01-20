@@ -4,6 +4,7 @@ import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Home from "./pages/Home/Home";
+import Signup from "./pages/Signup/Signup";
 import ProductsContext from "./Context/ProductsContext";
 import CartContext from "./Context/CartContext";
 
@@ -34,7 +35,6 @@ const App = () => {
       .filter((category, index, array) => array.indexOf(category) === index);
 
   const addToCart = (id, title, image, price, category, milk) => {
-    // const existingProduct = products.find((p) => p.id === id);
     const cartProduct = cart.find((p) => p.id === id);
     if (!cartProduct) {
       const newCartProduct = {
@@ -75,6 +75,7 @@ const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
       </CartContext.Provider>
