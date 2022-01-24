@@ -1,67 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Signup.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEye } from "@fortawesome/free-solid-svg-icons";
+import eye from "../../views/eye.png";
 
 const Signup = () => {
-  const handleSubmit = () => {
-    alert("Submitted!");
-  };
+  const [showPass, setShowPass] = useState(true);
 
-  // handlePassword = () => {};
+  const handlePassword = () => {
+    if (showPass) {
+      setShowPass(false);
+    } else {
+      setShowPass(true);
+    }
+  };
 
   return (
     <>
       <div className="Signup">
         <h1>Sign Up</h1>
-        <form className="SignSection" onSubmit={handleSubmit}>
+        <span className="SignSection">
           <div className="NameDetails">
-            <label for="FN">
+            <label htmlFor="FN">
               First Name:
               <input
                 className="FirstName"
                 name="FN"
+                id="FN"
                 type="text"
                 placeholder="First Name"
-              ></input>
+              />
             </label>
-            <label for="LN">
+            <label htmlFor="LN">
               Last Name:
               <input
                 className="LastName"
                 name="LN"
+                id="LN"
                 type="text"
                 placeholder="Last Name"
-              ></input>
+              />
             </label>
           </div>
           <div className="UserDetails">
-            <label for="Email">
+            <label htmlFor="Email">
               Email Address:
               <input
                 className="Email"
                 name="Email"
+                id="Email"
                 type="email"
                 placeholder="Email Address"
-              ></input>
+              />
             </label>
-            <label for="SignupPass">
+            <label htmlFor="SignupPass">
               Password:
               <input
                 className="SignupPass"
                 name="SignupPass"
-                type="password"
+                id="SignupPass"
+                type={showPass ? "password" : "text"}
                 placeholder="Password"
-              ></input>
+              />
             </label>
+            <button className="ShowPass" onClick={handlePassword}>
+              <img className="Eye" src={eye} /> Show Password
+            </button>
           </div>
-          <label for="TOS">
-            <input className="TOS" name="TOS" type="checkbox"></input> I accept
-            the terms of service.
+          <label htmlFor="TOS">
+            <input className="TOS" name="TOS" id="TOS" type="checkbox" /> I
+            accept the terms of service.
           </label>
           <button className="SignupBtn">SIGN UP</button>
-        </form>
+        </span>
       </div>
       <BottomNav />
     </>

@@ -20,6 +20,27 @@
   justify-content: space-between;
 }
 
+.Eye {
+  height: 20px;
+  margin-right: 2%;
+}
+
+.ShowPass {
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  margin-top: 3%;
+  margin-left: 210px;
+  font-size: 12px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  color: #efe3c8;
+  width: 123px;
+}
+
 .NameDetails {
   display: flex;
   justify-content: space-between;
