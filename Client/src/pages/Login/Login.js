@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEye } from "@fortawesome/free-solid-svg-icons";
+import eye from "../../views/eye.png";
 
 const Login = () => {
-  const handleSubmit = () => {
-    alert("Submitted!");
-  };
+  // const handleSubmit = () => {
+  //   alert("Submitted!");
+  // };
 
-  // handlePassword = () => {};
+  const [showPass, setShowPass] = useState(true);
+
+  const handlePassword = () => {
+    if (showPass) {
+      setShowPass(false);
+    } else {
+      setShowPass(true);
+    }
+  };
 
   return (
     <>
       <div className="Login">
         <h1>Sign In</h1>
-        <form className="SignIn" onSubmit={handleSubmit}>
-          <label for="User">Username:</label>
+        <span className="SignIn">
+          <label htmlFor="User">Username:</label>
           <input
             id="User"
             name="User"
@@ -26,21 +33,23 @@ const Login = () => {
             type="email"
           />
           <div>
-            <label for="Password">Password:</label>
+            <label htmlFor="Password">Password:</label>
             <input
               id="Password"
               name="Password"
               className="PasswordLogin"
-              type="password"
+              type={showPass ? "password" : "text"}
               placeholder="Enter Password"
             />
-            <i class="far fa-eye"></i>
+            <button className="ShowPass" onClick={handlePassword}>
+              <img className="Eye" src={eye} /> Show Password
+            </button>
           </div>
-          <label for="Remember-Info">
-            <input type="checkbox" id="Remember-Info"></input> Remember me
+          <label htmlFor="Remember-Info">
+            <input type="checkbox" id="Remember-Info" /> Remember me
           </label>
           <button className="SignInBtn">Sign In</button>
-        </form>
+        </span>
         <div className="Links">
           <a href="">Forgot Password?</a>
           <Link to={"/signup"}>
