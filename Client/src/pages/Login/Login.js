@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
+import UserContext from "../../Context/UserContext";
 
 const Login = () => {
-  // const handleSubmit = () => {
-  //   alert("Submitted!");
-  // };
-
-  const [showPass, setShowPass] = useState(true);
+  const { showPass, setShowPass } = useContext(UserContext);
 
   const handlePassword = () => {
     if (showPass) {
