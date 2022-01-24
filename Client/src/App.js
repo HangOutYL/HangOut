@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Signup from "./pages/Signup/Signup";
 import ProductsContext from "./Context/ProductsContext";
 import CartContext from "./Context/CartContext";
+import UserContext from "./Context/UserContext";
 
 const App = () => {
   const [products, setProducts] = useState();
@@ -14,6 +15,7 @@ const App = () => {
   const [cartAmount, setCartAmount] = useState(0);
   const [cart, setCart] = useState([]);
   const [noMatch, setNoMatch] = useState(false);
+  const [showPass, setShowPass] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,15 +71,17 @@ const App = () => {
       <CartContext.Provider
         value={{ cart, setCart, cartAmount, setCartAmount, addToCart }}
       >
-        <div className="app">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/products/:id" element={<ProductDetails />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-          </Routes>
-        </div>
+        <UserContext.Provider value={{ showPass, setShowPass }}>
+          <div className="app">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </div>
+        </UserContext.Provider>
       </CartContext.Provider>
     </ProductsContext.Provider>
   );
