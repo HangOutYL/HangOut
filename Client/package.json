@@ -13,6 +13,7 @@
     "react-scripts": "^3.0.1",
     "web-vitals": "^1.1.2"
   },
+  "proxy": "http://localhost:8080",
   "scripts": {
     "start": "react-scripts start",
     "server": "npx json-server --watch ./public/data-new.json --port 8080",
