@@ -7,17 +7,19 @@ const Products = () => {
   return (
     <div className="CoffeeCards">
       {searchedProducts &&
-        searchedProducts.map(({ id, image, title, price, category, milk }) => (
-          <Product
-            key={id}
-            id={id}
-            image={image}
-            title={title}
-            price={price}
-            category={category}
-            milk={milk}
-          />
-        ))}
+        searchedProducts.map(
+          ({ _id: id, image, title, price, category, milk }) => (
+            <Product
+              key={id}
+              id={id}
+              image={image}
+              title={title}
+              price={price}
+              category={category}
+              milk={milk}
+            />
+          )
+        )}
       {noMatch && <div>No Matches Found!</div>}
       <span></span>
     </div>
