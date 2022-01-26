@@ -193,6 +193,11 @@
   cursor: pointer;
 }
 
+.Product .MoreOptions .Tabs .Tab button:active {
+  background: #c28f17;
+  cursor: pointer;
+}
+
 /* Tab Text */
 
 .Product .MoreOptions .Tabs .Tab .TabText {

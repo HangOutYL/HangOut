@@ -20,7 +20,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       // const res = await fetch(`https://api.npoint.io/4b5384c6f07519b8aaa6`);
-      const res = await fetch(`http://localhost:8080/coffees`);
+      const res = await fetch(`/api/products`);
       const data = await res.json();
       if (data.length) {
         setProducts(data);
