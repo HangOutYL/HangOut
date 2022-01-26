@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "type": "module",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently --kill-others \"nodemon server.js\" \"npm run client\"",
@@ -21,6 +20,7 @@
   },
   "homepage": "https://github.com/HangOutYL/HangOut#readme",
   "dependencies": {
+    "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "dotenv": "^11.0.0",
     "express": "^4.17.2",
