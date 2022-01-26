@@ -61,10 +61,11 @@ const Signup = () => {
                 id="SignupPass"
                 type={showPass ? "password" : "text"}
                 placeholder="Password"
+                autocomplete="SignupPass"
               />
             </label>
             <button className="ShowPass" onClick={handlePassword}>
-              <img className="Eye" src={eye} /> Show Password
+              <img className="Eye" src={eye} alt="" /> Show Password
             </button>
           </div>
           <label htmlFor="TOS">
