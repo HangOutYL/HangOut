@@ -11,6 +11,7 @@ import UserContext from "./Context/UserContext";
 
 const App = () => {
   const [products, setProducts] = useState();
+  const [users, setUsers] = useState();
   const [searchedProducts, setSearchedProducts] = useState(products);
   const [cartAmount, setCartAmount] = useState(0);
   const [cart, setCart] = useState([]);
@@ -28,6 +29,18 @@ const App = () => {
       }
     };
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchUsersData = async () => {
+      const res = await fetch(`/api/users`);
+      const data = await res.json();
+      if (data.length) {
+        setUsers(data);
+        console.log(data);
+      }
+    };
+    fetchUsersData();
   }, []);
 
   const UniqueCategories =
@@ -71,7 +84,9 @@ const App = () => {
       <CartContext.Provider
         value={{ cart, setCart, cartAmount, setCartAmount, addToCart }}
       >
-        <UserContext.Provider value={{ showPass, setShowPass }}>
+        <UserContext.Provider
+          value={{ showPass, setShowPass, users, setUsers }}
+        >
           <div className="app">
             <Routes>
               <Route path="/" element={<Home />} />

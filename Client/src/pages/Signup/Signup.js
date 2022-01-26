@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Signup.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
@@ -13,6 +13,12 @@ const Signup = () => {
     } else {
       setShowPass(true);
     }
+  };
+
+  const [email, setEmail] = useState([]);
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
   };
 
   return (
@@ -51,6 +57,7 @@ const Signup = () => {
                 id="Email"
                 type="email"
                 placeholder="Email Address"
+                onChange={handleEmail}
               />
             </label>
             <label htmlFor="SignupPass">
@@ -61,7 +68,7 @@ const Signup = () => {
                 id="SignupPass"
                 type={showPass ? "password" : "text"}
                 placeholder="Password"
-                autocomplete="SignupPass"
+                autoComplete="SignupPass"
               />
             </label>
             <button className="ShowPass" onClick={handlePassword}>
