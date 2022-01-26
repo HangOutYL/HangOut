@@ -12,7 +12,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`http://localhost:8080/coffees/${id}`);
+      const res = await fetch(`/api/products/${id}`);
       const data = await res.json();
       setProduct(data);
     };
