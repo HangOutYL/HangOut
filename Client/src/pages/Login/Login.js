@@ -27,6 +27,7 @@ const Login = () => {
             name="User"
             className="UserLogin"
             placeholder="Enter Email"
+            autocomplete="username"
             type="email"
           />
           <div>
@@ -37,9 +38,10 @@ const Login = () => {
               className="PasswordLogin"
               type={showPass ? "password" : "text"}
               placeholder="Enter Password"
+              autocomplete="Password"
             />
             <button className="ShowPass" onClick={handlePassword}>
-              <img className="Eye" src={eye} /> Show Password
+              <img className="Eye" src={eye} alt="" /> Show Password
             </button>
           </div>
           <label htmlFor="Remember-Info">
