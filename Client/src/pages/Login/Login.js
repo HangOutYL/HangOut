@@ -27,7 +27,7 @@ const Login = () => {
             name="User"
             className="UserLogin"
             placeholder="Enter Email"
-            autocomplete="username"
+            autoComplete="username"
             type="email"
           />
           <div>
@@ -38,7 +38,7 @@ const Login = () => {
               className="PasswordLogin"
               type={showPass ? "password" : "text"}
               placeholder="Enter Password"
-              autocomplete="Password"
+              autoComplete="Password"
             />
             <button className="ShowPass" onClick={handlePassword}>
               <img className="Eye" src={eye} alt="" /> Show Password
