@@ -5,6 +5,8 @@ import Products from "./models/products.js";
 import Users from "./models/users.js";
 import cors from "cors";
 import dotenv from "dotenv";
+// import bcrypt from 'bcrypt'
+
 const app = express();
 
 dotenv.config();
