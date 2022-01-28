@@ -97,8 +97,7 @@ app.get("/api/users", async (req, res) => {
 app.post("/api/users", async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    const salt = await bcrypt.genSalt();
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(password, 10);
     const user = new Users({ name, email, password: hashedPassword });
     await user.save();
     res.status(200).send(user);
