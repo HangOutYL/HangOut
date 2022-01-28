@@ -29,7 +29,7 @@ async function initProducts() {
 async function initUsers() {
   const usersDB = await Users.find();
   if (!usersDB.length) {
-    const res = await fetch("https://api.npoint.io/db2e074c6fbb562f0257");
+    const res = await fetch("https://api.npoint.io/c5ae04d9d269b58ed569");
     const data = await res.json();
     const mappedUsers = data.map((u) => ({ ...u }));
     Users.insertMany(mappedUsers, () => {
