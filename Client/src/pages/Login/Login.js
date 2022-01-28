@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
@@ -6,13 +6,34 @@ import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
 
 const Login = () => {
-  const { showPass, setShowPass } = useContext(UserContext);
+  const { showPass, setShowPass, users } = useContext(UserContext);
 
   const handlePassword = () => {
     if (showPass) {
       setShowPass(false);
     } else {
       setShowPass(true);
+    }
+  };
+
+  const [userEmail, setUserEmail] = useState([]);
+  const [userPass, setUserPass] = useState([]);
+
+  const handleUserEmail = (e) => {
+    setUserEmail(e.target.value);
+  };
+  const handleUserPass = (e) => {
+    setUserPass(e.target.value);
+  };
+
+  const UserLogin = () => {
+    const user = users.find((u) => u.email === userEmail);
+    if (user) {
+      user.password === userPass
+        ? alert("Logging in!")
+        : alert("password incorrect!");
+    } else {
+      alert("Email not found, sign up required!");
     }
   };
 
@@ -29,6 +50,7 @@ const Login = () => {
             placeholder="Enter Email"
             autoComplete="username"
             type="email"
+            onChange={handleUserEmail}
           />
           <div>
             <label htmlFor="Password">Password:</label>
@@ -39,6 +61,7 @@ const Login = () => {
               type={showPass ? "password" : "text"}
               placeholder="Enter Password"
               autoComplete="Password"
+              onChange={handleUserPass}
             />
             <button className="ShowPass" onClick={handlePassword}>
               <img className="Eye" src={eye} alt="" /> Show Password
@@ -47,7 +70,9 @@ const Login = () => {
           <label htmlFor="Remember-Info">
             <input type="checkbox" id="Remember-Info" /> Remember me
           </label>
-          <button className="SignInBtn">Sign In</button>
+          <button className="SignInBtn" onClick={UserLogin}>
+            Sign In
+          </button>
         </span>
         <div className="Links">
           <a href="">Forgot Password?</a>
