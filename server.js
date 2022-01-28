@@ -5,7 +5,7 @@ import Products from "./models/products.js";
 import Users from "./models/users.js";
 import cors from "cors";
 import dotenv from "dotenv";
-// import bcrypt from 'bcrypt'
+import bcrypt from "bcrypt";
 
 const app = express();
 
@@ -95,10 +95,16 @@ app.get("/api/users", async (req, res) => {
 });
 
 app.post("/api/users", async (req, res) => {
-  const { name, email, password } = req.body;
-  const user = new Users({ name, email, password });
-  await user.save();
-  res.status(200).send(user);
+  try {
+    const { name, email, password } = req.body;
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(password, salt);
+    const user = new Users({ name, email, password: hashedPassword });
+    await user.save();
+    res.status(200).send(user);
+  } catch {
+    res.status(500).send();
+  }
 });
 
 // app.delete("/api/users/:id", async (req, res) => {
