@@ -94,6 +94,19 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
+app.post("/api/users", async (req, res) => {
+  const { name, email, password } = req.body;
+  const user = new Users({ name, email, password });
+  await user.save();
+  res.status(200).send(user);
+});
+
+// app.delete("/api/users/:id", async (req, res) => {
+//   const { _id } = req.params;
+//   const user = await Users.findByIdAndRemove(_id);
+//   res.status(200).send(user);
+// });
+
 app.get("*", (req, res) => {
   res.status(200).send("*");
 });
