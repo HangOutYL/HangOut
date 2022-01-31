@@ -22,7 +22,7 @@ const BottomNav = () => {
           <div className="Cart-Amount">{cartAmount}</div>
         </button>
       </Link>
-      <Link to={"/login"}>
+      <Link to={"/users/login"}>
         <button className="NavBtn">
           <img src={ProfilePic} alt="ProfilePic" className="ProfilePic" />
         </button>

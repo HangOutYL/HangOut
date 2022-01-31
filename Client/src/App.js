@@ -37,7 +37,6 @@ const App = () => {
       const data = await res.json();
       if (data.length) {
         setUsers(data);
-        console.log(data);
       }
     };
     fetchUsersData();
@@ -92,7 +91,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/products/:id" element={<ProductDetails />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/users/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
           </div>
