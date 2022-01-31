@@ -6,8 +6,10 @@ import Users from "./models/users.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 const app = express();
+app.use(express.json());
 
 dotenv.config();
 
@@ -103,6 +105,21 @@ app.post("/api/users", async (req, res) => {
     res.status(200).send(user);
   } catch {
     res.status(500).send();
+  }
+});
+
+app.post("/api/users/login", async (req, res) => {
+  const user = await Users.findOne({ email: req.body.email });
+  console.log(req.body.email);
+  console.log(user.password);
+  if (user === null) {
+    res.status(500).send("cannot find user");
+  }
+  const validUser = await bcrypt.compare(req.body.password, user.password);
+  if (validUser) {
+    console.log("success");
+  } else {
+    console.log("failed");
   }
 });
 

@@ -29,9 +29,21 @@ const Login = () => {
   const UserLogin = () => {
     const user = users.find((u) => u.email === userEmail);
     if (user) {
-      user.password === userPass
-        ? alert("Logging in!")
-        : alert("password incorrect!");
+      // const fetchUserLogin = async () => {
+      //   const postData = {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       userEmail,
+      //       userPass,
+      //     }),
+      //   };
+      //   const res = await fetch("/api/users/login", postData);
+      //   await res.json();
+      // };
+      // fetchUserLogin();
     } else {
       alert("Email not found, sign up required!");
     }
@@ -75,7 +87,7 @@ const Login = () => {
           </button>
         </span>
         <div className="Links">
-          <a href="">Forgot Password?</a>
+          <a href="/">Forgot Password?</a>
           <Link to={"/signup"}>
             <span>Don't have an account? Sign Up</span>
           </Link>

@@ -5,7 +5,7 @@ import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
 
 const Signup = () => {
-  const { showPass, setShowPass, users, setUsers } = useContext(UserContext);
+  const { showPass, setShowPass, users } = useContext(UserContext);
   // const [userData, setUserData] = useState([]);
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
@@ -36,20 +36,53 @@ const Signup = () => {
   const userSignup = () => {
     const existingUser = users.find((p) => p.email === email);
     if (!existingUser) {
-      const newUser = {
-        name: {
-          firstName,
-          lastName,
-        },
-        email,
-        password,
+      const fetchUserSignup = async () => {
+        const postData = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: {
+              firstName,
+              lastName,
+            },
+            email,
+            password,
+          }),
+        };
+        const res = await fetch("/api/users", postData);
+        await res.json();
       };
-      setUsers([...users, newUser]);
-      console.log(users);
+      fetchUserSignup();
     } else {
       alert("already signed up!");
     }
   };
+
+  // useEffect(() => {
+  //   const fetchUserLogin = async () => {
+  //     const postData = {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         name: {
+  //           firstName: "gigi",
+  //           lastName: "hadid",
+  //         },
+  //         password: "123",
+  //         email: "gigi@gmail.com",
+  //       }),
+  //     };
+  //     const res = await fetch("/api/users", postData);
+  //     const data = await res.json();
+  //     console.log(data);
+  //     debugger;
+  //   };
+  //   fetchUserLogin();
+  // }, [userSignup]);
 
   return (
     <>
@@ -123,7 +156,7 @@ const Signup = () => {
             accept the terms of service.
           </label>
           <button className="SignupBtn" onClick={() => userSignup()}>
-            SIGN UP
+            Sign Up
           </button>
         </span>
       </div>
