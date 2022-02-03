@@ -8,6 +8,7 @@ import Signup from "./pages/Signup/Signup";
 import ProductsContext from "./Context/ProductsContext";
 import CartContext from "./Context/CartContext";
 import UserContext from "./Context/UserContext";
+import MyAccount from "./pages/MyAccount/MyAccount";
 
 const App = () => {
   const [products, setProducts] = useState();
@@ -92,6 +93,7 @@ const App = () => {
               <Route path="/cart" element={<Cart />} />
               <Route path="/products/:id" element={<ProductDetails />} />
               <Route path="/users/login" element={<Login />} />
+              <Route path="/MyAccount" element={<MyAccount />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>
           </div>
