@@ -29,21 +29,23 @@ const Login = () => {
   const UserLogin = () => {
     const user = users.find((u) => u.email === userEmail);
     if (user) {
-      // const fetchUserLogin = async () => {
-      //   const postData = {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       userEmail,
-      //       userPass,
-      //     }),
-      //   };
-      //   const res = await fetch("/api/users/login", postData);
-      //   await res.json();
-      // };
-      // fetchUserLogin();
+      const fetchUserLogin = async () => {
+        const postData = {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: userEmail,
+            password: userPass,
+          }),
+        };
+        const res = await fetch("/api/users/login", postData);
+        const data = await res.json();
+        console.log(data);
+      };
+      fetchUserLogin();
     } else {
       alert("Email not found, sign up required!");
     }
