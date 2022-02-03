@@ -117,9 +117,10 @@ app.post("/api/users/login", async (req, res) => {
   }
   const validUser = await bcrypt.compare(req.body.password, user.password);
   if (validUser) {
-    console.log("success");
+    res.status(200).send("success");
+    // const username = req.body.email;
   } else {
-    console.log("failed");
+    res.status(500).send("failed");
   }
 });
 
