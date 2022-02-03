@@ -8,7 +8,7 @@ const MyAccount = () => {
       <div className="MyOrders">
         <h3>Last Orders:</h3>
         <table className="OrdersTable">
-          <thead>Orders</thead>
+          <thead>Orders:</thead>
           <tr>
             <td>1</td>
             <td>2</td>
