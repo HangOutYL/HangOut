@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 import mongoose from "mongoose";
 import Products from "./models/products.js";
 import Users from "./models/users.js";
+// import Posts from "./models/posts.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
@@ -110,19 +111,64 @@ app.post("/api/users", async (req, res) => {
 
 app.post("/api/users/login", async (req, res) => {
   const user = await Users.findOne({ email: req.body.email });
-  console.log(req.body.email);
-  console.log(user.password);
+
   if (user === null) {
     res.status(500).send("cannot find user");
   }
+
   const validUser = await bcrypt.compare(req.body.password, user.password);
   if (validUser) {
-    res.status(200).send("success");
-    // const username = req.body.email;
+    console.log("success");
+    const username = req.body.email;
+    const user = { name: username };
+    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
+    res.json({ accessToken: accessToken });
+    // res.status(200).send("success");
   } else {
     res.status(500).send("failed");
+    console.log("failed");
   }
 });
+
+// user posts; authorization
+
+const posts = [
+  {
+    username: "gigi@gmail.com",
+    title: "Post 1",
+  },
+  {
+    username: "bibi@gmail.com",
+    title: "Post 2",
+  },
+];
+
+app.get("/api/posts", authenticateToken, async (req, res) => {
+  try {
+    // const posts = await Posts.find();
+    res
+      .status(200)
+      .json(posts.filter((post) => post.username === req.user.name));
+  } catch (err) {
+    res.status(500).json({ msg: err.message });
+  }
+});
+
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token === null) {
+    res.sendstatus(401);
+  }
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) {
+      res.sendStatus(403);
+    }
+    req.user = user;
+    next();
+  });
+}
 
 // app.delete("/api/users/:id", async (req, res) => {
 //   const { _id } = req.params;

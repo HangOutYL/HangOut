@@ -42,8 +42,7 @@ const Login = () => {
           }),
         };
         const res = await fetch("/api/users/login", postData);
-        const data = await res.json();
-        console.log(data);
+        await res.json();
       };
       fetchUserLogin();
     } else {
