@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import mongoose from "mongoose";
 import Products from "./models/products.js";
 import Users from "./models/users.js";
-// import Posts from "./models/posts.js";
+import Posts from "./models/posts.js";
 import RefreshTokens from "./models/refreshTokens.js";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -142,20 +142,22 @@ function generateAccessToken(user) {
 
 // user posts; authorization
 
-const posts = [
-  {
-    username: "gigi@gmail.com",
-    title: "Post 1",
-  },
-  {
-    username: "bibi@gmail.com",
-    title: "Post 2",
-  },
-];
+// posts
+
+app.post("/api/posts", async (req, res) => {
+  try {
+    const { email, favorites, userDetails } = req.body;
+    const post = new Posts({ username: email, favorites, userDetails });
+    await post.save();
+    res.status(200).send(post);
+  } catch {
+    res.status(500).send();
+  }
+});
 
 app.get("/api/posts", authenticateToken, async (req, res) => {
   try {
-    // const posts = await Posts.find();
+    const posts = await Posts.find();
     res
       .status(200)
       .json(posts.filter((post) => post.username === req.user.name));
@@ -183,7 +185,9 @@ function authenticateToken(req, res, next) {
 // user tokens
 
 app.post("/api/tokens", async (req, res) => {
-  const refreshToken = RefreshTokens.find({ refreshToken: req.body.token });
+  const refreshToken = await RefreshTokens.find({
+    refreshToken: req.body.token,
+  });
   if (refreshToken === null) {
     res.sendStatus(401);
   }
