@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import Products from "./models/products.js";
 import Users from "./models/users.js";
 // import Posts from "./models/posts.js";
+import RefreshTokens from "./models/refreshTokens.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
@@ -109,26 +110,35 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
-// app.post("/api/users/login", async (req, res) => {
-//   const user = await Users.findOne({ email: req.body.email });
+// user login authentication
 
-//   if (user === null) {
-//     res.status(500).send("cannot find user");
-//   }
+app.post("/api/users/login", async (req, res) => {
+  console.log("login", req.body.email);
+  const user = await Users.findOne({ email: req.body.email });
+  if (user === null) {
+    res.status(500).send("cannot find user");
+    return;
+  }
 
-//   const validUser = await bcrypt.compare(req.body.password, user.password);
-//   if (validUser) {
-//     console.log("success");
-//     const username = req.body.email;
-//     const user = { name: username };
-//     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-//     res.json({ accessToken: accessToken });
-//     // res.status(200).send("success");
-//   } else {
-//     res.status(500).send("failed");
-//     console.log("failed");
-//   }
-// });
+  const validUser = await bcrypt.compare(req.body.password, user.password);
+  if (validUser) {
+    console.log("success");
+    const username = req.body.email;
+    const user = { name: username };
+    const accessToken = generateAccessToken(user);
+    console.log("accessToken", accessToken);
+    const refreshToken = jwt.sign(user, process.env.REFRESH_ACCESS_TOKEN);
+    const refToken = new RefreshTokens({ refreshToken });
+    await refToken.save();
+    res.json({ accessToken, refreshToken });
+  } else {
+    res.status(500).send("failed");
+  }
+});
+
+function generateAccessToken(user) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+}
 
 // user posts; authorization
 
@@ -169,6 +179,25 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
+
+// user tokens
+
+app.post("/api/tokens", async (req, res) => {
+  const refreshToken = RefreshTokens.find({ refreshToken: req.body.token });
+  if (refreshToken === null) {
+    res.sendStatus(401);
+  }
+  if (refreshToken) {
+    res.sendStatus(403);
+  }
+  jwt.verify(refreshToken, process.env.REFRESH_ACCESS_TOKEN, (err, user) => {
+    if (err) {
+      res.sendStatus(403);
+    }
+    const accessToken = generateAccessToken({ name: user.name });
+    res.json({ accessToken: accessToken });
+  });
+});
 
 // app.delete("/api/users/:id", async (req, res) => {
 //   const { _id } = req.params;

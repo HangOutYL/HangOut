@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const refreshTokens = new mongoose.Schema({
   refreshToken: {
-    type: Array,
+    type: String,
   },
 });
 

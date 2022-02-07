@@ -7,7 +7,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently --kill-others \"nodemon server.js\" \"npm run client\"",
-    "devStartAuth": "nodemon authServer.js",
     "client": "cd client && npm start"
   },
   "repository": {
