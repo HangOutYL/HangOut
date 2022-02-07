@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import Products from "./models/products.js";
 import Users from "./models/users.js";
 import Posts from "./models/posts.js";
-import RefreshTokens from "./models/refreshTokens.js";
+import Tokens from "./models/tokens.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
@@ -126,9 +126,8 @@ app.post("/api/users/login", async (req, res) => {
     const username = req.body.email;
     const user = { name: username };
     const accessToken = generateAccessToken(user);
-    console.log("accessToken", accessToken);
     const refreshToken = jwt.sign(user, process.env.REFRESH_ACCESS_TOKEN);
-    const refToken = new RefreshTokens({ refreshToken });
+    const refToken = new Tokens({ refreshToken });
     await refToken.save();
     res.json({ accessToken, refreshToken });
   } else {
@@ -137,8 +136,34 @@ app.post("/api/users/login", async (req, res) => {
 });
 
 function generateAccessToken(user) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "20s" });
 }
+
+app.post("/api/tokens", async (req, res) => {
+  const token = req.body.token;
+  const refreshToken = await Tokens.findOne({
+    refreshToken: token,
+  });
+  console.log("refresh", token);
+  if (token === null) {
+    res.sendStatus(401);
+    return;
+  }
+  if (!refreshToken) {
+    res.sendStatus(403);
+  }
+  jwt.verify(
+    refreshToken.refreshToken,
+    process.env.REFRESH_ACCESS_TOKEN,
+    (err, user) => {
+      if (err) {
+        throw err;
+      }
+      const accessToken = generateAccessToken({ name: user.name });
+      res.json({ accessToken });
+    }
+  );
+});
 
 // user posts; authorization
 
@@ -162,7 +187,7 @@ app.get("/api/posts", authenticateToken, async (req, res) => {
       .status(200)
       .json(posts.filter((post) => post.username === req.user.name));
   } catch (err) {
-    res.status(500).json({ msg: err.message });
+    res.status(500).send();
   }
 });
 
@@ -181,27 +206,6 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
-
-// user tokens
-
-app.post("/api/tokens", async (req, res) => {
-  const refreshToken = await RefreshTokens.find({
-    refreshToken: req.body.token,
-  });
-  if (refreshToken === null) {
-    res.sendStatus(401);
-  }
-  if (refreshToken) {
-    res.sendStatus(403);
-  }
-  jwt.verify(refreshToken, process.env.REFRESH_ACCESS_TOKEN, (err, user) => {
-    if (err) {
-      res.sendStatus(403);
-    }
-    const accessToken = generateAccessToken({ name: user.name });
-    res.json({ accessToken: accessToken });
-  });
-});
 
 // app.delete("/api/users/:id", async (req, res) => {
 //   const { _id } = req.params;
