@@ -135,9 +135,13 @@ app.post("/api/users/login", async (req, res) => {
   }
 });
 
+//generating access token
+
 function generateAccessToken(user) {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "20s" });
 }
+
+// creating new access token with refresh token
 
 app.post("/api/tokens", async (req, res) => {
   const token = req.body.token;
@@ -165,8 +169,6 @@ app.post("/api/tokens", async (req, res) => {
   );
 });
 
-// user posts; authorization
-
 // posts
 
 app.post("/api/posts", async (req, res) => {
@@ -180,6 +182,8 @@ app.post("/api/posts", async (req, res) => {
   }
 });
 
+// authorizing access to certain posts
+
 app.get("/api/posts", authenticateToken, async (req, res) => {
   try {
     const posts = await Posts.find();
@@ -190,6 +194,8 @@ app.get("/api/posts", authenticateToken, async (req, res) => {
     res.status(500).send();
   }
 });
+
+// authenticating valid token
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
@@ -206,6 +212,8 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
+
+app.delete("/api/users/logout", (res, req) => []);
 
 // app.delete("/api/users/:id", async (req, res) => {
 //   const { _id } = req.params;
