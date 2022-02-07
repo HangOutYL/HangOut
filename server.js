@@ -109,26 +109,26 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
-app.post("/api/users/login", async (req, res) => {
-  const user = await Users.findOne({ email: req.body.email });
+// app.post("/api/users/login", async (req, res) => {
+//   const user = await Users.findOne({ email: req.body.email });
 
-  if (user === null) {
-    res.status(500).send("cannot find user");
-  }
+//   if (user === null) {
+//     res.status(500).send("cannot find user");
+//   }
 
-  const validUser = await bcrypt.compare(req.body.password, user.password);
-  if (validUser) {
-    console.log("success");
-    const username = req.body.email;
-    const user = { name: username };
-    const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-    res.json({ accessToken: accessToken });
-    // res.status(200).send("success");
-  } else {
-    res.status(500).send("failed");
-    console.log("failed");
-  }
-});
+//   const validUser = await bcrypt.compare(req.body.password, user.password);
+//   if (validUser) {
+//     console.log("success");
+//     const username = req.body.email;
+//     const user = { name: username };
+//     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
+//     res.json({ accessToken: accessToken });
+//     // res.status(200).send("success");
+//   } else {
+//     res.status(500).send("failed");
+//     console.log("failed");
+//   }
+// });
 
 // user posts; authorization
 
