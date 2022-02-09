@@ -9,9 +9,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import cookieParser from "cookie-parser";
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 dotenv.config();
 
@@ -129,7 +131,12 @@ app.post("/api/users/login", async (req, res) => {
     const refreshToken = jwt.sign(user, process.env.REFRESH_ACCESS_TOKEN);
     const refToken = new Tokens({ refreshToken });
     await refToken.save();
-    res.json({ accessToken, refreshToken });
+    res
+      .cookie("access_token", accessToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+      })
+      .json({ accessToken, refreshToken });
   } else {
     res.status(500).send("failed");
   }
@@ -213,7 +220,12 @@ function authenticateToken(req, res, next) {
   });
 }
 
-app.delete("/api/users/logout", (res, req) => []);
+app.delete("/api/users/logout", async (res, req) => {
+  const newTokens = await Tokens.findOneAndDelete({
+    refreshToken: req.body.token,
+  });
+  res.status(204).send(newTokens);
+});
 
 // app.delete("/api/users/:id", async (req, res) => {
 //   const { _id } = req.params;
