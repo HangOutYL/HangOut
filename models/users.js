@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const users = new mongoose.Schema({
-  // id: {
-  //   type: String,
-  //   required: true,
-  // },
   name: {
     firstName: {
       type: String,
@@ -22,6 +18,12 @@ const users = new mongoose.Schema({
   email: {
     type: String,
     required: true,
+  },
+  profileImg: {
+    type: String,
+  },
+  favorites: {
+    type: Array,
   },
 });
 

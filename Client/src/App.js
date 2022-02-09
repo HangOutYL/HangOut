@@ -32,16 +32,16 @@ const App = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchUsersData = async () => {
-      const res = await fetch(`/api/users`);
-      const data = await res.json();
-      if (data.length) {
-        setUsers(data);
-      }
-    };
-    fetchUsersData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUsersData = async () => {
+  //     const res = await fetch(`/api/users`);
+  //     const data = await res.json();
+  //     if (data.length) {
+  //       setUsers(data);
+  //     }
+  //   };
+  //   fetchUsersData();
+  // }, []);
 
   const UniqueCategories =
     products &&

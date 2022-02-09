@@ -3,7 +3,6 @@ import fetch from "node-fetch";
 import mongoose from "mongoose";
 import Products from "./models/products.js";
 import Users from "./models/users.js";
-import Posts from "./models/posts.js";
 import Tokens from "./models/tokens.js";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -91,10 +90,13 @@ app.put("/api/products/:id", async (req, res) => {
 
 // users
 
-app.get("/api/users", async (req, res) => {
+app.get("/api/profile", authenticateToken, async (req, res) => {
   try {
-    const users = await Users.find();
-    res.status(200).send(users);
+    console.log("check", req.user);
+    const { name, email, profileImg, favorites } = await Users.findOne({
+      email: req.user,
+    });
+    res.status(200).send({ email, favorites, profileImg, name });
   } catch (err) {
     res.status(500).send("error connecting to db", err);
   }
@@ -140,12 +142,13 @@ app.post("/api/users/login", async (req, res) => {
   } else {
     res.status(500).send("failed");
   }
+  console.log("Cookies: ", req.cookies);
 });
 
 //generating access token
 
 function generateAccessToken(user) {
-  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "20s" });
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
 }
 
 // creating new access token with refresh token
@@ -178,46 +181,69 @@ app.post("/api/tokens", async (req, res) => {
 
 // posts
 
-app.post("/api/posts", async (req, res) => {
-  try {
-    const { email, favorites, userDetails } = req.body;
-    const post = new Posts({ username: email, favorites, userDetails });
-    await post.save();
-    res.status(200).send(post);
-  } catch {
-    res.status(500).send();
-  }
-});
+// app.post("/api/profile", async (req, res) => {
+//   try {
+//     const { email, favorites, userDetails } = req.body;
+//     const post = new Posts({ username: email, favorites, userDetails });
+//     await post.save();
+//     res.status(200).send(post);
+//   } catch {
+//     res.status(500).send();
+//   }
+// });
 
 // authorizing access to certain posts
 
-app.get("/api/posts", authenticateToken, async (req, res) => {
-  try {
-    const posts = await Posts.find();
-    res
-      .status(200)
-      .json(posts.filter((post) => post.username === req.user.name));
-  } catch (err) {
-    res.status(500).send();
-  }
-});
+// app.get("/api/users", authenticateToken, async (req, res) => {
+//   try {
+//     const users = await Users.find();
+//     res.status(200).json(users.filter((u) => u.username === req.user.name));
+//   } catch (err) {
+//     res.status(500).send();
+//   }
+// });
 
 // authenticating valid token
 
-function authenticateToken(req, res, next) {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-  if (token === null) {
-    res.sendstatus(401);
-  }
+// function authenticateToken(req, res, next) {
+//   const authHeader = req.headers["authorization"];
+//   const token = authHeader && authHeader.split(" ")[1];
+//   if (token === null) {
+//     res.sendstatus(401);
+//   }
 
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    if (err) {
+//   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+//     if (err) {
+//       res.sendStatus(403);
+//     }
+//     req.user = user;
+//     next();
+//   });
+// }
+
+function authenticateToken(req, res, next) {
+  console.log("authenticateToken");
+  const token = req.cookies?.access_token;
+  console.log("cookie req", token);
+  // // const token = authHeader && authHeader.split(" ")[1];
+  // if (token === null) {
+  //   res.sendstatus(401);
+  // }
+
+  try {
+    const verifyData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    console.log(verifyData);
+    console.log("token", token);
+    console.log("accesstok", process.env.ACCESS_TOKEN_SECRET);
+    if (verifyData?.name) {
+      req.user = verifyData?.name;
+      next();
+    } else {
       res.sendStatus(403);
     }
-    req.user = user;
-    next();
-  });
+  } catch (err) {
+    res.sendStatus(403);
+  }
 }
 
 app.delete("/api/users/logout", async (res, req) => {

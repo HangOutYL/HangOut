@@ -6,7 +6,7 @@ import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
 
 const Login = () => {
-  const { showPass, setShowPass, users } = useContext(UserContext);
+  const { showPass, setShowPass } = useContext(UserContext);
 
   const handlePassword = () => {
     if (showPass) {
@@ -27,27 +27,27 @@ const Login = () => {
   };
 
   const UserLogin = () => {
-    const user = users.find((u) => u.email === userEmail);
-    if (user) {
-      const fetchUserLogin = async () => {
-        const postData = {
-          method: "POST",
-          headers: {
-            accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: userEmail,
-            password: userPass,
-          }),
-        };
-        const res = await fetch("/api/users/login", postData);
-        await res.json();
+    // const user = users.find((u) => u.email === userEmail);
+    // if (user) {
+    const fetchUserLogin = async () => {
+      const postData = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: userEmail,
+          password: userPass,
+        }),
       };
-      fetchUserLogin();
-    } else {
-      alert("Email not found, sign up required!");
-    }
+      const res = await fetch("/api/users/login", postData);
+      await res.json();
+    };
+    fetchUserLogin();
+    // } else {
+    //   alert("Email not found, sign up required!");
+    // }
   };
 
   return (
