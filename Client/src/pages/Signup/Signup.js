@@ -5,8 +5,7 @@ import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
 
 const Signup = () => {
-  const { showPass, setShowPass, users } = useContext(UserContext);
-  // const [userData, setUserData] = useState([]);
+  const { showPass, setShowPass } = useContext(UserContext);
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
   const [firstName, setFirstName] = useState([]);
@@ -34,30 +33,25 @@ const Signup = () => {
   };
 
   const userSignup = () => {
-    const existingUser = users.find((p) => p.email === email);
-    if (!existingUser) {
-      const fetchUserSignup = async () => {
-        const postData = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
+    const fetchUserSignup = async () => {
+      const postData = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: {
+            firstName,
+            lastName,
           },
-          body: JSON.stringify({
-            name: {
-              firstName,
-              lastName,
-            },
-            email,
-            password,
-          }),
-        };
-        const res = await fetch("/api/users", postData);
-        await res.json();
+          email,
+          password,
+        }),
       };
-      fetchUserSignup();
-    } else {
-      alert("already signed up!");
-    }
+      const res = await fetch("/api/users", postData);
+      await res.json();
+    };
+    fetchUserSignup();
   };
 
   // useEffect(() => {

@@ -88,11 +88,10 @@ app.put("/api/products/:id", async (req, res) => {
   res.status(200).send(updatedProduct);
 });
 
-// users
+// authorizing access to certain user profile
 
 app.get("/api/profile", authenticateToken, async (req, res) => {
   try {
-    console.log("check", req.user);
     const { name, email, profileImg, favorites } = await Users.findOne({
       email: req.user,
     });
@@ -101,6 +100,8 @@ app.get("/api/profile", authenticateToken, async (req, res) => {
     res.status(500).send("error connecting to db", err);
   }
 });
+
+// creating new user
 
 app.post("/api/users", async (req, res) => {
   try {
@@ -179,62 +180,13 @@ app.post("/api/tokens", async (req, res) => {
   );
 });
 
-// posts
-
-// app.post("/api/profile", async (req, res) => {
-//   try {
-//     const { email, favorites, userDetails } = req.body;
-//     const post = new Posts({ username: email, favorites, userDetails });
-//     await post.save();
-//     res.status(200).send(post);
-//   } catch {
-//     res.status(500).send();
-//   }
-// });
-
-// authorizing access to certain posts
-
-// app.get("/api/users", authenticateToken, async (req, res) => {
-//   try {
-//     const users = await Users.find();
-//     res.status(200).json(users.filter((u) => u.username === req.user.name));
-//   } catch (err) {
-//     res.status(500).send();
-//   }
-// });
-
 // authenticating valid token
 
-// function authenticateToken(req, res, next) {
-//   const authHeader = req.headers["authorization"];
-//   const token = authHeader && authHeader.split(" ")[1];
-//   if (token === null) {
-//     res.sendstatus(401);
-//   }
-
-//   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-//     if (err) {
-//       res.sendStatus(403);
-//     }
-//     req.user = user;
-//     next();
-//   });
-// }
-
 function authenticateToken(req, res, next) {
-  console.log("authenticateToken");
   const token = req.cookies?.access_token;
-  console.log("cookie req", token);
-  // // const token = authHeader && authHeader.split(" ")[1];
-  // if (token === null) {
-  //   res.sendstatus(401);
-  // }
 
   try {
     const verifyData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    console.log(verifyData);
-    console.log("token", token);
-    console.log("accesstok", process.env.ACCESS_TOKEN_SECRET);
     if (verifyData?.name) {
       req.user = verifyData?.name;
       next();
