@@ -139,6 +139,7 @@ app.post("/api/users/login", async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
       })
+      .cookie("logged_in", "1")
       .json({ accessToken, refreshToken });
   } else {
     res.status(500).send("failed");
@@ -202,7 +203,8 @@ app.delete("/api/users/logout", async (res, req) => {
   const newTokens = await Tokens.findOneAndDelete({
     refreshToken: req.body.token,
   });
-  res.status(204).send(newTokens);
+
+  res.status(204).send(newTokens).cookie("logged_in", "0");
 });
 
 // app.delete("/api/users/:id", async (req, res) => {
