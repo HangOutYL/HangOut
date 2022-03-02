@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
@@ -7,6 +8,7 @@ import UserContext from "../../Context/UserContext";
 
 const Login = () => {
   const { showPass, setShowPass } = useContext(UserContext);
+  const [cookies, setCookie] = useCookies(["user"]);
 
   const handlePassword = () => {
     if (showPass) {
@@ -43,12 +45,20 @@ const Login = () => {
       };
       const res = await fetch("/api/users/login", postData);
       await res.json();
+      // console.log(cookies);
     };
+    setCookie("user", userEmail, {
+      path: "/",
+    });
     fetchUserLogin();
-    // } else {
-    //   alert("Email not found, sign up required!");
-    // }
   };
+
+  // const handleCookie = () => {
+  //   setCookie("user", userEmail, {
+  //     path: "/",
+  //   });
+  //   console.log(cookies);
+  // };
 
   return (
     <>

@@ -9,6 +9,7 @@ import ProductsContext from "./Context/ProductsContext";
 import CartContext from "./Context/CartContext";
 import UserContext from "./Context/UserContext";
 import MyAccount from "./pages/MyAccount/MyAccount";
+// import { useCookies } from "react-cookie";
 
 const App = () => {
   const [products, setProducts] = useState();
@@ -18,6 +19,7 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [noMatch, setNoMatch] = useState(false);
   const [showPass, setShowPass] = useState(true);
+  // const [cookies, setCookie] = useCookies(["user"]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,6 +70,13 @@ const App = () => {
       setCartAmount(cartAmount + 1);
     }
   };
+
+  // const handleCookie = (e) => {
+  //   setCookie("user", "gowtham", {
+  //     path: "/",
+  //   });
+  //   console.log(cookies);
+  // };
 
   return (
     <ProductsContext.Provider
