@@ -106,10 +106,15 @@ app.get("/api/profile", authenticateToken, async (req, res) => {
 app.post("/api/users", async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new Users({ name, email, password: hashedPassword });
-    await user.save();
-    res.status(200).send(user);
+    const mail = await Users.findOne({ email: email });
+    if (mail) {
+      res.status(403).send("User Already Exist");
+    } else {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const user = new Users({ name, email, password: hashedPassword });
+      await user.save();
+      res.status(200).send(user);
+    }
   } catch {
     res.status(500).send();
   }

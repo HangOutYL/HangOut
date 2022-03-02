@@ -105,3 +105,10 @@
   display: flex;
   justify-content: space-between;
 } */
+
+.Success {
+  background-color: rgba(0, 128, 0, 0.637);
+  color: aliceblue;
+  font-size: large;
+  border: 1px solid rgb(216, 2, 2);
+}
