@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <>
       <div className="Login">
-        <h1>Sign In</h1>
+        <h1>Log In</h1>
         <span className="SignIn">
           <label htmlFor="User">Username:</label>
           <input
