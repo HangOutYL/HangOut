@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useCookies } from "react-cookie";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
@@ -13,6 +13,8 @@ const Login = () => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userNotExist, setUserNotExist] = useState(false);
+
+  let navigate = useNavigate();
 
   const handlePassword = () => {
     if (showPass) {
@@ -60,6 +62,7 @@ const Login = () => {
       setTimeout(() => {
         setLoggedIn(false);
       }, 4000);
+      navigate("/MyAccount", { replace: true });
     };
 
     setCookie("user", userEmail, {
