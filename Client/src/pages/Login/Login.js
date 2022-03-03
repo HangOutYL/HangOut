@@ -8,7 +8,7 @@ import UserContext from "../../Context/UserContext";
 import LoggedInContext from "../../Context/LoggedInContext";
 
 const Login = () => {
-  const { loggedUserName } = useContext(LoggedInContext);
+  const { loggedUserName, setIsLogged } = useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [cookies, setCookie] = useCookies(["user"]);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -56,6 +56,7 @@ const Login = () => {
       }
       await res.json();
       setLoggedIn(true);
+      setIsLogged(true);
       setTimeout(() => {
         setLoggedIn(false);
       }, 4000);
@@ -78,7 +79,9 @@ const Login = () => {
         )}
         {userNotExist && (
           <div>
-            <span className="userNotExist">User Not Exist, Please Sign Up</span>
+            <span className="userNotExist">
+              Email or Password are Incorrect
+            </span>
           </div>
         )}
         <h1>Log In</h1>

@@ -147,7 +147,7 @@ app.post("/api/users/login", async (req, res) => {
       .cookie("logged_in", "1")
       .json({ accessToken, refreshToken });
   } else {
-    res.status(500).send("failed");
+    res.status(403).send("failed");
   }
   console.log("Cookies: ", req.cookies);
 });

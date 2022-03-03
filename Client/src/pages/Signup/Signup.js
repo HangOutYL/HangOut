@@ -6,7 +6,8 @@ import UserContext from "../../Context/UserContext";
 import LoggedInContext from "../../Context/LoggedInContext";
 
 const Signup = () => {
-  const { setLoggedUserName, setLoggedUserEmail } = useContext(LoggedInContext);
+  const { loggedUserName, setLoggedUserName, setLoggedUserEmail } =
+    useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
@@ -37,7 +38,6 @@ const Signup = () => {
   };
 
   // creating a user in loggedIn Context
-
   setLoggedUserName(firstName, lastName);
   setLoggedUserEmail(email);
 

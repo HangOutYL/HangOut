@@ -10,7 +10,6 @@ import CartContext from "./Context/CartContext";
 import UserContext from "./Context/UserContext";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import LoggedInContext from "./Context/LoggedInContext";
-// import { useCookies } from "react-cookie";
 
 const App = () => {
   const [products, setProducts] = useState();
@@ -22,6 +21,7 @@ const App = () => {
   const [showPass, setShowPass] = useState(true);
   const [loggedUserName, setLoggedUserName] = useState([]);
   const [loggedUserEmail, setLoggedUserEmail] = useState([]);
+  const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -87,6 +87,8 @@ const App = () => {
         setLoggedUserName,
         loggedUserEmail,
         setLoggedUserEmail,
+        setIsLogged,
+        isLogged,
       }}
     >
       <ProductsContext.Provider
