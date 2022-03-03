@@ -36,7 +36,7 @@ const Signup = () => {
   };
 
   // creating a user in loggedIn Context
-  console.log("first", firstName, "last", lastName, "email", email);
+
   setLoggedUserName(firstName, lastName);
   setLoggedUserEmail(email);
 
@@ -69,7 +69,7 @@ const Signup = () => {
 
       setTimeout(() => {
         setSuccess(false);
-      }, 2000);
+      }, 4000);
     };
     fetchUserSignup();
   };

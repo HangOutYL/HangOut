@@ -53,13 +53,13 @@ const Login = () => {
       setLoggedIn(true);
       setTimeout(() => {
         setLoggedIn(false);
-      }, 3000);
+      }, 4000);
     };
 
     setCookie("user", userEmail, {
       path: "/",
     });
-    console.log(cookies);
+
     fetchUserLogin();
   };
 
