@@ -9,6 +9,7 @@ import ProductsContext from "./Context/ProductsContext";
 import CartContext from "./Context/CartContext";
 import UserContext from "./Context/UserContext";
 import MyAccount from "./pages/MyAccount/MyAccount";
+import LoggedInContext from "./Context/LoggedInContext";
 // import { useCookies } from "react-cookie";
 
 const App = () => {
@@ -19,7 +20,8 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [noMatch, setNoMatch] = useState(false);
   const [showPass, setShowPass] = useState(true);
-  // const [cookies, setCookie] = useCookies(["user"]);
+  const [loggedUserName, setLoggedUserName] = useState([]);
+  const [loggedUserEmail, setLoggedUserEmail] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,36 +81,45 @@ const App = () => {
   // };
 
   return (
-    <ProductsContext.Provider
+    <LoggedInContext.Provider
       value={{
-        products,
-        setProducts,
-        UniqueCategories,
-        searchedProducts,
-        setSearchedProducts,
-        noMatch,
-        setNoMatch,
+        loggedUserName,
+        setLoggedUserName,
+        loggedUserEmail,
+        setLoggedUserEmail,
       }}
     >
-      <CartContext.Provider
-        value={{ cart, setCart, cartAmount, setCartAmount, addToCart }}
+      <ProductsContext.Provider
+        value={{
+          products,
+          setProducts,
+          UniqueCategories,
+          searchedProducts,
+          setSearchedProducts,
+          noMatch,
+          setNoMatch,
+        }}
       >
-        <UserContext.Provider
-          value={{ showPass, setShowPass, users, setUsers }}
+        <CartContext.Provider
+          value={{ cart, setCart, cartAmount, setCartAmount, addToCart }}
         >
-          <div className="app">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/products/:id" element={<ProductDetails />} />
-              <Route path="/users/login" element={<Login />} />
-              <Route path="/MyAccount" element={<MyAccount />} />
-              <Route path="/signup" element={<Signup />} />
-            </Routes>
-          </div>
-        </UserContext.Provider>
-      </CartContext.Provider>
-    </ProductsContext.Provider>
+          <UserContext.Provider
+            value={{ showPass, setShowPass, users, setUsers }}
+          >
+            <div className="app">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/products/:id" element={<ProductDetails />} />
+                <Route path="/users/login" element={<Login />} />
+                <Route path="/MyAccount" element={<MyAccount />} />
+                <Route path="/signup" element={<Signup />} />
+              </Routes>
+            </div>
+          </UserContext.Provider>
+        </CartContext.Provider>
+      </ProductsContext.Provider>
+    </LoggedInContext.Provider>
   );
 };
 

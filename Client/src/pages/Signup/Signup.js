@@ -3,8 +3,10 @@ import "./Signup.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
+import LoggedInContext from "../../Context/LoggedInContext";
 
 const Signup = () => {
+  const { setLoggedUserName, setLoggedUserEmail } = useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
@@ -33,6 +35,13 @@ const Signup = () => {
     setLastName(e.target.value);
   };
 
+  // creating a user in loggedIn Context
+  console.log("first", firstName, "last", lastName, "email", email);
+  setLoggedUserName(firstName, lastName);
+  setLoggedUserEmail(email);
+
+  //
+
   const userSignup = () => {
     const fetchUserSignup = async () => {
       const postData = {
@@ -57,36 +66,13 @@ const Signup = () => {
       }
       await res.json();
       setSuccess(true);
+
       setTimeout(() => {
         setSuccess(false);
       }, 2000);
     };
     fetchUserSignup();
   };
-
-  // useEffect(() => {
-  //   const fetchUserLogin = async () => {
-  //     const postData = {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         name: {
-  //           firstName: "gigi",
-  //           lastName: "hadid",
-  //         },
-  //         password: "123",
-  //         email: "gigi@gmail.com",
-  //       }),
-  //     };
-  //     const res = await fetch("/api/users", postData);
-  //     const data = await res.json();
-  //     console.log(data);
-  //     debugger;
-  //   };
-  //   fetchUserLogin();
-  // }, [userSignup]);
 
   return (
     <>

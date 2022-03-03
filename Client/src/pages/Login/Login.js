@@ -5,10 +5,13 @@ import "./Login.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
+import LoggedInContext from "../../Context/LoggedInContext";
 
 const Login = () => {
+  const { loggedUserName } = useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [cookies, setCookie] = useCookies(["user"]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handlePassword = () => {
     if (showPass) {
@@ -29,8 +32,6 @@ const Login = () => {
   };
 
   const UserLogin = () => {
-    // const user = users.find((u) => u.email === userEmail);
-    // if (user) {
     const fetchUserLogin = async () => {
       const postData = {
         method: "POST",
@@ -43,26 +44,33 @@ const Login = () => {
           password: userPass,
         }),
       };
+
       const res = await fetch("/api/users/login", postData);
+      if (!res.ok) {
+        setLoggedIn(false);
+      }
       await res.json();
-      // console.log(cookies);
+      setLoggedIn(true);
+      setTimeout(() => {
+        setLoggedIn(false);
+      }, 3000);
     };
+
     setCookie("user", userEmail, {
       path: "/",
     });
+    console.log(cookies);
     fetchUserLogin();
   };
-
-  // const handleCookie = () => {
-  //   setCookie("user", userEmail, {
-  //     path: "/",
-  //   });
-  //   console.log(cookies);
-  // };
 
   return (
     <>
       <div className="Login">
+        {loggedIn && (
+          <div>
+            <span className="loggedIn">Welcome {loggedUserName}</span>
+          </div>
+        )}
         <h1>Log In</h1>
         <span className="SignIn">
           <label htmlFor="User">Username:</label>

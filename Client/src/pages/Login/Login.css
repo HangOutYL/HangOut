@@ -99,3 +99,13 @@ a {
 .PassShow {
   font-size: 12px;
 }
+
+.loggedIn {
+  background-color: rgba(93, 185, 93, 0.637);
+  color: aliceblue;
+  font-size: 20px;
+  border: 1px solid rgb(245, 238, 238);
+  width: 550px;
+  height: 10px;
+  padding: 10px 30px 10px 30px;
+}
