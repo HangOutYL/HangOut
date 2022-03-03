@@ -12,6 +12,7 @@ const Login = () => {
   const { showPass, setShowPass } = useContext(UserContext);
   const [cookies, setCookie] = useCookies(["user"]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [userNotExist, setUserNotExist] = useState(false);
 
   const handlePassword = () => {
     if (showPass) {
@@ -48,6 +49,10 @@ const Login = () => {
       const res = await fetch("/api/users/login", postData);
       if (!res.ok) {
         setLoggedIn(false);
+        setUserNotExist(true);
+        setTimeout(() => {
+          setUserNotExist(false);
+        }, 4000);
       }
       await res.json();
       setLoggedIn(true);
@@ -69,6 +74,11 @@ const Login = () => {
         {loggedIn && (
           <div>
             <span className="loggedIn">Welcome {loggedUserName}</span>
+          </div>
+        )}
+        {userNotExist && (
+          <div>
+            <span className="userNotExist">User Not Exist, Please Sign Up</span>
           </div>
         )}
         <h1>Log In</h1>
