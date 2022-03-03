@@ -13,6 +13,7 @@ const Signup = () => {
   const [firstName, setFirstName] = useState([]);
   const [lastName, setLastName] = useState([]);
   const [success, setSuccess] = useState(false);
+  const [userExist, setUserExist] = useState(false);
 
   const handleShowPassword = (e) => {
     if (showPass) {
@@ -62,7 +63,10 @@ const Signup = () => {
       const res = await fetch("/api/users", postData);
       if (!res.ok) {
         setSuccess(false);
-        alert("User Already Exist");
+        setUserExist(true);
+        setTimeout(() => {
+          setUserExist(false);
+        }, 4000);
       }
       await res.json();
       setSuccess(true);
@@ -80,6 +84,11 @@ const Signup = () => {
         {success && (
           <div>
             <span className="Success"> Success !</span>
+          </div>
+        )}
+        {userExist && (
+          <div>
+            <span className="userExist">User Already Exist, Please Log In</span>
           </div>
         )}
         <h1>Sign Up</h1>
@@ -109,16 +118,6 @@ const Signup = () => {
             </label>
           </div>
           <div className="UserDetails">
-            {/* <label htmlFor="Username">
-              Username:
-              <input
-                className="Username"
-                name="Username"
-                id="Username"
-                type="text"
-                placeholder="Username"
-              />
-            </label> */}
             <label htmlFor="Email">
               Email Address:
               <input

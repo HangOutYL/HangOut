@@ -115,3 +115,13 @@
   height: 10px;
   padding: 5px 30px 5px 30px;
 }
+
+.userExist {
+  background-color: rgb(255, 81, 0);
+  color: aliceblue;
+  font-size: 20px;
+  border: 1px solid rgb(245, 238, 238);
+  width: 550px;
+  height: 10px;
+  padding: 5px 30px 5px 30px;
+}
