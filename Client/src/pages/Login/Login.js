@@ -68,7 +68,6 @@ const Login = () => {
     setCookie("user", userEmail, {
       path: "/",
     });
-
     fetchUserLogin();
   };
 
