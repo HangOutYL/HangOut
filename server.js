@@ -46,6 +46,7 @@ async function initUsers() {
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "build")));
 
 // Express Routing
 
@@ -220,6 +221,9 @@ app.delete("/api/users/logout", async (res, req) => {
 
 app.get("*", (req, res) => {
   res.status(200).send("*");
+});
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 // Mongoose Connection To DB/
 
