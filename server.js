@@ -230,11 +230,11 @@ app.delete("/api/users/logout", async (res, req) => {
 //   res.sendFile(path.join(__dirname, "/client/public", "index.html"));
 // });
 
-app.get("*", (req, res) => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  res.sendFile(__dirname + "/client/build/index.html");
-});
+// app.get("*", (req, res) => {
+//   const __filename = fileURLToPath(import.meta.url);
+//   const __dirname = dirname(__filename);
+//   res.sendFile(__dirname + "/client/build/index.html");
+// });
 
 // Mongoose Connection To DB/
 
