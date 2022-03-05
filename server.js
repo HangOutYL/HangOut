@@ -1,4 +1,4 @@
-import express, { path } from "express";
+import express from "express";
 import fetch from "node-fetch";
 import mongoose from "mongoose";
 import Products from "./models/products.js";
@@ -9,12 +9,13 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
-import { path } from "express/lib/application";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
+app.use(express.static("client/build"));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static("client/build"));
 
 dotenv.config();
 
@@ -220,15 +221,11 @@ app.delete("/api/users/logout", async (res, req) => {
 //   res.status(200).send(user);
 // });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+app.get("*", (req, res) => {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  res.sendFile(__dirname + "/client/build/index.html");
 });
-
-// app.get("*", (req, res) => {
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = dirname(__filename);
-//   res.sendFile(__dirname + "/Client/build/index.html");
-// });
 
 // Mongoose Connection To DB/
 
