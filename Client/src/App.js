@@ -36,17 +36,6 @@ const App = () => {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchUsersData = async () => {
-  //     const res = await fetch(`/api/users`);
-  //     const data = await res.json();
-  //     if (data.length) {
-  //       setUsers(data);
-  //     }
-  //   };
-  //   fetchUsersData();
-  // }, []);
-
   const UniqueCategories =
     products &&
     products
@@ -72,13 +61,6 @@ const App = () => {
       setCartAmount(cartAmount + 1);
     }
   };
-
-  // const handleCookie = (e) => {
-  //   setCookie("user", "gowtham", {
-  //     path: "/",
-  //   });
-  //   console.log(cookies);
-  // };
 
   return (
     <LoggedInContext.Provider
