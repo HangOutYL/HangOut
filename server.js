@@ -48,7 +48,7 @@ async function initUsers() {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("client/build"));
+app.use(express.static("Client/build"));
 
 // Express Routing
 
@@ -224,7 +224,7 @@ app.delete("/api/users/logout", async (res, req) => {
 app.get("*", (req, res) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
-  res.sendFile(__dirname + "/client/build/index.html");
+  res.sendFile(__dirname + "/Client/build/index.html");
 });
 
 // Mongoose Connection To DB/
