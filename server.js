@@ -9,12 +9,11 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static("client/build"));
 
 dotenv.config();
 
@@ -48,7 +47,6 @@ async function initUsers() {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "client/build")));
 
 // Express Routing
 
@@ -221,7 +219,7 @@ app.delete("/api/users/logout", async (res, req) => {
 //   res.status(200).send(user);
 // });
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
