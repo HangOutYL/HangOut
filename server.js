@@ -9,6 +9,8 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
@@ -46,7 +48,7 @@ async function initUsers() {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static("client/build"));
 
 // Express Routing
 
@@ -220,11 +222,11 @@ app.delete("/api/users/logout", async (res, req) => {
 // });
 
 app.get("*", (req, res) => {
-  res.status(200).send("*");
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  res.sendFile(__dirname + "/client/build/index.html");
 });
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+
 // Mongoose Connection To DB/
 
 mongoose.connect(
