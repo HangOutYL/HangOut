@@ -9,11 +9,9 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 
 const app = express();
-app.use(express.static("client/build"));
+app.use(express.static("client/public"));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -225,11 +223,16 @@ app.delete("/api/users/logout", async (res, req) => {
 //   res.send("hey");
 // });
 
-app.get("*", (req, res) => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  res.sendFile(__dirname + "/client/build/index.html");
-});
+// const path = require("path");
+// app.get("/", (req, res) => {
+//  res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+
+// app.get("*", (req, res) => {
+//   const __filename = fileURLToPath(import.meta.url);
+//   const __dirname = dirname(__filename);
+//   res.sendFile(__dirname + "/client/build/index.html");
+// });
 
 // Mongoose Connection To DB/
 
