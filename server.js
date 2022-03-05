@@ -222,10 +222,14 @@ app.delete("/api/users/logout", async (res, req) => {
 // });
 
 app.get("*", (req, res) => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  res.sendFile(__dirname + "/client/build/index.html");
+  res.send("hey");
 });
+
+// app.get("*", (req, res) => {
+//   const __filename = fileURLToPath(import.meta.url);
+//   const __dirname = dirname(__filename);
+//   res.sendFile(__dirname + "/client/build/index.html");
+// });
 
 // Mongoose Connection To DB/
 
