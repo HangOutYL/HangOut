@@ -223,10 +223,10 @@ app.delete("/api/users/logout", async (res, req) => {
 //   res.send("hey");
 // });
 
-// const path = require("path");
-// app.get("/", (req, res) => {
-//  res.sendFile(path.join(__dirname, "public", "index.html"));
-// });
+const path = require("path");
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 // app.get("*", (req, res) => {
 //   const __filename = fileURLToPath(import.meta.url);
