@@ -1,4 +1,4 @@
-import express from "express";
+import express, { path } from "express";
 import fetch from "node-fetch";
 import mongoose from "mongoose";
 import Products from "./models/products.js";
@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
+import { path } from "express/lib/application";
 
 const app = express();
 app.use(express.json());
@@ -219,7 +220,7 @@ app.delete("/api/users/logout", async (res, req) => {
 //   res.status(200).send(user);
 // });
 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
