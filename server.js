@@ -232,9 +232,7 @@ app.delete("/api/users/logout", async (res, req) => {
 
 app.get("*", (req, res) => {
   const __filename = fileURLToPath(import.meta.url);
-  console.log("filename", __filename);
   const __dirname = dirname(__filename);
-  console.log("dirname", __dirname);
   res.sendFile(__dirname + "/client/build/index.html");
 });
 
