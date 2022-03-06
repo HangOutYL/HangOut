@@ -1,11 +1,8 @@
 import React from "react";
 import "./MyAccount.css";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const MyAccount = () => {
-  const [cookies] = useCookies(["user"]);
-
   const navigate = useNavigate();
 
   const userLogout = () => {

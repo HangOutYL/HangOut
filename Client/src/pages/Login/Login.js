@@ -10,7 +10,7 @@ import LoggedInContext from "../../Context/LoggedInContext";
 const Login = () => {
   const { loggedUserName, setIsLogged, setToken } = useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
-  const [cookies, setCookie] = useCookies(["user"]);
+  const [setCookie] = useCookies(["user"]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userNotExist, setUserNotExist] = useState(false);
 

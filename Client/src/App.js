@@ -22,7 +22,6 @@ const App = () => {
   const [loggedUserName, setLoggedUserName] = useState([]);
   const [loggedUserEmail, setLoggedUserEmail] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
-  const [token, setToken] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,8 +71,6 @@ const App = () => {
         setLoggedUserEmail,
         setIsLogged,
         isLogged,
-        token,
-        setToken,
       }}
     >
       <ProductsContext.Provider
