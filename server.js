@@ -9,7 +9,7 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
-import { dirname } from "path";
+// import { dirname } from "path";
 
 const app = express();
 app.use(express.json());
@@ -226,7 +226,7 @@ app.delete("/api/users/logout", async (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(dirname + "/client/build/index.html");
+  res.sendFile(__dirname + "/client/build/index.html");
 });
 // Mongoose Connection To DB ///
 
