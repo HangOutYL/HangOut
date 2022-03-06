@@ -22,6 +22,7 @@ const App = () => {
   const [loggedUserName, setLoggedUserName] = useState([]);
   const [loggedUserEmail, setLoggedUserEmail] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
+  const [token, setToken] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,17 +36,6 @@ const App = () => {
     };
     fetchData();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchUsersData = async () => {
-  //     const res = await fetch(`/api/users`);
-  //     const data = await res.json();
-  //     if (data.length) {
-  //       setUsers(data);
-  //     }
-  //   };
-  //   fetchUsersData();
-  // }, []);
 
   const UniqueCategories =
     products &&
@@ -73,13 +63,6 @@ const App = () => {
     }
   };
 
-  // const handleCookie = (e) => {
-  //   setCookie("user", "gowtham", {
-  //     path: "/",
-  //   });
-  //   console.log(cookies);
-  // };
-
   return (
     <LoggedInContext.Provider
       value={{
@@ -89,6 +72,8 @@ const App = () => {
         setLoggedUserEmail,
         setIsLogged,
         isLogged,
+        token,
+        setToken,
       }}
     >
       <ProductsContext.Provider

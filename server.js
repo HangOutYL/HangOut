@@ -144,12 +144,16 @@ app.post("/api/users/login", async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
       })
+      .cookie("refresh_token", refreshToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+      })
       .cookie("logged_in", "1")
       .json({ accessToken, refreshToken });
   } else {
     res.status(403).send("failed");
   }
-  console.log("Cookies: ", req.cookies);
+  // console.log("Cookies: ", req.cookies);
 });
 
 //generating access token
@@ -204,12 +208,20 @@ function authenticateToken(req, res, next) {
   }
 }
 
-app.delete("/api/users/logout", async (res, req) => {
-  const newTokens = await Tokens.findOneAndDelete({
-    refreshToken: req.body.token,
-  });
-
-  res.status(204).send(newTokens).cookie("logged_in", "0");
+app.delete("/api/users/logout", async (req, res) => {
+  try {
+    await Tokens.findOneAndDelete({
+      refreshToken: req.cookies?.refresh_token,
+    });
+    console.log("Cookies: ", req.cookies);
+    console.log(req.body.token);
+    res.clearCookie("refresh_token");
+    res.clearCookie("access_token");
+    res.status(200).send({ message: "logged out" }).cookie("logged_in", "0");
+    // console.log(cookie);
+  } catch {
+    res.status(500).send();
+  }
 });
 
 app.get("*", (req, res) => {

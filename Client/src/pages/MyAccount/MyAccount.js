@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const MyAccount = () => {
-  const [cookies, removeCookie] = useCookies(["user"]);
+  const [cookies] = useCookies(["user"]);
 
   const navigate = useNavigate();
 
@@ -15,9 +15,8 @@ const MyAccount = () => {
       if (!res.ok) {
         alert("failed to log out");
       }
-      console.log(cookies);
-      removeCookie(["user"]);
-      navigate("/", { replace: true });
+
+      navigate("/users/login", { replace: true });
 
       // setTimeout(() => {
       //  setLogout(false);

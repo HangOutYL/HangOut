@@ -8,7 +8,7 @@ import UserContext from "../../Context/UserContext";
 import LoggedInContext from "../../Context/LoggedInContext";
 
 const Login = () => {
-  const { loggedUserName, setIsLogged } = useContext(LoggedInContext);
+  const { loggedUserName, setIsLogged, setToken } = useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [cookies, setCookie] = useCookies(["user"]);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -57,7 +57,8 @@ const Login = () => {
         }, 4000);
       }
 
-      await res.json();
+      const data = await res.json();
+      setToken(data.refreshToken);
       setLoggedIn(true);
       setIsLogged(true);
       setTimeout(() => {
@@ -69,7 +70,6 @@ const Login = () => {
     setCookie("user", userEmail, {
       path: "/",
     });
-
     fetchUserLogin();
   };
 
