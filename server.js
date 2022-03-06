@@ -228,7 +228,7 @@ app.delete("/api/users/logout", async (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(dirname + "/client/build/index.html");
 });
-// Mongoose Connection To DB //
+// Mongoose Connection To DB ///
 
 mongoose.connect(
   `mongodb+srv://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`,
