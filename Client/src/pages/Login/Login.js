@@ -56,6 +56,7 @@ const Login = () => {
           setUserNotExist(false);
         }, 4000);
       }
+
       await res.json();
       setLoggedIn(true);
       setIsLogged(true);

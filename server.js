@@ -212,12 +212,6 @@ app.delete("/api/users/logout", async (res, req) => {
   res.status(204).send(newTokens).cookie("logged_in", "0");
 });
 
-// app.delete("/api/users/:id", async (req, res) => {
-//   const { _id } = req.params;
-//   const user = await Users.findByIdAndRemove(_id);
-//   res.status(200).send(user);
-// });
-
 app.get("*", (req, res) => {
   res.status(200).send("*");
 });

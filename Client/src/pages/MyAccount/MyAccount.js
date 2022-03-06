@@ -1,7 +1,31 @@
 import React from "react";
 import "./MyAccount.css";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 const MyAccount = () => {
+  const [cookies, removeCookie] = useCookies(["user"]);
+
+  const navigate = useNavigate();
+
+  const userLogout = () => {
+    const fetchUserLogout = async () => {
+      const res = await fetch("/api/users/logout", { method: "DELETE" });
+      await res.json();
+      if (!res.ok) {
+        alert("failed to log out");
+      }
+      console.log(cookies);
+      removeCookie(["user"]);
+      navigate("/", { replace: true });
+
+      // setTimeout(() => {
+      //  setLogout(false);
+      // }, 4000);
+    };
+    fetchUserLogout();
+  };
+
   return (
     <div className="MyAccount">
       <h1>My Account</h1>
@@ -20,6 +44,9 @@ const MyAccount = () => {
             <td>3</td>
           </tr>
         </table>
+        <button className="Logout" onClick={userLogout}>
+          Log out
+        </button>
       </div>
     </div>
   );
