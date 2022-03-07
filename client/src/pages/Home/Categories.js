@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import ProductsContext from "../../Context/ProductsContext";
 
 const Categories = ({ names }) => {
