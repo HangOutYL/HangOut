@@ -5,9 +5,10 @@ import ProfilePic from "../../views/ProfilePictureVector.png";
 import "./BottomNav.css";
 import { Link } from "react-router-dom";
 import CartContext from "../../Context/CartContext";
-
+// import LoggedInContext from "../../Context/LoggedInContext";
 const BottomNav = () => {
   const { cartAmount } = useContext(CartContext);
+  // const { loggedIn } = useContext(LoggedInContext);
 
   return (
     <div className="BottomNav">

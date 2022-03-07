@@ -4,6 +4,7 @@ import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
 // import LoggedInContext from "../../Context/LoggedInContext";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   // const { loggedUserName, setLoggedUserName, setLoggedUserEmail } =
@@ -15,6 +16,7 @@ const Signup = () => {
   const [lastName, setLastName] = useState([]);
   const [success, setSuccess] = useState(false);
   const [userExist, setUserExist] = useState(false);
+  const navigate = useNavigate();
 
   const handleShowPassword = (e) => {
     if (showPass) {
@@ -73,6 +75,7 @@ const Signup = () => {
 
       setTimeout(() => {
         setSuccess(false);
+        navigate("/", { replace: true });
       }, 4000);
     };
     fetchUserSignup();
