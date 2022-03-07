@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   color: #efe3c8;
   background: #201520;
   overflow: hidden;
@@ -19,6 +19,166 @@
   flex-direction: column;
 }
 
-thead {
-  color: springgreen;
+.MyOrders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-data {
+  display: flex;
+  flex-direction: column;
+  /* border: blue 1px solid; */
+  height: 100%;
+  align-items: center;
+}
+
+.Logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  padding: 15px 50px;
+  margin-top: 10px;
+
+  width: 343px;
+  height: 45px;
+
+  cursor: auto;
+  background: #efe3c8;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.Logout:hover {
+  background-color: tomato;
+}
+
+/* .user-favorites {
+  display: flex;
+  flex-flow: row wrap;
+  border: #efe3c8 solid 1px;
+} */
+
+.user-favorites {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
+  align-items: flex-start;
+  /* border: firebrick 1px solid; */
+
+  width: 97%;
+
+  box-sizing: border-box;
+}
+
+.fav-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fav-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 5px;
+  /* position: fixed; */
+  width: 130px;
+  height: 180px;
+  left: 63px;
+  top: 201px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12.6087px;
+}
+
+/* Each Card Link Route */
+.fav-card .Link {
+  /* border: solid 1px blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-decoration: none;
+}
+
+.fav-card img {
+  cursor: pointer;
+  /* position: fixed; */
+  width: 80px;
+  height: 80px;
+  left: 75px;
+  top: 213px;
+  /* border: blue 1px solid; */
+  border-radius: 15px;
+}
+
+.fav-card .Text {
+  cursor: pointer;
+  /* position: fixed; */
+  width: 111px;
+  height: 35px;
+  left: 75px;
+  top: 332px;
+  margin-top: 1em;
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 145%;
+  /* or 20px */
+
+  color: #ffffff;
+}
+
+.fav-card .PriceAndCart {
+  /* border: 1px solid blue; */
+  width: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fav-card .PriceAndCart button {
+  cursor: pointer;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+.fav-card .PriceAndCart button:hover {
+  background-color: tomato;
+}
+
+.purchase-text {
+  cursor: pointer;
+  /* position: fixed; */
+  height: 35px;
+  left: 75px;
+  top: 332px;
+  margin-top: 1em;
+  font-family: Rosarivo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 145%;
+  /* or 20px */
+
+  color: #ffffff;
+}
+
+.loggedout {
+  background-color: rgb(247, 8, 8);
+  color: aliceblue;
+  font-size: 20px;
+  border: 1px solid rgb(245, 238, 238);
+  width: 550px;
+  height: 10px;
+  padding: 5px 30px 5px 30px;
 }

@@ -126,6 +126,7 @@ app.post("/api/users", async (req, res) => {
 app.post("/api/users/login", async (req, res) => {
   console.log("login", req.body.email);
   const user = await Users.findOne({ email: req.body.email });
+  let userFN = user.name.firstName;
   if (user === null) {
     res.status(500).send("cannot find user");
     return;
@@ -150,6 +151,7 @@ app.post("/api/users/login", async (req, res) => {
         secure: process.env.NODE_ENV === "production",
       })
       .cookie("logged_in", "1")
+      .cookie("user_name", userFN)
       .json({ accessToken, refreshToken });
   } else {
     res.status(403).send("failed");

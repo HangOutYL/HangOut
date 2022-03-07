@@ -3,11 +3,11 @@ import "./Signup.css";
 import BottomNav from "../../components/BottomNav/BottomNav";
 import eye from "../../views/eye.png";
 import UserContext from "../../Context/UserContext";
-import LoggedInContext from "../../Context/LoggedInContext";
+// import LoggedInContext from "../../Context/LoggedInContext";
 
 const Signup = () => {
-  const { loggedUserName, setLoggedUserName, setLoggedUserEmail } =
-    useContext(LoggedInContext);
+  // const { loggedUserName, setLoggedUserName, setLoggedUserEmail } =
+  //   useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
@@ -37,11 +37,11 @@ const Signup = () => {
     setLastName(e.target.value);
   };
 
-  // creating a user in loggedIn Context
-  setLoggedUserName(firstName, lastName);
-  setLoggedUserEmail(email);
+  // setLoggedUserName(firstName);
+  // // creating a user in loggedIn Context
+  // setLoggedUserEmail(email);
 
-  //
+  // //
 
   const userSignup = () => {
     const fetchUserSignup = async () => {
