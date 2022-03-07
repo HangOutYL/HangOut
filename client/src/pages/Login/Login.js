@@ -8,13 +8,13 @@ import UserContext from "../../Context/UserContext";
 import LoggedInContext from "../../Context/LoggedInContext";
 
 const Login = () => {
-  const { loggedUserName, setIsLogged, setToken } = useContext(LoggedInContext);
+  const { loggedUserName, setIsLogged } = useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
-  const [setCookie] = useCookies(["user"]);
+  const [cookies, setCookie] = useCookies(["user"]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [userNotExist, setUserNotExist] = useState(false);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handlePassword = () => {
     if (showPass) {
@@ -57,8 +57,8 @@ const Login = () => {
         }, 4000);
       }
 
-      const data = await res.json();
-      setToken(data.refreshToken);
+      await res.json();
+
       setLoggedIn(true);
       setIsLogged(true);
       setTimeout(() => {
@@ -70,6 +70,7 @@ const Login = () => {
     setCookie("user", userEmail, {
       path: "/",
     });
+
     fetchUserLogin();
   };
 
