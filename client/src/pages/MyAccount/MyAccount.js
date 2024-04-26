@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./MyAccount.css";
 import { useNavigate } from "react-router-dom";
 import CoffeeImage from "./../../views/CoffeeImage1.png";
 import { useState } from "react";
+import LoggedInContext from "../../Context/LoggedInContext";
 
 const MyAccount = () => {
   const navigate = useNavigate();
   const [logout, setLogout] = useState(false);
+  const { setIsLogged } = useContext(LoggedInContext);
 
   const userLogout = () => {
     const fetchUserLogout = async () => {
       const res = await fetch("/api/users/logout", { method: "DELETE" });
-      await res.json();
       if (!res.ok) {
         alert("failed to log out");
       }
+      await res.json();
 
+      setIsLogged(false);
+      setLogout(true);
       setTimeout(() => {
         setLogout(false);
       }, 4000);

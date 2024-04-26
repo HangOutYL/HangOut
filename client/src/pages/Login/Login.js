@@ -8,11 +8,11 @@ import UserContext from "../../Context/UserContext";
 import LoggedInContext from "../../Context/LoggedInContext";
 
 const Login = () => {
-  const { loggedUserName, setLoggedUserName, setIsLogged } =
+  const { loggedUserName, setLoggedUserName, setIsLogged, isLogged } =
     useContext(LoggedInContext);
   const { showPass, setShowPass } = useContext(UserContext);
   const [cookies, setCookie] = useCookies(["user"]);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
   const [userNotExist, setUserNotExist] = useState(false);
 
   const navigate = useNavigate();
@@ -51,7 +51,6 @@ const Login = () => {
 
       const res = await fetch("/api/users/login", postData);
       if (!res.ok) {
-        setLoggedIn(false);
         setUserNotExist(true);
         setTimeout(() => {
           setUserNotExist(false);
@@ -59,11 +58,12 @@ const Login = () => {
       }
 
       await res.json();
-      setLoggedIn(true);
+
       setIsLogged(true);
       alert("logged in!");
+      setSuccessMessage(true);
       setTimeout(() => {
-        setLoggedIn(false);
+        setSuccessMessage(false);
       }, 4000);
       navigate("/MyAccount", { replace: true });
     };
@@ -78,7 +78,7 @@ const Login = () => {
   return (
     <>
       <div className="Login">
-        {loggedIn && (
+        {successMessage && (
           <div>
             <span className="loggedIn">Welcome {loggedUserName}</span>
           </div>
