@@ -156,7 +156,6 @@ app.post("/api/users/login", async (req, res) => {
   } else {
     res.status(403).send("failed");
   }
-  // console.log("Cookies: ", req.cookies);
 });
 
 //generating access token
